@@ -1,3 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: relative;
+}
+
+.dot {
+  width: 30px;
+  height: 5px;
+  position: relative;
+  background-color: #cfcfcf;
+  margin: 15px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dots {
+  position: absolute;
+  /* z-index: 10; */
+  top: 50%;
+  left: 40px;
+}
+
+@media (max-width: 768px) {
+  .dots {
+    display: none;
+  }
+  .dot {
+    display: none;
+  }
+}

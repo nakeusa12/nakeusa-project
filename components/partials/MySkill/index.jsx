@@ -16,12 +16,12 @@ export const MySkill = () => {
             <path
               d="M172.239 363.265C119.306 310.332 119.422 224.396 172.497 171.321C225.572 118.247 311.508 118.131 364.44 171.064"
               stroke="#2949FA"
-              stroke-width="40"
+              strokeWidth="40"
             />
             <path
               d="M370.761 179.102C423.693 232.034 423.578 317.97 370.503 371.045C317.428 424.12 231.492 424.235 178.56 371.303"
               stroke="#2949FA"
-              stroke-width="40"
+              strokeWidth="40"
             />
             <circle cx="271.5" cy="271.5" r="223.987" stroke="#2949FA" />
             <circle cx="271.5" cy="47.0129" r="9.4026" fill="#2949FA" />
@@ -33,7 +33,7 @@ export const MySkill = () => {
               cy="271.5"
               r="269"
               stroke="#2949FA"
-              stroke-width="5"
+              strokeWidth="5"
             />
             <circle cx="66.9935" cy="97.5519" r="15.2792" fill="#2949FA" />
             <circle cx="82.2727" cy="461.903" r="15.2792" fill="#2949FA" />

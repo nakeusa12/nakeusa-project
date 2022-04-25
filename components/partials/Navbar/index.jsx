@@ -141,7 +141,7 @@ const ShowMenu = ({ toggle, onClick }) => {
 };
 
 let NavbarContent = tw.nav`
-  fixed z-10 w-full h-full bg-transparent
+  fixed z-40 w-full h-full bg-transparent
 `;
 
 let NavHead = tw.div`

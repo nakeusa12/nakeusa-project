@@ -153,10 +153,10 @@ let NavBurger = tw.div`
 `;
 
 let MenuOverlay = tw.div`
-  fixed w-full h-screen bg-gray-200 opacity-50 -top-full
+  fixed w-full h-screen bg-gray-200 opacity-0 -top-full
 `;
 let MenuShowNavbar = tw.div`
-  fixed flex flex-row items-center justify-center  sm:justify-start w-full h-screen px-40  opacity-30 -top-full 
+  fixed flex flex-row items-center justify-center  sm:justify-start w-full h-screen px-40  opacity-0 -top-full 
 `;
 
 let MenuClose = tw.div`

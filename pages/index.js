@@ -1,5 +1,6 @@
 import Head from "next/head";
-import gsap from "gsap";
+import gsap,{ Linear } from "gsap";
+import Draggable from "gsap/dist/Draggable";
 import { useEffect } from "react";
 import tw from "twin.macro";
 import { Hero } from "@components/partials/Hero";
@@ -8,9 +9,12 @@ import { MySkill } from "@components/partials/MySkill";
 
 export default function Home() {
   useEffect(() => {
+    gsap.registerPlugin(Draggable);
+
     const slides = document.querySelectorAll("#screen-slider");
     const container = document.querySelector("#panelWrap");
     let dots = document.querySelector(".dots");
+    let toolTips = document.querySelectorAll(".toolTip");
     let oldSlide = 0;
     let activeSlide = 0;
     let navDots = [];
@@ -18,7 +22,7 @@ export default function Home() {
     let offsets = [];
     let toolTipAnims = [];
     let ih = window.innerHeight;
-
+    
     // create nev dots and add tooltip listeners
     for (let i = 0; i < slides.length; i++) {
       let tl = gsap.timeline({ paused: true, reversed: true });
@@ -27,14 +31,85 @@ export default function Home() {
       newDot.index = i;
       navDots.push(newDot);
       newDot.addEventListener("click", slideAnim);
+      newDot.addEventListener("mouseenter", dotHover);
+      newDot.addEventListener("mouseleave", dotHover);
       dots.appendChild(newDot);
       offsets.push(-slides[i].offsetTop);
+      tl.to(toolTips[i], 0.25, { opacity: 1, ease: Linear.easeNone });
       toolTipAnims.push(tl);
     }
-
+    
+    // =================== icon animations for slide 1 ===================
+    
+    // Animation Pulse for "Mousewheel" 
+    const mouseAnim = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    mouseAnim.fromTo(
+      "#mouseRings circle",
+      { attr: { r: 15 } },
+      { duration: 0.8, stagger: 0.25, attr: { r: 40 } }
+    );
+    mouseAnim.fromTo(
+      "#mouseRings circle",
+      { opacity: 0 },
+      { duration: 0.4, stagger: 0.25, opacity: 1 },
+      0
+    );
+    mouseAnim.fromTo(
+      "#mouseRings circle",
+      { opacity: 1 },
+      { duration: 0.6, stagger: 0.25, opacity: 0 },
+      0.4
+    );
+    
+    // Animation "Drag & Throw" 
+    const handAnim = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    handAnim.to("#hand", {
+      duration: 0.75,
+      y: -16,
+      rotation: 5,
+      transformOrigin: "right bottom",
+    });
+    handAnim.to("#hand", { duration: 0.5, y: 15, ease: "power3.inOut" });
+    handAnim.to("#hand", { duration: 1, y: 0, rotation: 0 });
+    
+    // Animation "Nav Dots" 
+    const cursorAnim = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    gsap.set("#cursor", {
+      rotation: 240,
+      transformOrigin: "center center",
+      x: -25,
+    });
+    cursorAnim.to("#cursor", 0.25, { duration: 0.25, y: -24 });
+    cursorAnim.to(
+      "#iconCircles circle",
+      { duration: 0.5, stagger: 0.15, attr: { r: 6 } },
+      "expand"
+    );
+    cursorAnim.to("#cursor", { duration: 1.1, y: 50 }, "expand");
+    cursorAnim.to("#cursor", { duration: 0.75, y: 0 }, "contract");
+    cursorAnim.to(
+      "#iconCircles circle",
+      { duration: 0.5, attr: { r: 4 } },
+      "contract"
+    );
+    
+    // Animation "Arrow" 
+    const arrowAnim = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    arrowAnim.to("#caret", {
+      duration: 0.5,
+      attr: { points: "30 40, 50 65, 70 40" },
+      repeat: 3,
+      yoyo: true,
+      ease: "power2.inOut",
+      repeatDelay: 0.25,
+    });
+    
+    // =================== END icon animations for slide 1 ===================
+    
     // get elements positioned
     gsap.set(".dots", { yPercent: -50 });
-
+    gsap.set(".toolTips", { yPercent: -50 });
+    
     // side screen animation with nav dots
     const dotAnim = gsap.timeline({ paused: true });
     dotAnim.to(
@@ -44,14 +119,21 @@ export default function Home() {
         scale: 1,
         rotation: 0.1,
         ease: "none",
-        width: "50px",
+        width: "60px",
         height: "6px",
         backgroundColor: "#2348F7",
       },
       0.5
     );
     dotAnim.time(1);
-
+    
+    // tooltips hovers
+    function dotHover() {
+      toolTipAnims[this.index].reversed()
+        ? toolTipAnims[this.index].play()
+        : toolTipAnims[this.index].reverse();
+    }
+    
     // figure out which of the 4 nav controls called the function
     function slideAnim(e) {
       oldSlide = activeSlide;
@@ -90,9 +172,42 @@ export default function Home() {
         });
       }
     }
-
+    
+    gsap.set(".hideMe", { opacity: 1 });
     window.addEventListener("wheel", slideAnim);
-
+    window.addEventListener("resize", newSize);
+    
+    // make the container a draggable element
+    let dragMe = Draggable.create(container, {
+      // type: "y",
+      type: "scroll",
+      edgeResistance: 1,
+      onDragEnd: slideAnim,
+      onDrag: tweenDot,
+      onThrowUpdate: tweenDot,
+      snap: offsets,
+      inertia: true,
+      zIndexBoost: false,
+      allowNativeTouchScrolling: false,
+      bounds: "#masterWrap",
+    });
+    
+    dragMe[0].id = "dragger";
+    newSize();
+    
+    // resize all panels and refigure draggable snap array
+    function newSize() {
+      offsets = [];
+      ih = window.innerHeight;
+      gsap.set("#panelWrap", { height: slides.length * ih });
+      gsap.set(slides, { height: ih });
+      for (let i = 0; i < slides.length; i++) {
+        offsets.push(-slides[i].offsetTop);
+      }
+      gsap.set(container, { y: offsets[activeSlide] });
+      dragMe[0].vars.snap = offsets;
+    }
+    
     // tween the dot animation as the draggable moves
     function tweenDot() {
       gsap.set(dotAnim, {

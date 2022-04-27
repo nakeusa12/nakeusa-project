@@ -99,7 +99,7 @@ export const MySkill = () => {
 const Item = ({ name, className }) => {
   return (
     <div
-      className={`px-6 top-0 border-[1.5px] border-main-primary rounded-md bg-white py-2.5 ${className}`}
+      className={`px-6 top-0 border-[1.5px] border-main-primary rounded-md bg-white py-2 ${className}`}
     >
       {name}
     </div>

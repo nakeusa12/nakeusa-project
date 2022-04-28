@@ -1,7 +1,7 @@
 export const MySkill = () => {
   return (
     <div className="lg:min-h-screen w-full flex lg:items-center lg:justify-center">
-      <div className="max-w-3xl w-full mx-auto relative lg:block hidden">
+      <div className="max-w-3xl w-full mx-auto xl:mr-10 xl:ml-auto relative lg:block hidden">
         <div className="relative flex justify-end">
           <svg
             className="w-[80%] 2xl:w-full h-[450px] 2xl:h-[600px]"
@@ -87,9 +87,9 @@ export const MySkill = () => {
           <Item className="2xl:text-base text-[13px]" name={"GSAP"} />
         </div>
       </div>
-      <div className="flex lg:hidden px-10 flex-wrap gap-4 sm:gap-5">
+      <div className="flex lg:hidden px-10 flex-wrap gap-2.5 sm:gap-5">
         {skills.map((skill) => (
-          <Item name={skill} className="sm:text-sm text-xs" />
+          <Item name={skill} key={skill} className="sm:text-sm text-[10px]" />
         ))}
       </div>
     </div>
@@ -99,7 +99,7 @@ export const MySkill = () => {
 const Item = ({ name, className }) => {
   return (
     <div
-      className={`px-6 top-0 border-[1.5px] border-main-primary rounded-md bg-white py-2 ${className}`}
+      className={`px-3 sm:px-6 top-0 border-[1.5px] duration-300 border-main-primary hover:bg-main-primary hover:text-white rounded-md bg-white py-2 ${className}`}
     >
       {name}
     </div>

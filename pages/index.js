@@ -160,12 +160,10 @@ export default function Home() {
               </div>
             </ScreenSlider>
             <ScreenSlider id="screen-slider">
-              <h3>Side Dot Animation</h3>
-              <p>
-                See that animation on the right with the navigation dots? Its
-                time is based on the position of the draggable element. Keep an
-                eye on it as you drag the slides.
-              </p>
+              <div className="w-full lg:grid lg:grid-cols-2">
+                <MyServices />
+                <TextSlider />
+              </div>
             </ScreenSlider>
             <ScreenSlider id="screen-slider">
               <h3>Random dog </h3>
@@ -189,33 +187,33 @@ const SliderMarker = () => {
 };
 
 const SliderArrow = () => {
-  return(
+  return (
     <>
       <svg
-          id="downArrow"
-          className="arrow bg-main-primary"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-        >
-          <g strokeLinejoin="round" strokeLinecap="round">
-            <circle r="46" cx="50" cy="50" />
-            <polyline points="25 40, 50 70, 75 40"></polyline>
-          </g>
-        </svg>
-        <svg
-          id="upArrow"
-          className="arrow bg-main-primary"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-        >
-          <g strokeLinejoin="round" strokeLinecap="round">
-            <circle r="46" cx="50" cy="50" />
-            <polyline points="25 60, 50 30, 75 60"></polyline>
-          </g>
-        </svg>
+        id="downArrow"
+        className="arrow bg-main-primary"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+      >
+        <g strokeLinejoin="round" strokeLinecap="round">
+          <circle r="46" cx="50" cy="50" />
+          <polyline points="25 40, 50 70, 75 40"></polyline>
+        </g>
+      </svg>
+      <svg
+        id="upArrow"
+        className="arrow bg-main-primary"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+      >
+        <g strokeLinejoin="round" strokeLinecap="round">
+          <circle r="46" cx="50" cy="50" />
+          <polyline points="25 60, 50 30, 75 60"></polyline>
+        </g>
+      </svg>
     </>
-  )
-}
+  );
+};
 
 const AboutMe = () => {
   return (
@@ -223,10 +221,10 @@ const AboutMe = () => {
       <div className="lg:max-w-lg w-full lg:mx-24 p-10">
         <div className="w-full space-y-2">
           <h3 className="text-sm font-normal text-main-dark uppercase">
-            Summary
+            MY SERVICES
           </h3>
           <h1 className="text-black text-2xl font-bold uppercase">
-            ABOUT <span className="text-main-primary">ME</span>
+            WHAT I <span className="text-main-primary">Do</span>
           </h1>
         </div>
         <div className="mt-6 sm:mt-12">
@@ -243,6 +241,89 @@ const AboutMe = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const MyServices = () => {
+  return (
+    <div className="lg:bg-gray-100 bg-transparent lg:min-h-screen w-full flex flex-col justify-center">
+      <div className="lg:max-w-3xl w-full lg:mx-24 xl:pl-24 p-10">
+        <div className="w-full space-y-2">
+          <h3 className="text-sm font-normal text-main-dark uppercase">
+            Summary
+          </h3>
+          <h1 className="text-black text-2xl font-bold uppercase">
+            ABOUT <span className="text-main-primary">ME</span>
+          </h1>
+        </div>
+        <div className="mt-6 sm:mt-12 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="px-6 py-12 bg-white shadow-md">
+            <span>
+              <img src="/assets/svgs/web.svg" alt="" />
+            </span>
+            <div className="mt-6 space-y-3">
+              <h4 className="text-base font-semibold">Website Development</h4>
+              <p className="text-sm font-normal">
+                Build high-quality websites that have attractive and fluid
+                functions and fast rendering.
+              </p>
+            </div>
+          </div>
+          <div className="px-6 py-12 bg-white shadow-md">
+            <span>
+              <img src="/assets/svgs/uiux.svg" alt="" />
+            </span>
+            <div className="mt-6 space-y-3">
+              <h4 className="text-base font-semibold">UI UX Design</h4>
+              <p className="text-sm font-normal">
+                Creating attractive Website and Mobile Designs and an excellent
+                user experience.
+              </p>
+            </div>
+          </div>
+          <div className="px-6 py-12 bg-white shadow-md">
+            <span>
+              <img src="/assets/svgs/responsive.svg" alt="" />
+            </span>
+            <div className="mt-6 space-y-3">
+              <h4 className="text-base font-semibold">Responsive Website</h4>
+              <p className="text-sm font-normal">
+                Developing responsive websites can be accessed on computers,
+                tablets and mobile.
+              </p>
+            </div>
+          </div>
+          <div className="px-6 py-12 bg-white shadow-md">
+            <span>
+              <img src="/assets/svgs/pwa.svg" alt="" />
+            </span>
+            <div className="mt-6 space-y-3">
+              <h4 className="text-base font-semibold">Progressive Web Apps</h4>
+              <p className="text-sm font-normal">
+                Making the Website accessible without an internet connection and
+                responsive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TextSlider = () => {
+  return (
+    <>
+      <div className="h-full w-full hidden lg:flex justify-center gap-x-6">
+        <p
+          className="text-[70px] uppercase max-h-screen h-full"
+          style={{ textOrientation: "upright", writingMode: "vertical-rl" }}
+        >
+          • Follow Me • <span className="text-main-primary">Follow Me</span> •
+          Follow Me
+        </p>
+      </div>
+    </>
   );
 };
 

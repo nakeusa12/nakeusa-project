@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 export const Hero = () => {
   return (
     <>
-      <div className="lg:block hidden">
+      <div className="md:block hidden">
         <div className="absolute top-[5%] xl:top-[8%] 2xl:top-[15%] left-60">
           <img src="assets/svgs/rectangle1.svg" alt="" />
         </div>

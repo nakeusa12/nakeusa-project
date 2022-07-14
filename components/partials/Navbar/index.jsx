@@ -14,12 +14,12 @@ export const Navbar = () => {
     <NavbarContent>
       <NavHead>
         <div className="logo">
-          <img src="assets/images/logo.png" alt="" />
+          <img src="assets/images/logo-white.png" alt="" />
         </div>
         <NavBurger onClick={handleOpen}>
-          <div className="w-4 h-[3px] rounded-full bg-black" />
-          <div className="w-8 h-[3px] rounded-full bg-black" />
-          <div className="w-4 h-[3px] rounded-full bg-black" />
+          <div className="w-4 h-[3px] rounded-full bg-white" />
+          <div className="w-8 h-[3px] rounded-full bg-white" />
+          <div className="w-4 h-[3px] rounded-full bg-white" />
         </NavBurger>
       </NavHead>
 
@@ -44,7 +44,7 @@ const ShowMenu = ({ toggle, onClick }) => {
       ".menu",
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         top: 0,
         ease: Power2.easeInOut,
       },
@@ -57,7 +57,7 @@ const ShowMenu = ({ toggle, onClick }) => {
         marginBottom: 0,
         duration: 1,
         ease: Power2.easeInOut,
-        stagger: 0.3,
+        stagger: 0.2,
       },
       ">-0.5"
     );

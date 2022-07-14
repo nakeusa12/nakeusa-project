@@ -16,6 +16,9 @@ export default function Home() {
       <main className="bg-main-dark">
         <Navbar />
         <Hero />
+        <div className="bg-white bg-opacity-5">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente recusandae iste nesciunt tenetur incidunt odio sunt fugiat, id pariatur officiis quibusdam asperiores, dolores magni? Dolore, sit inventore nobis at quidem pariatur consectetur ut ipsum eum sapiente, doloremque, repellendus aut odio incidunt ducimus voluptatibus nulla vitae est? Saepe reiciendis minus quae beatae corrupti! Cum, eligendi, voluptates perspiciatis sit iste quo quos commodi at quis dolor eum, in illum nobis eos dolorem. Adipisci, eveniet quae, voluptate inventore dignissimos commodi explicabo sapiente voluptas minus excepturi eius dolorum dolorem praesentium architecto officiis, molestiae ipsum libero in dolores! Aut quasi omnis ducimus, vitae nulla distinctio.
+        </div>
       </main>
     </>
   );

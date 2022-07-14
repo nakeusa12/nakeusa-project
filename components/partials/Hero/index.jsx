@@ -1,8 +1,9 @@
 import { IoIosArrowDown } from "react-icons/io";
+import { Square } from "./square";
 
 export const Hero = () => {
   return (
-    <section className="relative">
+    <section className="relative overflow-x-hidden">
       <div className="w-full max-w-7xl mx-auto z-10">
         <div className="w-full min-h-screen flex justify-center flex-col">
           <h4 className="text-main-gray text-lg font-poppins font-bold tracking-wide inline-flex items-center">
@@ -13,6 +14,10 @@ export const Hero = () => {
           </h1>
         </div>
       </div>
+
+     <div className="absolute inset-x-40 inset-y-24 w-full mx-auto">
+      <Square />
+     </div>
     </section>
   );
 };

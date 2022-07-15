@@ -3,8 +3,8 @@ import { Square } from "./square";
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-x-hidden">
-      <div className="w-full max-w-7xl mx-auto z-10">
+    <section className="relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto z-10 relative">
         <div className="w-full min-h-screen flex justify-center flex-col">
           <h4 className="text-main-gray text-lg font-poppins font-bold tracking-wide inline-flex items-center">
             SAIFUL NAKEUSA <span className="w-10 h-0.5 bg-main-gray mx-3" /> WEB DESIGNER & FRONTEND DEVELOPER
@@ -15,8 +15,10 @@ export const Hero = () => {
         </div>
       </div>
 
-     <div className="absolute inset-x-40 inset-y-24 w-full mx-auto">
-      <Square />
+     <div className="absolute w-full mx-auto top-0 left-0" style={{ zIndex: '0'}}>
+      <div className="max-w-[1550px] mx-auto w-full min-h-screen h-full flex items-center">
+        <Square />
+      </div>
      </div>
     </section>
   );

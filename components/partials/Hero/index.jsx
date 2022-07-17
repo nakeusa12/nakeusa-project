@@ -16,9 +16,7 @@ export const Hero = () => {
       </div>
 
      <div className="absolute w-full mx-auto top-0 left-0" style={{ zIndex: '0'}}>
-      <div className="max-w-[1550px] mx-auto w-full min-h-screen h-full flex items-center">
         <Square />
-      </div>
      </div>
     </section>
   );

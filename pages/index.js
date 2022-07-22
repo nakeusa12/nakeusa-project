@@ -32,6 +32,6 @@ export default function Home() {
   );
 }
 
-// let MainHome = tw.main`
-//   opacity-100
-// `;
+let MainHome = tw.main`
+  opacity-100
+`;

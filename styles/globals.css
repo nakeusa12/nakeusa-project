@@ -145,3 +145,9 @@ body {
   -ms-transform: rotate(51deg);
   transform: rotate(51deg);
 } 
+
+@media screen and (max-width: 768px) {
+  .navbar-item{
+    height: calc(100vh - 88px);
+  }
+}

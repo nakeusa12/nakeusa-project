@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Navbar } from "@components/partials/Navbar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function TestNavbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -65,6 +66,11 @@ export default function TestNavbar() {
                     <Nyobain status={'selesai'} />
                 </div>
 
+                <div className="p-20">
+                    <UploadImages />
+                    tes
+                </div>
+
 
             </main>
         </>
@@ -81,7 +87,59 @@ const Nyobain = ({ status }) => {
     )
 }
 
+const UploadImages = () => {
+    const [image, setImage] = useState(''); //mengambil path image yg diupload
+    const [imagePreview, setImagePreview] = useState(''); //menampilkan image yang diupload
+    // const [images, setImages] = useState([]);
+    // const [imageURLs, setImageURLs] = useState([]);
 
-// let MainHome = tw.main`
-//   opacity-100
-// `;
+    // useEffect(() => {
+    //     if(images.length < 1) return;
+    //     const newImageUrls = [];
+    //     images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
+    //     setImageURLs(newImageUrls);
+    // }, [images]);
+
+    // const onImageChange = (e) => {
+    //     setImages([...e.target.files]);
+    // }
+
+    // console.log("imageURL: ", imageURLs);
+    // console.log("images: ", images);
+
+    return(
+        <div className="w-full grid grid-cols-3 gap-5">
+            {/* {imageURLs === [] ? (
+                <button className=" border-none focus:outline-none ring-2 ring-blue-200 relative h-52 w-full flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            <input type="file" accept="image/*" onChange={onImageChange} className="absolute bg-red-50 inset-0 cursor-pointer opacity-0" />
+        </button>
+            ) : (
+                <>
+            { imageURLs.map(imageSrc => <img src={imageSrc} />)}
+                </>
+            )}
+             */}
+
+<div className="text-center image-upload">
+                  <label htmlFor="avatar">
+                    <Image src={imagePreview} className="img-load" alt="upload icon" />
+                  </label>
+                  <input
+                    id="avatar"
+                    type="file"
+                    name="avatar"
+                    accept="image/png, image/jpeg"
+                    onChange={(event) => {
+                      const img = event.target.files[0]
+                      setImagePreview(URL.createObjectURL(img))
+                      return setImage(img)
+                    }}
+                  />
+                </div>
+
+        </div>
+    )
+}

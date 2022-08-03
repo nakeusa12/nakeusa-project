@@ -16,16 +16,83 @@ export default function Home() {
       <main className="bg-main-dark">
         <Navbar />
         <Hero />
-        <div className="bg-white w-full min-h-screen h-screen grid grid-cols-12 grid-rows-3 gap-4">
-          <div className="w-full col-span-4 row-span-2 bg-red-100">
-             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi tempora dolores beatae numquam, vero suscipit, sint accusamus iusto autem ducimus incidunt sunt, ut distinctio natus vitae debitis! Nam placeat, unde deleniti voluptates nobis error quae suscipit, nisi incidunt nesciunt aperiam eaque aliquid optio repudiandae velit similique recusandae adipisci dolorem natus debitis. Minus repellendus itaque inventore, reiciendis obcaecati, est laboriosam quidem mollitia neque nobis enim. Eveniet, itaque ea nesciunt consequatur enim accusantium ratione a possimus nemo! Quod reprehenderit error fugiat magnam maiores laudantium pariatur obcaecati ab laborum, aliquid animi dolorem, possimus et non accusamus libero numquam. Corporis eius optio maiores dicta. Tenetur, laudantium labore libero repellendus doloremque sint architecto a ipsum unde inventore aperiam, rem facere quibusdam, quos expedita neque culpa ut dolor alias! Magnam ipsam aperiam saepe voluptas totam. Sapiente tempore ipsam dolores accusantium dolorem iste unde ipsum blanditiis esse harum. Ducimus aspernatur, at iusto odit culpa blanditiis fuga saepe deleniti magni neque sequi rem voluptates.
+        <div className="w-full h-full bg-main-secondDark py-40">
+          <div className="text-center text-white">PROJECTS</div>
+          <div className="w-full max-w-7xl mx-auto pt-40">
+            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray">SERVICES</h2>
+            <div className="w-full grid grid-cols-12 gap-5 pt-14">
+              <div className="col-span-7 w-full grid grid-rows-4 gap-y-10">
+                <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
+                  <div className="flex flex-col space-y-4">
+                    <div>
+                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
+                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 className="text-white text-lg font-semibold">
+                      Website Developement
+                    </h4>
+                  </div>
+                  <div className="text-main-gray">
+                    detail
+                  </div>
+                </div>
+                <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
+                  <div className="flex flex-col space-y-4">
+                    <div>
+                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
+                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 className="text-white text-lg font-semibold">
+                      Website Developement
+                    </h4>
+                  </div>
+                  <div className="text-main-gray">
+                    detail
+                  </div>
+                </div>
+                <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
+                  <div className="flex flex-col space-y-4">
+                    <div>
+                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
+                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 className="text-white text-lg font-semibold">
+                      Website Developement
+                    </h4>
+                  </div>
+                  <div className="text-main-gray">
+                    detail
+                  </div>
+                </div>
+                <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
+                  <div className="flex flex-col space-y-4">
+                    <div>
+                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
+                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 className="text-white text-lg font-semibold">
+                      Website Developement
+                    </h4>
+                  </div>
+                  <div className="text-main-gray">
+                    detail
+                  </div>
+                </div>
+              </div>
+              <div  className="col-span-5 col-start-9 w-full">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate qui dolore atque earum recusandae id sequi nihil eos labore! Amet delectus animi sequi sint quo distinctio necessitatibus labore voluptas veritatis.
+              </div>
+            </div>
           </div>
-          <div className="w-full col-span-8 row-span-2 bg-green-100">
-             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi tempora dolores beatae numquam, vero suscipit, sint accusamus iusto autem ducimus incidunt sunt, ut distinctio natus vitae debitis! Nam placeat, unde deleniti voluptates nobis error quae suscipit, nisi incidunt nesciunt aperiam eaque aliquid optio repudiandae velit similique recusandae adipisci dolorem natus debitis. Minus repellendus itaque inventore, reiciendis obcaecati, est laboriosam quidem mollitia neque nobis enim. Eveniet, itaque ea nesciunt consequatur enim accusantium ratione a possimus nemo! Quod reprehenderit error fugiat magnam maiores laudantium pariatur obcaecati ab laborum, aliquid animi dolorem, possimus et non accusamus libero numquam. Corporis eius optio maiores dicta. Tenetur, laudantium labore libero repellendus doloremque sint architecto a ipsum unde inventore aperiam, rem facere quibusdam, quos expedita neque culpa ut dolor alias! Magnam ipsam aperiam saepe voluptas totam. Sapiente tempore ipsam dolores accusantium dolorem iste unde ipsum blanditiis esse harum. Ducimus aspernatur, at iusto odit culpa blanditiis fuga saepe deleniti magni neque sequi rem voluptates. Ab eius quia, quaerat unde ea veritatis repellat enim deserunt amet totam eligendi quibusdam error aperiam iusto rem corporis a, 
-          </div>
-          <div className="w-full col-span-12 row-span-1 bg-blue-100">
-             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi tempora dolores beatae numquam, vero suscipit, sint accusamus iusto autem ducimus incidunt sunt, ut distinctio natus vitae debitis! Nam placeat, unde deleniti voluptates nobis error quae suscipit, nisi incidunt nesciunt aperiam eaque aliquid optio repudiandae velit similique recusandae adipisci dolorem natus debitis. Minus repellendus itaque inventore, reiciendis obcaecati, est laboriosam quidem mollitia neque nobis enim. Eveniet, itaque ea nesciunt consequatur enim accusantium ratione a possimus nemo! Quod reprehenderit error fugiat magnam maiores laudantium pariatur obcaecati ab laborum, aliquid animi dolorem, possimus et non accusamus libero numquam. Corporis eius optio maiores dicta. 
-          </div>
+         
         </div>
       </main>
     </>

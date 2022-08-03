@@ -3,6 +3,7 @@ import Head from "next/head";
 // import tw from "twin.macro";
 import { Hero } from "@components/partials/Hero";
 import { Navbar } from "@components/partials/Navbar";
+import { BsArrowRight } from 'react-icons/bs';
 
 export default function Home() {
   return (
@@ -17,82 +18,91 @@ export default function Home() {
         <Navbar />
         <Hero />
         <div className="w-full h-full bg-main-secondDark py-40">
-          <div className="text-center text-white">PROJECTS</div>
+          <div className="text-center text-white uppercase">SERVICES</div>
           <div className="w-full max-w-7xl mx-auto pt-40">
-            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray">SERVICES</h2>
+            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">SERVICES</h2>
             <div className="w-full grid grid-cols-12 gap-5 pt-14">
               <div className="col-span-7 w-full grid grid-rows-4 gap-y-10">
                 <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
                   <div className="flex flex-col space-y-4">
-                    <div>
-                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
-                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                    <div className="w-14 h-11">
+                      <img src="/assets/svgs/web-development.svg" alt="web-developement-icon" className="w-full h-full object-contain" />
                     </div>
                     <h4 className="text-white text-lg font-semibold">
                       Website Developement
                     </h4>
                   </div>
-                  <div className="text-main-gray">
-                    detail
+                  <div className="inline-flex gap-x-1 items-center group">
+                    <p className=" text-sm text-main-gray font-medium">Detail</p> 
+                    <BsArrowRight className="-rotate-45 text-main-gray text-base font-medium group-hover:rotate-0 duration-300" />
                   </div>
                 </div>
                 <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
                   <div className="flex flex-col space-y-4">
-                    <div>
-                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
-                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                    <div className="w-14 h-11">
+                      <img src="/assets/svgs/uiux-design.svg" alt="web-developement-icon" className="w-full h-full object-contain" />
                     </div>
                     <h4 className="text-white text-lg font-semibold">
-                      Website Developement
+                      UI UX Design
                     </h4>
                   </div>
-                  <div className="text-main-gray">
-                    detail
+                  <div className="inline-flex gap-x-1 items-center group">
+                    <p className=" text-sm text-main-gray font-medium">Detail</p> 
+                    <BsArrowRight className="-rotate-45 text-main-gray text-base font-medium group-hover:rotate-0 duration-300" />
                   </div>
                 </div>
                 <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
                   <div className="flex flex-col space-y-4">
-                    <div>
-                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
-                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                    <div className="w-14 h-11">
+                      <img src="/assets/svgs/responsive-webapp.svg" alt="web-developement-icon" className="w-full h-full object-contain" />
                     </div>
                     <h4 className="text-white text-lg font-semibold">
-                      Website Developement
+                      Responsive WebApp
                     </h4>
                   </div>
-                  <div className="text-main-gray">
-                    detail
+                  <div className="inline-flex gap-x-1 items-center group">
+                    <p className=" text-sm text-main-gray font-medium">Detail</p> 
+                    <BsArrowRight className="-rotate-45 text-main-gray text-base font-medium group-hover:rotate-0 duration-300" />
                   </div>
                 </div>
                 <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
                   <div className="flex flex-col space-y-4">
-                    <div>
-                      <svg width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 36.2857V7.71429C2 6.19876 2.60204 4.74531 3.67368 3.67368C4.74531 2.60204 6.19876 2 7.71429 2H47.7143C49.2298 2 50.6833 2.60204 51.7549 3.67368C52.8265 4.74531 53.4286 6.19876 53.4286 7.71429V36.2857C53.4286 37.8012 52.8265 39.2547 51.7549 40.3263C50.6833 41.398 49.2298 42 47.7143 42H7.71429C6.19876 42 4.74531 41.398 3.67368 40.3263C2.60204 39.2547 2 37.8012 2 36.2857Z" stroke="white" stroke-width="3.5"/>
-                      <path d="M10.5715 10.5714H13.4287M26.763 13.4286L22.0001 22H33.4287L28.6658 30.5714L26.763 13.4286Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                    <div className="w-14 h-11">
+                      <img src="/assets/svgs/pwa.svg" alt="web-developement-icon" className="w-full h-full object-contain" />
                     </div>
                     <h4 className="text-white text-lg font-semibold">
-                      Website Developement
+                      Progressive Web Apps
                     </h4>
                   </div>
-                  <div className="text-main-gray">
-                    detail
+                  <div className="inline-flex gap-x-1 items-center group">
+                    <p className=" text-sm text-main-gray font-medium">Detail</p> 
+                    <BsArrowRight className="-rotate-45 text-main-gray text-base font-medium group-hover:rotate-0 duration-300" />
                   </div>
                 </div>
               </div>
-              <div  className="col-span-5 col-start-9 w-full">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate qui dolore atque earum recusandae id sequi nihil eos labore! Amet delectus animi sequi sint quo distinctio necessitatibus labore voluptas veritatis.
+              <div  className="col-span-5 col-start-9 w-full space-y-5">
+               <h3 className="text-white uppercase font-poppins font-bold text-lg tracking-wider">SKILLS</h3>
+               <ul className="text-white space-y-2.5">
+                <li>HTML - CSS - Javascript</li>
+                <li>React - Next Js</li>
+                <li>Svelte Js</li>
+                <li>Alphine Js</li>
+                <li>Tailwind CSS</li>
+                <li>Styled Components</li>
+                <li>SASS/SCSS</li>
+                <li>GSAP</li>
+               </ul>
               </div>
             </div>
           </div>
          
+        </div>
+        <div className="w-full h-full bg-main-dark py-40">
+          <div className="text-center text-white uppercase">PROJECTS</div>
+          <div className="w-full max-w-7xl mx-auto pt-40">
+            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">PROJECTS</h2>
+            <div className="w-full grid grid-cols-12 gap-5 pt-14"></div>
+          </div>
         </div>
       </main>
     </>

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Hero } from "@components/partials/Hero";
 import { Navbar } from "@components/partials/Navbar";
 import { BsArrowRight } from 'react-icons/bs';
+import { MasonryLayout } from "@components/basics/MasonryLayout";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <div className="text-center text-white uppercase">SERVICES</div>
           <div className="w-full max-w-7xl mx-auto pt-40">
             <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">SERVICES</h2>
-            <div className="w-full grid grid-cols-12 gap-5 pt-14">
+            <div className="w-full grid grid-cols-12 gap-5 mt-14">
               <div className="col-span-7 w-full grid grid-rows-4 gap-y-10">
                 <div className="w-full flex justify-between items-end flex-row pb-4 border-b border-main-gray">
                   <div className="flex flex-col space-y-4">
@@ -101,7 +102,52 @@ export default function Home() {
           <div className="text-center text-white uppercase">PROJECTS</div>
           <div className="w-full max-w-7xl mx-auto pt-40">
             <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">PROJECTS</h2>
-            <div className="w-full grid grid-cols-12 gap-5 pt-14"></div>
+            <ul className="w-full flex flex-wrap mt-14 justify-between">
+              <li className="max-w-xl h-full w-full">
+                <a href="#">
+                  <div className="max-h-[655px] h-full w-full">
+                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+                  </div>
+                  <div className="mt-10 space-y-4">
+                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
+                  </div>
+                </a>
+              </li>
+              <li className="max-w-xl h-full w-full">
+                <a href="#">
+                  <div className="max-h-[655px] h-full w-full">
+                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+                  </div>
+                  <div className="mt-10 space-y-4">
+                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
+                  </div>
+                </a>
+              </li>
+              <li className="max-w-xl h-full w-full">
+                <a href="#">
+                  <div className="max-h-[655px] h-full w-full">
+                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+                  </div>
+                  <div className="mt-10 space-y-4">
+                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
+                  </div>
+                </a>
+              </li>
+              <li className="max-w-xl h-full w-full">
+                <a href="#">
+                  <div className="max-h-[655px] h-full w-full">
+                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+                  </div>
+                  <div className="mt-10 space-y-4">
+                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </main>

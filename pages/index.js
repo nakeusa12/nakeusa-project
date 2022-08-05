@@ -103,49 +103,49 @@ export default function Home() {
           <div className="w-full max-w-7xl mx-auto pt-40">
             <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">PROJECTS</h2>
             <ul className="w-full flex flex-wrap mt-14 justify-between">
-              <li className="max-w-xl h-full w-full">
-                <a href="#">
-                  <div className="max-h-[655px] h-full w-full">
-                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+              <li className="max-w-xl w-full h-full">
+                <div className="h-[60rem] w-full flex flex-col  justify-start">
+                  <div className="w-full bg-green-100 relative h-[40rem]">
+                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
                     <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
-                </a>
+                </div>
               </li>
-              <li className="max-w-xl h-full w-full">
-                <a href="#">
-                  <div className="max-h-[655px] h-full w-full">
-                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+              <li className="max-w-xl w-full h-full">
+                <div className="h-[60rem] w-full flex flex-col justify-end">
+                  <div className="w-full bg-green-100 relative h-[40rem]">
+                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
                     <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
-                </a>
+                </div>
               </li>
-              <li className="max-w-xl h-full w-full">
-                <a href="#">
-                  <div className="max-h-[655px] h-full w-full">
-                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+              <li className="max-w-xl w-full h-full">
+                <div className="h-[60rem] w-full flex flex-col  justify-start">
+                  <div className="w-full bg-green-100 relative h-[40rem]">
+                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
                     <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
-                </a>
+                </div>
               </li>
-              <li className="max-w-xl h-full w-full">
-                <a href="#">
-                  <div className="max-h-[655px] h-full w-full">
-                    <img src="/assets/images/images.png" className="h-full w-full" alt="" />
+              <li className="max-w-xl w-full h-full">
+                <div className="h-[60rem] w-full flex flex-col justify-end">
+                  <div className="w-full bg-green-100 relative h-[40rem]">
+                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
                     <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
-                </a>
+                </div>
               </li>
             </ul>
           </div>

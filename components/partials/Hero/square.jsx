@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const Square = () => {
-    var moveSquare = useRef();
+    // var moveSquare = useRef();
 
     // const moveSquare = (e) => {
     //     let move = document.querySelectorAll(".move");

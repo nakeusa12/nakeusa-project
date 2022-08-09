@@ -150,6 +150,21 @@ export default function Home() {
             </ul>
           </div>
         </div>
+        <div className="w-full h-full bg-main-secondDark py-40">
+          <div className="text-center text-white uppercase">About Me</div>
+          <div className="w-full max-w-7xl mx-auto pt-40">
+            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">About</h2>
+            <div className="w-full grid grid-cols-12 gap-5 mt-14">
+             <div className="col-span-6 space-y-6">
+              <p className="text-xl font-semibold text-white">
+              I’ve a background in information technology, with a focus on Frontend Development. I am the type of person who takes every opportunity to learn something new. That's why I enjoy challenges. From there, I was under pressure to learn quickly and gain a lot of new experiences.  Through innovation, passion and expertise. 
+              </p>
+              <p className="text-xl font-semibold text-white">I want to create a high quality website and application. Apart from coding, I love Traveling, Fitness & helping others in the community.</p>
+             </div>
+            </div>
+          </div>
+         
+        </div>
       </main>
     </>
   );

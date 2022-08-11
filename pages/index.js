@@ -153,7 +153,7 @@ export default function Home() {
         <div className="w-full h-full bg-main-secondDark py-40">
           <div className="text-center text-white uppercase">About Me</div>
           <div className="w-full max-w-7xl mx-auto pt-40">
-            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">About</h2>
+            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">About Me</h2>
             <div className="w-full grid grid-cols-12 gap-5 mt-14">
              <div className="col-span-6 space-y-6">
               <p className="text-xl font-semibold text-white">

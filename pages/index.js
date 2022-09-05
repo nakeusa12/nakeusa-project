@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Hero } from "@components/partials/Hero";
 import { Navbar } from "@components/partials/Navbar";
 import { BsArrowRight } from 'react-icons/bs';
-import { MasonryLayout } from "@components/basics/MasonryLayout";
+// import { MasonryLayout } from "@components/basics/MasonryLayout";
 
 export default function Home() {
   return (

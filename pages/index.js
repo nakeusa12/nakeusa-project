@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home</title>
-        <meta name="description" content="Home" />
+        <meta name="description" content="Personal Website Saiful Nakeusa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
  

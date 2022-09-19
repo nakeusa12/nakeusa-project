@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;500;600&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Righteous&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +11,10 @@ font-family: 'Righteous', cursive; */
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-nunito{
   font-family: 'Nunito', sans-serif;
 }
 
@@ -21,6 +25,18 @@ body {
   font-family: 'Righteous', cursive;
 }
 
+.noise {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("/assets/static.gif");
+  background-repeat: repeat;
+  opacity: .04;
+  display: block !important;
+}
+
 .particle-wrapper{
   position: absolute;
     /* top: -108px; */
@@ -29,125 +45,4 @@ body {
     width: 100%;
     height: 310px;
     left: 0;
-}
-
-.particle-8 {
-  position: absolute;
-  top: 111px;
-  right: 64px;
-  width: 11px;
-  height: 11px;
-  border-radius: 3px;
-  background-color: #acacac;
-  opacity: 0.15;
-  -webkit-transform: rotate(17deg);
-  -ms-transform: rotate(17deg);
-  transform: rotate(17deg);
-}
-
-.particle-7 {
-  position: absolute;
-  /* z-index: 10; */
-  top: 50%;
-  left: 40px;
-  top: 213px;
-  right: 104px;
-  width: 9px;
-  height: 9px;
-  border-radius: 2px;
-  background-color: #9e9e9e;
-  opacity: 0.2;
-  -webkit-transform: rotate(-14deg);
-  -ms-transform: rotate(-14deg);
-  transform: rotate(-14deg);
-}
-
-.particle-6 {
-  position: absolute;
-  top: 251px;
-  right: 262px;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background-color: #a8a8a8;
-  opacity: 0.2;
-  -webkit-transform: rotate(14deg);
-  -ms-transform: rotate(14deg);
-  transform: rotate(14deg);
-}
-
-.particle-5 {
-  position: absolute;
-  top: 203px;
-  right: 448px;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background-color: #b6b6b6;
-  opacity: 0.2;
-  -webkit-transform: rotate(-11deg);
-  -ms-transform: rotate(-11deg);
-  transform: rotate(-11deg);
-}
-
-.particle-4 {
-  position: absolute;
-  top: 64px;
-  right: 428px;
-  width: 15px;
-  height: 15px;
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  opacity: 0.2;
-  -webkit-transform: rotate(26deg);
-  -ms-transform: rotate(26deg);
-  transform: rotate(26deg);
-}
-
-.particle-3 {
-  position: absolute;
-  top: 94px;
-  right: 624px;
-  width: 9px;
-  height: 9px;
-  border-radius: 2px;
-  background-color: #bdbdbd;
-  opacity: 0.4;
-  -webkit-transform: rotate(-17deg);
-  -ms-transform: rotate(-17deg);
-  transform: rotate(-17deg);
-}
-
-.particle-2 {
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background-color: #323235;
-  opacity: 0.3;
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-}
-
-.particle-1 {
-  position: absolute;
-  top: 90px;
-  right: 159px;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  background-color: #a1a1a1;
-  opacity: 0.4;
-  -webkit-transform: rotate(51deg);
-  -ms-transform: rotate(51deg);
-  transform: rotate(51deg);
-} 
-
-@media screen and (max-width: 768px) {
-  .navbar-item{
-    height: calc(100vh - 88px);
-  }
 }

@@ -4,19 +4,12 @@ import Head from "next/head";
 import { Hero } from "@components/partials/Hero";
 import { Navbar } from "@components/partials/Navbar";
 import { BsArrowRight } from 'react-icons/bs';
+import Layout from "@components/partials/Layout";
 // import { MasonryLayout } from "@components/basics/MasonryLayout";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Home</title>
-        <meta name="description" content="Personal Website Saiful Nakeusa" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
- 
-      <main className="bg-main-dark">
-        <Navbar />
+    <Layout title="Home">
         <Hero />
         <div className="w-full h-full bg-main-secondDark py-40">
           <div className="text-center text-white uppercase">SERVICES</div>
@@ -98,7 +91,7 @@ export default function Home() {
           </div>
          
         </div>
-        <div className="w-full h-full bg-main-dark py-40">
+        {/* <div className="w-full h-full bg-white py-40">
           <div className="text-center text-white uppercase">PROJECTS</div>
           <div className="w-full max-w-7xl mx-auto pt-40">
             <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">PROJECTS</h2>
@@ -109,7 +102,7 @@ export default function Home() {
                     <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
                 </div>
@@ -120,7 +113,7 @@ export default function Home() {
                     <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
                 </div>
@@ -131,7 +124,7 @@ export default function Home() {
                     <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
                 </div>
@@ -142,7 +135,7 @@ export default function Home() {
                     <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
                   </div>
                   <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-white text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
+                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
                     <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
                   </div>
                 </div>
@@ -164,9 +157,8 @@ export default function Home() {
             </div>
           </div>
          
-        </div>
-      </main>
-    </>
+        </div> */}
+    </Layout>
   );
 }
 

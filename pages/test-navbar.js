@@ -3,6 +3,7 @@ import { Navbar } from "@components/partials/Navbar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Marquee from 'react-gsap-marquee'
 
 export default function TestNavbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -67,9 +68,11 @@ export default function TestNavbar() {
                 </div>
 
                 <div className="p-20">
-                    <UploadImages />
+                    {/* <UploadImages /> */}
                     tes
                 </div>
+
+               
 
 
             </main>

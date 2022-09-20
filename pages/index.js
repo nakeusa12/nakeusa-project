@@ -12,25 +12,30 @@ export default function Home() {
   return (
     <Layout title="Home">
         <Hero />
-        <div className="container mx-auto px-5 md:px-6 py-80 z-10 relative">
-          <div className="py-10 px-10 bg-red-50 bg-opacity-50 w-full grid grid-cols-12 gap-12">
-            <div className="font-righteous text-2xl text-main-dark col-span-12 md:col-span-2">
-              <span className="text-main-blue text-6xl">Quote</span> Of The <span className="text-main-blue text-5xl">DAY</span>
-            </div>
-            <div className="col-span-12 md:col-span-9 space-y-8">
-              <p className="font-semibold text-4xl text-main-dark leading-[48px] whitespace-normal">
-                “I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”
-              </p>
-              <p className="text-2xl leading-8">Marilyn Monroe</p>
+        <div className="max-w-full md:max-w-[80%] mx-auto px-6 md:px-5 z-10 relative">
+          <div className="w-full grid grid-cols-12 gap-5">
+            <div className="py-10 px-10 bg-white bg-opacity-50 xl:col-start-2 col-span-12 xl:col-span-10 flex flex-col lg:flex-row gap-12 min-h-[400px]">
+              <div className="font-righteous text-main-blue text-5xl lg:text-6xl max-w-[200px] w-full">
+                Quote <br /> <sup className="text-main-dark text-xl lg:text-2xl">Of The</sup> <span className="text-main-blue text-4xl lg:text-5xl">DAY</span>
+              </div>
+              <div className="w-full space-y-8">
+                <p className="font-semibold text-2xl sm:text-3xl lg:text-4xl text-main-dark leading-9 sm:leading-10 lg:leading-[48px] whitespace-normal">
+                  “I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”
+                </p>
+                <div className="inline-flex gap-x-5 items-center">
+                  <p className="text-xl lg:text-2xl text-main-dark leading-8">Marilyn Monroe</p>
+                  <div className="w-40 h-1 bg-main-blue"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div className="w-full h-full bg-white py-40">
           <div className="relative w-full h-full">
             <Marquee className="rotate-[-3deg]" maxVelocity={0} reverseOnScrollUp={false} speed={20}>
-              <h1 className="text-main-blue uppercase font-righteous block whitespace-nowrap text-[12vw] leading-[14vw] mb-20 align-middle pr-10">SERVICES • SERVICES • SERVICES • SERVICES • </h1>
+              <h1 className="text-main-blue uppercase font-righteous block whitespace-nowrap text-[12vw] leading-[14vw] mb-20 align-middle pt-16 pr-10">SERVICES • SERVICES • SERVICES • SERVICES • </h1>
             </Marquee>
-            <div className="absolute top-32 left-0 right-0 w-full text-center">
+            <div className="absolute top-0 left-0 right-0 w-full flex justify-center items-center h-full">
               <span className="bg-main-dark py-4 px-7 text-base uppercase text-white tracking-[0.2em]">
                 WHAT CAN I DO
               </span>
@@ -121,9 +126,9 @@ export default function Home() {
         <div className="w-full h-full bg-white py-40">
           <div className="relative w-full h-full">
             <Marquee className="rotate-[-3deg]" maxVelocity={0} reverseOnScrollUp={false} speed={20}>
-              <h1 className="text-main-blue uppercase font-righteous block whitespace-nowrap text-[12vw] leading-[14vw] mb-20 align-middle pr-10">PROJECTS • PROJECTS • PROJECTS • PROJECTS • </h1>
+              <h1 className="text-main-blue uppercase font-righteous block whitespace-nowrap text-[12vw] leading-[14vw] mb-20 align-middle pt-16 pr-10">PROJECTS • PROJECTS • PROJECTS • PROJECTS • </h1>
             </Marquee>
-            <div className="absolute top-32 left-0 right-0 w-full text-center">
+            <div className="absolute top-0 left-0 right-0 w-full flex justify-center items-center h-full">
               <span className="bg-main-dark py-4 px-7 text-base uppercase text-white tracking-[0.2em]">
                 LATEST WORKS
               </span>
@@ -180,73 +185,24 @@ export default function Home() {
           </div>
          
         </div>
-        {/* <div className="w-full h-full bg-white py-40">
-          <div className="text-center text-white uppercase">PROJECTS</div>
-          <div className="w-full max-w-7xl mx-auto pt-40">
-            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">PROJECTS</h2>
-            <ul className="w-full flex flex-wrap mt-14 justify-between">
-              <li className="max-w-xl w-full h-full">
-                <div className="h-[60rem] w-full flex flex-col  justify-start">
-                  <div className="w-full bg-green-100 relative h-[40rem]">
-                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
-                  </div>
-                  <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
-                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
-                  </div>
-                </div>
-              </li>
-              <li className="max-w-xl w-full h-full">
-                <div className="h-[60rem] w-full flex flex-col justify-end">
-                  <div className="w-full bg-green-100 relative h-[40rem]">
-                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
-                  </div>
-                  <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
-                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
-                  </div>
-                </div>
-              </li>
-              <li className="max-w-xl w-full h-full">
-                <div className="h-[60rem] w-full flex flex-col  justify-start">
-                  <div className="w-full bg-green-100 relative h-[40rem]">
-                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
-                  </div>
-                  <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
-                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
-                  </div>
-                </div>
-              </li>
-              <li className="max-w-xl w-full h-full">
-                <div className="h-[60rem] w-full flex flex-col justify-end">
-                  <div className="w-full bg-green-100 relative h-[40rem]">
-                    <img src="/assets/images/images.png" className="h-full w-full bg-blue-100" alt="" />
-                  </div>
-                  <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
-                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full h-full bg-main-secondDark py-40">
-          <div className="text-center text-white uppercase">About Me</div>
-          <div className="w-full max-w-7xl mx-auto pt-40">
-            <h2 className="font-poppins text-2xl font-semibold tracking-[0.08em] text-left text-main-gray uppercase">About Me</h2>
-            <div className="w-full grid grid-cols-12 gap-5 mt-14">
-             <div className="col-span-6 space-y-6">
-              <p className="text-xl font-semibold text-white">
-              I’ve a background in information technology, with a focus on Frontend Development. I am the type of person who takes every opportunity to learn something new. That's why I enjoy challenges. From there, I was under pressure to learn quickly and gain a lot of new experiences.  Through innovation, passion and expertise. 
-              </p>
-              <p className="text-xl font-semibold text-white">I want to create a high quality website and application. Apart from coding, I love Traveling, Fitness & helping others in the community.</p>
-             </div>
+        <div className="w-full h-full bg-white py-40">
+          <div className="relative w-full h-full">
+            <Marquee className="rotate-[-3deg]" maxVelocity={0} reverseOnScrollUp={false} speed={20}>
+              <h1 className="text-main-blue uppercase font-righteous block whitespace-nowrap text-[12vw] leading-[14vw] mb-20 align-middle pt-16 pr-10">BLOGS • BLOGS • BLOGS • BLOGS • </h1>
+            </Marquee>
+            <div className="absolute top-0 left-0 right-0 w-full flex justify-center items-center h-full">
+              <span className="bg-main-dark py-4 px-7 text-base uppercase text-white tracking-[0.2em]">
+                LATEST NEWS
+              </span>
             </div>
           </div>
+          
+          <div className="w-full max-w-7xl mx-auto pt-20">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates ad consequuntur eius enim aperiam ipsam eveniet non facere repellendus voluptatibus ut sequi voluptas perspiciatis possimus tempore architecto, minus provident quasi animi, debitis quis. Ea reprehenderit earum deserunt mollitia ut quisquam modi repellendus, at ipsam aspernatur, itaque porro corrupti. Veritatis fugit quae, amet qui minima corrupti iste temporibus tempore voluptates beatae incidunt nesciunt, nihil officiis? Cum ea, excepturi ipsum quidem aut perferendis officia animi, quae quam dolor totam ad optio numquam in, maiores autem veritatis laudantium distinctio. Id expedita veritatis libero commodi, officia porro obcaecati, mollitia velit ipsum inventore error labore fugit impedit quae praesentium nisi quam vitae eius animi recusandae ex adipisci enim? Incidunt nihil voluptas eos, autem optio molestias a unde, exercitationem libero eius aspernatur laudantium asperiores aperiam sapiente distinctio illo dolorem dolores architecto ratione deleniti. In impedit incidunt sint eum, voluptatibus molestias soluta saepe reiciendis ad quis qui temporibus dignissimos consequatur eveniet sequi voluptatem iure animi minima eaque porro totam aspernatur odio, earum fugiat? In blanditiis, possimus itaque deleniti fugit sapiente facilis id repellat officiis esse? Reprehenderit ipsam veniam consequatur maiores quos doloremque, accusantium tempora adipisci ducimus porro voluptatem architecto laboriosam. Facilis, ex. Voluptatum reprehenderit beatae magni.
+          </div>
          
-        </div> */}
+        </div>
+        
     </Layout>
   );
 }

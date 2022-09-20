@@ -61,14 +61,14 @@ const ShowMenu = ({ toggle, onClick }) => {
     tl.current.to(".overlay", {
       opacity: 1,
       duration: 1,
-      x: 80,
+      x: 0,
     });
     tl.current.to(
       ".menu",
       {
         opacity: 1,
         duration: 0.8,
-        x: 80,
+        x: 0,
       },
       ">-0.7"
     );

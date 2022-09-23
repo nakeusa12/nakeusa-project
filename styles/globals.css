@@ -164,6 +164,6 @@ img.img-project {
 }
 
 .gallery-item-wrapper.is-reveal .gallery-item-image {
-  transform: scale(1);
+  transform: scale(1) skewX(0deg);
   filter: none;
 }

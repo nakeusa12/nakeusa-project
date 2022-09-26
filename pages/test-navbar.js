@@ -10,7 +10,6 @@ import Layout from "@components/partials/Layout";
 import { MarqueeText } from "@components/basics/MarqueeText";
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -158,9 +157,12 @@ export default function TestNavbar() {
         </div>
 
         <div>
-          <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
+          <MarqueeText
+            text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
+            title={"LATEST WORKS"}
+          />
 
-            <Gallery />
+          <Gallery />
         </div>
         <div className="pt-40 mb-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -233,151 +235,119 @@ const Nyobain = ({ status }) => {
   );
 };
 
-const GalleryItem = ({
-    src,
-    category,
-    title,
-    updateActiveImage,
-    index,
-  }) => {
-    const ref = useRef(null);
+const GalleryItem = ({ src, category, title, updateActiveImage, index }) => {
+  const ref = useRef(null);
 
-    const onScreen = useOnScreen(ref, 0.5);
-    console.log("onScreen: ", onScreen);
-  
-    useEffect(() => {
-        if (onScreen) {
-            updateActiveImage(index);
-        }
-    }, [onScreen, index]);
-  
-    return (
-      <div
-        // className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
-        className={cn("gallery-item-wrapper aspect-video h-full grid grid-cols-[20vw_1fr_200px] bg-teal-100 border w-full", { "is-reveal": onScreen })}
-        ref={ref}
-      >
-        <div></div>
-        <div className={"w-full h-full relative will-change-transform"}>
-          <div
-            className={`gallery-item-image bg-contain bg-no-repeat bg-center origin-center w-full h-full will-change-transform scale-75 transition-all duration-1000 grayscale sepia-[20%] brightness-[80%] ease-in-out`}
-            style={{ backgroundImage: `url(${src})` }}
-          ></div>
-          <div className="flex w-full items-center justify-between mt-5">
-            <div className="text-main-dark">
-              <h1 className="text-2xl font-semibold">{title}</h1>
-              <p className="text-lg">{category}</p>
-            </div>
-            <span>#{index + 1}</span>
-          </div>
+  const onScreen = useOnScreen(ref, 0.5);
 
+  useEffect(() => {
+    if (onScreen) {
+      updateActiveImage(index);
+    }
+  }, [onScreen, index]);
+
+  return (
+    <div
+      // className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
+      className={cn(
+        "gallery-item-wrapper aspect-video h-full grid border w-full",
+        { "is-reveal": onScreen }
+      )}
+      ref={ref}
+    >
+      <div className="w-full bg-red-50 max-w-3xl h-auto mx-auto flex flex-col justify-center relative will-change-transform">
+        <div className="w-full h-[450px]">
+          <img
+            src={src}
+            className="gallery-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
+            alt="project"
+          />
         </div>
-        <div></div>
+        <div className="flex w-full items-center justify-between mt-5">
+          <div className="text-main-dark">
+            <h1 className="text-2xl font-semibold">{title}</h1>
+            <p className="text-lg">{category}</p>
+          </div>
+          <span>#{index + 1}</span>
+        </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-const Gallery = ({ src, index, columnOffset }) => {
-  const [projects, setProjectsRef] = useArrayRef();
+const Gallery = () => {
   const projectContainer = useRef();
   const [activeImage, setActiveImage] = useState(1);
-  console.log("projects: ", projects);
-  console.log("setProjectsRef: ", setProjectsRef);
-  
-    const ref = useRef(null);
-  
-    useEffect(() => {
-        // const totalProjects = projects.current.length;
-        // console.log(totalProjects);
 
-        // gsap.to(projects.current, {
-        //       xPercent: -100 * (totalProjects - 1),
-        //       ease: "none",
-        //       scrollTrigger: {
-        //         trigger: projectContainer.current,
-        //         pin: true,
-        //         scrub: 1,
-        //         markers: true,
-        //         // snap: 1 / (totalProjects - 1),
-        //         end: () => "+=" + projectContainer.current.offsetWidth,
-        //       },
-        //     });
-        setTimeout(() => {
-          let sections = gsap.utils.toArray(".gallery-item-wrapper");
-          console.log(sections);
-    
-          gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-              trigger: projectContainer.current,
-              start: "top top",
-              scrub: 0.5,
-              markers: true,
-              pin: true,
-              snap: 1 / (sections.length - 1),
-              end: () => `+=${projectContainer.current.offsetWidth}`,
-            },
-          });
-          
-          ScrollTrigger.refresh();
-        })
-        
-    }, []);
-  
-    const handleUpdateActiveImage = (index) => {
-      setActiveImage(index + 1);
-    };
-  
-    return (
-      <section className="section-wrapper">
-  
-        <div className="h-screen py-[15vh] px-0 w-[400%] flex flex-nowrap" ref={projectContainer}>
-          <div className="absolute top-[10%] left-28 z-[1] leading-4 text-gray-200 font-semibold text-base inline-block mix-blend-difference">
-            <span>{activeImage}</span>
-            <span className="content-[''] bg-white w-[6.25vw] my-2 mx-2.5 h-1 inline-block " />
-            <span>{images.length}</span>
-          </div>
-          {images.map((image, index) => (
-            <GalleryItem
-              key={src}
-              index={index}
-              {...image}
-              updateActiveImage={handleUpdateActiveImage}
-              ref={setProjectsRef}
-            />
-          ))}
-        </div>
-      </section>
-    );
-  }
+  useEffect(() => {
+    let sections = gsap.utils.toArray(".gallery-item-wrapper");
+    console.log(sections);
 
-  const useArrayRef = () => {
-    const refs = useRef([]);
-    refs.current = [];
-    return [refs, (ref) => ref && refs.current.push(ref)];
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: projectContainer.current,
+        start: "top top",
+        scrub: 0.5,
+        markers: true,
+        pin: true,
+        snap: 1 / (sections.length - 1),
+        end: () => `+=${projectContainer.current.offsetWidth}`,
+      },
+    });
+  }, []);
+
+  const handleUpdateActiveImage = (index) => {
+    setActiveImage(index + 1);
   };
+
+  return (
+    <section className="section-wrapper">
+      <div
+        className="h-screen px-0 w-[400%] flex flex-nowrap"
+        ref={projectContainer}
+      >
+        <div className="absolute left-20 -z-10 h-full leading-4 text-main-blue font-semibold inline-flex flex-row items-center gap-x-4 text-[12rem] -rotate-90 font-sen">
+          <span>{activeImage}</span>
+          <span>/</span>
+          <span>{images.length}</span>
+        </div>
+        {images.map((image, index) => (
+          <GalleryItem
+            key={index}
+            index={index}
+            {...image}
+            updateActiveImage={handleUpdateActiveImage}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 const images = [
   {
-    src: "/assets/images/images.png",
+    src: "https://www.datocms-assets.com/23447/1625738350-photoscoper.png?auto=format&dpr=1&w=1600",
     title: "Dracaena Trifasciata",
     subtitle: "Live the Beauty",
     category: "Shooting / Adv.Campaing",
   },
   {
-    src: "/assets/images/images.png",
+    src: "https://www.datocms-assets.com/23447/1596891182-embersword-hero.png?auto=format&dpr=1&w=1600",
     title: "Cereus Penuvianus",
     subtitle: "Live the Beauty",
     category: "Shooting / Adv.Campaing",
   },
   {
-    src: "/assets/images/images.png",
+    src: "https://www.datocms-assets.com/23447/1585257493-base.jpg?auto=format&dpr=1&w=1600",
+    title: "Cereus Penuvianus",
     subtitle: "Live the Beauty",
     category: "Shooting / Adv.Campaing",
   },
   {
-    src: "/assets/images/images.png",
+    src: "https://www.datocms-assets.com/23447/1596369335-boa-hero.png?auto=format&dpr=1&w=1600",
+    title: "Cereus Penuvianus",
     subtitle: "Living Room",
     category: "Shooting / Adv.Campaing",
   },

@@ -84,9 +84,18 @@ img.img-project {
 /* =============================================== */
 @layer base{
   .activeImageProject{
-    @apply absolute left-20 -z-10 h-full leading-4 text-transparent font-extrabold inline-flex flex-row items-center gap-x-4 text-[15rem] -rotate-90 opacity-20;
+    @apply absolute left-5 md:left-20 -z-10 h-full leading-4 text-transparent font-extrabold flex flex-row justify-center md:justify-start gap-x-4 text-8xl opacity-10;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke: 2px #2140F4;
   }
 }
 
+
+.project-info-title {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 2px #2140F4;
+}
+
+.project-info-category {
+  -webkit-font-smoothing: antialiased;
+}

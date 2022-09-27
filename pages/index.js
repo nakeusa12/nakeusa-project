@@ -81,9 +81,7 @@ export default function Home() {
       <div className="bg-white">
         <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
 
-        <div className="mt-20">
-          <Project />
-        </div>
+        <Project />
       </div>
       <div className="w-full h-full bg-white py-40">
         <MarqueeText text={"BLOGS • BLOGS • BLOGS • BLOGS • "} title={"LATEST NEWS"} />
@@ -157,7 +155,7 @@ export default function Home() {
 const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
   const ref = useRef(null);
 
-  const onScreen = useOnScreen(ref, 0);
+  const onScreen = useOnScreen(ref, 0.5);
 
   useEffect(() => {
     if (onScreen) {
@@ -181,12 +179,11 @@ const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
             alt="project"
           />
         </div>
-        <div className="flex w-full items-center justify-between mt-5 absolute bottom-0">
-          <div className="text-main-dark">
-            <h1 className="text-2xl font-semibold">{title}</h1>
-            <p className="text-lg">{category}</p>
+        <div className="flex w-full items-center justify-between mt-5 absolute md:-bottom-20 md:-left-20 flex-col bottom-0">
+          <div className="font-sen relative">
+            <h1 className="project-info-title text-5xl md:text-8xl font-extrabold text-gray-50 ">{title}</h1>
+            <p className="project-info-category relative font-normal text-xl md:text-3xl text-main-dark">{category}</p>
           </div>
-          <span>#{index + 1}</span>
         </div>
       </div>
     </div>

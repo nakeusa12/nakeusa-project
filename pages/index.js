@@ -3,7 +3,7 @@ import { Hero } from "@components/partials/Hero";
 import Layout from "@components/partials/Layout";
 import { BsTriangleFill } from "react-icons/bs";
 import gsap from "gsap";
-import { Project } from "@components/partials/Project";
+// import { Project } from "@components/partials/Project";
 import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
 import { MarqueeText } from "@components/basics/MarqueeText";
 import { useRef, useState, useEffect } from "react";
@@ -82,7 +82,7 @@ export default function Home() {
         <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
 
         <div className="mt-20">
-          <Gallery />
+          <Project />
         </div>
       </div>
       <div className="w-full h-full bg-white py-40">
@@ -154,7 +154,7 @@ export default function Home() {
 // `;
 
 
-const GalleryItem = ({ src, category, title, updateActiveImage, index }) => {
+const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
   const ref = useRef(null);
 
   const onScreen = useOnScreen(ref, 0);
@@ -168,20 +168,20 @@ const GalleryItem = ({ src, category, title, updateActiveImage, index }) => {
   return (
     <div
       className={cn(
-        "gallery-item-wrapper aspect-video h-full grid border w-full",
+        "project-item-wrapper h-full grid w-full",
         { "is-reveal": onScreen }
       )}
       ref={ref}
     >
-      <div className="w-full bg-red-50 max-w-3xl h-auto mx-auto flex flex-col justify-center relative will-change-transform">
-        <div className="w-full h-[450px]">
+      <div className="w-full max-w-3xl h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0">
+        <div className="w-full h-full">
           <img
             src={src}
-            className="gallery-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
+            className="project-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
             alt="project"
           />
         </div>
-        <div className="flex w-full items-center justify-between mt-5">
+        <div className="flex w-full items-center justify-between mt-5 absolute bottom-0">
           <div className="text-main-dark">
             <h1 className="text-2xl font-semibold">{title}</h1>
             <p className="text-lg">{category}</p>
@@ -193,12 +193,12 @@ const GalleryItem = ({ src, category, title, updateActiveImage, index }) => {
   );
 };
 
-const Gallery = () => {
+const Project = () => {
   const projectContainer = useRef();
   const [activeImage, setActiveImage] = useState(1);
 
   useEffect(() => {
-    let sections = gsap.utils.toArray(".gallery-item-wrapper");
+    let sections = gsap.utils.toArray(".project-item-wrapper");
     console.log(sections);
 
     gsap.to(sections, {
@@ -221,18 +221,17 @@ const Gallery = () => {
   };
 
   return (
-    <section className="section-wrapper">
       <div
-        className="h-screen px-0 w-[400%] flex flex-nowrap"
+        className="h-screen w-[400%] flex flex-nowrap py-[20vh]"
         ref={projectContainer}
       >
-        <div className="absolute left-20 -z-10 h-full leading-4 text-main-blue font-semibold inline-flex flex-row items-center gap-x-4 text-[12rem] -rotate-90 font-sen">
+        <div className="activeImageProject font-sen">
           <span>{activeImage}</span>
           <span>/</span>
           <span>{images.length}</span>
         </div>
         {images.map((image, index) => (
-          <GalleryItem
+          <ProjectItem
             key={index}
             index={index}
             {...image}
@@ -240,7 +239,6 @@ const Gallery = () => {
           />
         ))}
       </div>
-    </section>
   );
 };
 

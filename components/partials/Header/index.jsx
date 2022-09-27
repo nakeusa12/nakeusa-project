@@ -8,6 +8,14 @@ export const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
   return (
     <>
       <header className="fixed left-0 top-0 right-0 overflow-hidden py-5 px-6 md:h-screen md:w-20 border-b md:border-r border-gray-200 z-50 flex md:flex-col justify-between bg-white">

@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,6 @@ const useArrayRef = () => {
 export const Project = () => {
   const projectContainer = useRef();
   const [projects, setProjectsRef] = useArrayRef();
-  const [activeImage, setActiveImage] = useState(1);
 
   useEffect(() => {
     const totalProjects = projects.current.length;
@@ -25,6 +24,7 @@ export const Project = () => {
       ease: "none",
       scrollTrigger: {
         trigger: projectContainer.current,
+        markers: true,
         pin: true,
         scrub: 1,
         snap: 1 / (totalProjects - 1),
@@ -61,7 +61,7 @@ const ProjectCard = forwardRef(({ title, img, category, total }, ref) => {
       <div className="inline-flex items-center font-sen font-bold gap-x-2 text-main-blue text-xl">
         {total} <div className="w-40 h-1 bg-main-blue"></div>
       </div>
-      <div className=" bg-green-400 w-96 h-40">
+      <div className="w-full md:w-96 h-40">
         <Image src={img} width="100%" height="100%" layout="responsive" objectFit="contain" />
       </div>
       <div className="mt-10 space-y-4">

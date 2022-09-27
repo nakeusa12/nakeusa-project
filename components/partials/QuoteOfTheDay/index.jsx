@@ -17,7 +17,7 @@ export const QuoteOfTheDay = () => {
             <p className="text-xl lg:text-2xl text-main-dark leading-8 font-sen">
               Marilyn Monroe
             </p>
-            <div className="w-40 h-1 bg-main-blue"></div>
+            <div className="w-20 sm:w-40 h-1 bg-main-blue"></div>
           </div>
         </div>
       </div>

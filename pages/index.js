@@ -1,22 +1,14 @@
 import Head from "next/head";
-// import { useEffect } from "react";
-// import tw from "twin.macro";
 import { Hero } from "@components/partials/Hero";
-import { Navbar } from "@components/partials/Navbar";
-import { BsArrowRight } from "react-icons/bs";
 import Layout from "@components/partials/Layout";
 import { BsTriangleFill } from "react-icons/bs";
-import Image from "next/image";
 import gsap from "gsap";
 import { Project } from "@components/partials/Project";
 import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
 import { MarqueeText } from "@components/basics/MarqueeText";
-import { MasonryLayout } from "@components/basics/MasonryLayout";
-// import ScrollTrigger from "gsap/dist/ScrollTrigger";
-// import ScrollToPlugin from "gsap/dist/ScrollToPlugin"
-// import { useEffect } from "react";
-
-// import { MasonryLayout } from "@components/basics/MasonryLayout";
+import { useRef, useState, useEffect } from "react";
+import { useOnScreen } from "@hooks/useOnScreen";
+import cn from "classnames";
 
 export default function Home() {
   return (
@@ -89,27 +81,9 @@ export default function Home() {
       <div className="bg-white">
         <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
 
-        {/* <div className="w-full max-w-full h-screen mt-20 bg-red-50">
-            <ul className="w-full whitespace-nowrap overflow-hidden">
-              <li className="inline-flex w-screen h-screen justify-center items-center">
-                <div className="w-full flex flex-col bg-green-100  justify-start">
-                  <div className="w-full relative">
-                    <Image
-                      src="/assets/images/images.png"
-                      alt="Picture of the author"
-                      width={650}
-                      height={700}
-                    />
-                  </div>
-                  <div className="mt-10 space-y-4">
-                    <h3 className="font-bold text-black text-4xl font-poppins">BridgeZero - Website for work and visit visas</h3>
-                    <p className="font-poppins text-xl text-main-gray">2020 - Web Designer</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div> */}
-        <div className="mt-20"><Project /></div>
+        <div className="mt-20">
+          <Gallery />
+        </div>
       </div>
       <div className="w-full h-full bg-white py-40">
         <MarqueeText text={"BLOGS • BLOGS • BLOGS • BLOGS • "} title={"LATEST NEWS"} />
@@ -178,3 +152,121 @@ export default function Home() {
 // let MainHome = tw.main`
 //   opacity-100
 // `;
+
+
+const GalleryItem = ({ src, category, title, updateActiveImage, index }) => {
+  const ref = useRef(null);
+
+  const onScreen = useOnScreen(ref, 0);
+
+  useEffect(() => {
+    if (onScreen) {
+      updateActiveImage(index);
+    }
+  }, [onScreen, index]);
+
+  return (
+    <div
+      className={cn(
+        "gallery-item-wrapper aspect-video h-full grid border w-full",
+        { "is-reveal": onScreen }
+      )}
+      ref={ref}
+    >
+      <div className="w-full bg-red-50 max-w-3xl h-auto mx-auto flex flex-col justify-center relative will-change-transform">
+        <div className="w-full h-[450px]">
+          <img
+            src={src}
+            className="gallery-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
+            alt="project"
+          />
+        </div>
+        <div className="flex w-full items-center justify-between mt-5">
+          <div className="text-main-dark">
+            <h1 className="text-2xl font-semibold">{title}</h1>
+            <p className="text-lg">{category}</p>
+          </div>
+          <span>#{index + 1}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Gallery = () => {
+  const projectContainer = useRef();
+  const [activeImage, setActiveImage] = useState(1);
+
+  useEffect(() => {
+    let sections = gsap.utils.toArray(".gallery-item-wrapper");
+    console.log(sections);
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: projectContainer.current,
+        start: "top top",
+        scrub: 1,
+        markers: true,
+        pin: true,
+        snap: 1 / (sections.length - 1),
+        end: () => `+=${projectContainer.current.offsetWidth}`,
+      },
+    });
+  }, []);
+
+  const handleUpdateActiveImage = (index) => {
+    setActiveImage(index + 1);
+  };
+
+  return (
+    <section className="section-wrapper">
+      <div
+        className="h-screen px-0 w-[400%] flex flex-nowrap"
+        ref={projectContainer}
+      >
+        <div className="absolute left-20 -z-10 h-full leading-4 text-main-blue font-semibold inline-flex flex-row items-center gap-x-4 text-[12rem] -rotate-90 font-sen">
+          <span>{activeImage}</span>
+          <span>/</span>
+          <span>{images.length}</span>
+        </div>
+        {images.map((image, index) => (
+          <GalleryItem
+            key={index}
+            index={index}
+            {...image}
+            updateActiveImage={handleUpdateActiveImage}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const images = [
+  {
+    src: "https://www.datocms-assets.com/23447/1625738350-photoscoper.png?auto=format&dpr=1&w=1600",
+    title: "Dracaena Trifasciata",
+    subtitle: "Live the Beauty",
+    category: "Shooting / Adv.Campaing",
+  },
+  {
+    src: "https://www.datocms-assets.com/23447/1596891182-embersword-hero.png?auto=format&dpr=1&w=1600",
+    title: "Cereus Penuvianus",
+    subtitle: "Live the Beauty",
+    category: "Shooting / Adv.Campaing",
+  },
+  {
+    src: "https://www.datocms-assets.com/23447/1585257493-base.jpg?auto=format&dpr=1&w=1600",
+    title: "Cereus Penuvianus",
+    subtitle: "Live the Beauty",
+    category: "Shooting / Adv.Campaing",
+  },
+  {
+    src: "https://www.datocms-assets.com/23447/1596369335-boa-hero.png?auto=format&dpr=1&w=1600",
+    title: "Cereus Penuvianus",
+    subtitle: "Living Room",
+    category: "Shooting / Adv.Campaing",
+  },
+];

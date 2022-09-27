@@ -1,7 +1,8 @@
+import { useOnScreen } from "@hooks/useOnScreen";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ const useArrayRef = () => {
 export const Project = () => {
   const projectContainer = useRef();
   const [projects, setProjectsRef] = useArrayRef();
+  const [activeImage, setActiveImage] = useState(1);
 
   useEffect(() => {
     const totalProjects = projects.current.length;
@@ -33,18 +35,29 @@ export const Project = () => {
     });
   }, []);
 
+  const handleUpdateActiveImage = (index) => {
+    setActiveImage(index + 1);
+  };
+
   return (
     <div className="flex flex-nowrap h-screen w-[400%]" ref={projectContainer}>
+       <div className="activeImageProject font-sen">
+          <span>{activeImage}</span>
+          <span>/</span>
+          <span>{projectData.length}</span>
+        </div>
       {projectData.map((card, index) => {
         return(
           <ProjectCard
             key={index}
+            index={index}
             total={index + 1}
-            ref={setProjectsRef}
+            refPro={setProjectsRef}
             value={card}
             title={card.title}
             img={card.src}
             category={card.category}
+            updateActiveImage={handleUpdateActiveImage}
           />
         )
       })}
@@ -52,17 +65,25 @@ export const Project = () => {
   );
 };
 
-const ProjectCard = forwardRef(({ title, img, category, total }, ref) => {
+const ProjectCard = forwardRef(({ title, img, category, total, updateActiveImage, index}, refPro) => {
+  const ref = useRef(null);
+
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) {
+      updateActiveImage(index);
+    }
+  }, [onScreen, index]);
+
   return (
     <div
-      className="flex flex-col justify-center items-center relative w-full h-full bg-red-200"
-      ref={ref}
+      className="flex flex-col justify-center items-center relative w-full h-full"
+      ref={refPro}
     >
-      <div className="inline-flex items-center font-sen font-bold gap-x-2 text-main-blue text-xl">
-        {total} <div className="w-40 h-1 bg-main-blue"></div>
-      </div>
-      <div className="w-full md:w-96 h-40">
-        <Image src={img} width="100%" height="100%" layout="responsive" objectFit="contain" />
+      <div className="w-full md:w-96 h-[600px] bg-teal-50">
+        <img src={img} className="w-full h-full object-contain" alt="" />
+        {/* <Image src={img} width="100%" height="100%" layout="responsive" objectFit="contain" /> */}
       </div>
       <div className="mt-10 space-y-4">
         <h3 className="font-bold text-black text-4xl font-sen">{title}</h3>

@@ -1,7 +1,7 @@
 export const QuoteOfTheDay = () => {
   return (
     <div className="w-full grid grid-cols-12 gap-5">
-      <div className="py-10 px-10 bg-white bg-opacity-50 xl:col-start-2 col-span-12 xl:col-span-10 flex flex-col lg:flex-row gap-12 min-h-[400px]">
+      <div className="py-10 px-6 md:px-10 bg-white bg-opacity-50 xl:col-start-2 col-span-12 xl:col-span-10 flex flex-col lg:flex-row gap-12 min-h-[400px]">
         <div className="font-righteous text-main-blue text-5xl lg:text-6xl max-w-[200px] w-full">
           Quote <br />{" "}
           <sup className="text-main-dark text-xl lg:text-2xl">Of The</sup>{" "}

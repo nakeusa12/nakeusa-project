@@ -20,7 +20,7 @@ export default function Home() {
       <div className="w-full h-full bg-white">
         <MarqueeText text={"SERVICES • SERVICES • SERVICES • SERVICES • "} title={"WHAT CAN I DO"} />
 
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+        <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
             <p className="font-sen text-base md:text-lg font-medium md:leading-8 whitespace-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -86,16 +86,16 @@ export default function Home() {
       <div className="w-full h-full bg-white py-40">
         <MarqueeText text={"BLOGS • BLOGS • BLOGS • BLOGS • "} title={"LATEST NEWS"} />
 
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="group relative cursor-pointer">
-            <div className="w-full h-[450px] overflow-hidden rounded backdrop-contrast-125 bg-white/30">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
                 src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full p-5 block space-y-5 relative">
+            <div className="w-full block space-y-5 relative py-5">
               <div className="text-main-dark flex w-full items-center justify-between font-medium">
                 <span>Category</span>
                 <span>- July 4, 2022</span>
@@ -106,14 +106,14 @@ export default function Home() {
             </div>
           </div>
           <div className="group relative cursor-pointer">
-            <div className="w-full h-[450px] overflow-hidden rounded backdrop-contrast-125 bg-white/30">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
                 src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full p-5 block space-y-5 relative">
+            <div className="w-full block space-y-5 relative py-5">
               <div className="text-main-dark flex w-full items-center justify-between font-medium">
                 <span>Category</span>
                 <span>- July 4, 2022</span>
@@ -124,14 +124,14 @@ export default function Home() {
             </div>
           </div>
           <div className="group relative cursor-pointer">
-            <div className="w-full h-[450px] overflow-hidden rounded backdrop-contrast-125 bg-white/30">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
                 src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full p-5 block space-y-5 relative">
+            <div className="w-full block space-y-5 relative py-5">
               <div className="text-main-dark flex w-full items-center justify-between font-medium">
                 <span>Category</span>
                 <span>- July 4, 2022</span>
@@ -171,8 +171,8 @@ const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
       )}
       ref={ref}
     >
-      <div className="w-full max-w-3xl h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0">
-        <div className="w-full h-full">
+      <div className="w-full max-w-5xl h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0">
+        <div className="w-full h-full aspect-auto">
           <img
             src={src}
             className="project-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
@@ -181,8 +181,8 @@ const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
         </div>
         <div className="flex w-full items-center justify-between mt-5 absolute md:-bottom-20 md:-left-20 flex-col bottom-0">
           <div className="font-sen relative">
-            <h1 className="project-info-title text-5xl md:text-8xl font-extrabold text-gray-50 ">{title}</h1>
-            <p className="project-info-category relative font-normal text-xl md:text-3xl text-main-dark">{category}</p>
+            <h1 className="project-info-title text-4xl font-poppins md:text-7xl font-extrabold text-gray-50 ">{title}</h1>
+            <p className="project-info-category relative font-normal text-xl md:text-3xl text-main-dark">2020 - {category}</p>
           </div>
         </div>
       </div>
@@ -242,26 +242,22 @@ const Project = () => {
 const images = [
   {
     src: "https://www.datocms-assets.com/23447/1625738350-photoscoper.png?auto=format&dpr=1&w=1600",
-    title: "Dracaena Trifasciata",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
+    title: "BridgeZero - Website for work and visit visas",
+    category: "Web Designer",
   },
   {
     src: "https://www.datocms-assets.com/23447/1596891182-embersword-hero.png?auto=format&dpr=1&w=1600",
-    title: "Cereus Penuvianus",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
+    title: "BridgeZero - Website for work and visit visas",
+    category: "Web Designer",
   },
   {
     src: "https://www.datocms-assets.com/23447/1585257493-base.jpg?auto=format&dpr=1&w=1600",
-    title: "Cereus Penuvianus",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
+    title: "BridgeZero - Website for work and visit visas",
+    category: "Web Designer",
   },
   {
     src: "https://www.datocms-assets.com/23447/1596369335-boa-hero.png?auto=format&dpr=1&w=1600",
-    title: "Cereus Penuvianus",
-    subtitle: "Living Room",
-    category: "Shooting / Adv.Campaing",
+    title: "BridgeZero - Website for work and visit visas",
+    category: "Web Designer",
   },
 ];

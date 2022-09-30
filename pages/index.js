@@ -16,6 +16,7 @@ import { MarqueeText } from "@components/basics/MarqueeText";
 import { useRef, useState, useEffect } from "react";
 import { useOnScreen } from "@hooks/useOnScreen";
 import cn from "classnames";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -93,146 +94,17 @@ export default function Home() {
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
         />
-        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
-          <a className="relative card-project">
-            <div className="w-full aspect-square">
-              <img
-                src="/assets/images/images.png"
-                className="w-full h-full object-cover"
-                alt="project"
-              />
-            </div>
-            <div className="pt-5 space-y-3">
-              <div className="flex items-center gap-x-3 text-main-dark">
-                <span className="font-koulen tracking-wide text-lg">
-                  2020 - Website Designer
-                </span>
-                <span className="w-5 h-5 rotate-45">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-full h-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
-                BridgeZero - Website for work and visit visas
-              </h3>
-            </div>
-          </a>
-          <a className="relative card-project">
-            <div className="w-full aspect-square">
-              <img
-                src="/assets/images/images.png"
-                className="w-full h-full object-cover"
-                alt="project"
-              />
-            </div>
-            <div className="pt-5 space-y-3">
-              <div className="flex items-center gap-x-3 text-main-dark">
-                <span className="font-koulen tracking-wide text-lg">
-                  2020 - Website Designer
-                </span>
-                <span className="w-5 h-5 rotate-45">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-full h-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
-                BridgeZero - Website for work and visit visas
-              </h3>
-            </div>
-          </a>
-          <a className="relative card-project">
-            <div className="w-full aspect-square">
-              <img
-                src="/assets/images/images.png"
-                className="w-full h-full object-cover"
-                alt="project"
-              />
-            </div>
-            <div className="pt-5 space-y-3">
-              <div className="flex items-center gap-x-3 text-main-dark">
-                <span className="font-koulen tracking-wide text-lg">
-                  2020 - Website Designer
-                </span>
-                <span className="w-5 h-5 rotate-45">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-full h-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
-                BridgeZero - Website for work and visit visas
-              </h3>
-            </div>
-          </a>
-          <a className="relative card-project">
-            <div className="w-full aspect-square">
-              <img
-                src="/assets/images/images.png"
-                className="w-full h-full object-cover"
-                alt="project"
-              />
-            </div>
-            <div className="pt-5 space-y-3">
-              <div className="flex items-center gap-x-3 text-main-dark">
-                <span className="font-koulen tracking-wide text-lg">
-                  2020 - Website Designer
-                </span>
-                <span className="w-5 h-5 rotate-45">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-full h-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
-                BridgeZero - Website for work and visit visas
-              </h3>
-            </div>
+        <Project>
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </Project>
+        <div className="text-center w-full pt-10">
+          <a href="#">
+            <button className="py-3 md:py-4 font-sen px-10 md:px-12 inline-flex items-center justify-center border border-main-dark text-main-dark text-sm md:text-xl tracking-wider uppercase">
+              View All Projects
+            </button>
           </a>
         </div>
       </div>
@@ -328,113 +200,62 @@ export default function Home() {
   );
 }
 
-// const Project = () => {
-//   const projectContainer = useRef();
-//   const [activeImage, setActiveImage] = useState(1);
+const Project = ({ children }) => {
+  return (
+    <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20  ">
+      {children}
+    </div>
+  );
+};
 
-//   // useEffect(() => {
-//   //   let sections = gsap.utils.toArray(".project-item-wrapper");
+const ProjectCard = () => {
+  const [isHovering, setIsHovered] = useState(false);
+  const onMouseEnter = () => setIsHovered(true);
+  const onMouseLeave = () => setIsHovered(false);
 
-//   //   gsap.to(sections, {
-//   //     xPercent: -100 * (sections.length - 1),
-//   //     ease: "none",
-//   //     scrollTrigger: {
-//   //       trigger: projectContainer.current,
-//   //       start: "top top",
-//   //       scrub: 1,
-//   //       markers: true,
-//   //       pin: true,
-//   //       snap: 1 / (sections.length - 1),
-//   //       end: () => `+=${projectContainer.current.offsetWidth}`,
-//   //     },
-//   //   });
-//   // }, []);
-
-//   const handleUpdateActiveImage = (index) => {
-//     setActiveImage(index + 1);
-//   };
-
-//   return (
-//     <div className="h-screen w-[400%] flex flex-nowrap " ref={projectContainer}>
-//       <div className="activeImageProject font-k2d">
-//         <span>{activeImage}</span>
-//         <span>/</span>
-//         <span>{images.length}</span>
-//       </div>
-//       {images.map((image, index) => (
-//         <ProjectItem
-//           key={index}
-//           index={index}
-//           {...image}
-//           updateActiveImage={handleUpdateActiveImage}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
-
-// const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
-//   const ref = useRef(null);
-
-//   const onScreen = useOnScreen(ref, 0.5);
-
-//   useEffect(() => {
-//     if (onScreen) {
-//       updateActiveImage(index);
-//     }
-//   }, [onScreen, index]);
-
-//   return (
-//     <div
-//       className={cn(
-//         "project-item-wrapper h-full grid grid-cols-[10vw_minmax(300px,_1fr)_20%] w-full"
-//       )}
-//       ref={ref}
-//     >
-//       <div></div>
-//       <div className="w-full h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0 bg-teal-200">
-//         <div className="h-full w-full aspect-video">
-//           <img
-//             src={src}
-//             className="project-item-image object-contain object-center origin-center w-full h-full will-change-transform transition-all duration-300 ease-in-out"
-//             alt="project"
-//           />
-//         </div>
-//         <div className="flex w-full items-center justify-between mt-5 absolute flex-col bottom-2">
-//           <div className="font-k2d relative">
-//             <h1 className="project-info-title text-4xl font-poppins md:text-7xl font-extrabold text-gray-50 ">
-//               {title}
-//             </h1>
-//             <p className="project-info-category relative font-normal text-xl md:text-3xl text-main-dark">
-//               2020 - {category}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       <div></div>
-//     </div>
-//   );
-// };
-
-// const images = [
-//   {
-//     src: "https://www.datocms-assets.com/23447/1625738350-photoscoper.png?auto=format&dpr=1&w=1600",
-//     title: "BridgeZero - Website for work and visit visas",
-//     category: "Web Designer",
-//   },
-//   {
-//     src: "https://www.datocms-assets.com/23447/1596891182-embersword-hero.png?auto=format&dpr=1&w=1600",
-//     title: "BridgeZero - Website for work and visit visas",
-//     category: "Web Designer",
-//   },
-//   {
-//     src: "https://www.datocms-assets.com/23447/1585257493-base.jpg?auto=format&dpr=1&w=1600",
-//     title: "BridgeZero - Website for work and visit visas",
-//     category: "Web Designer",
-//   },
-//   {
-//     src: "https://www.datocms-assets.com/23447/1596369335-boa-hero.png?auto=format&dpr=1&w=1600",
-//     title: "BridgeZero - Website for work and visit visas",
-//     category: "Web Designer",
-//   },
-// ];
+  return (
+    <a href="#" className="card-project">
+      <div
+        className="relative group w-full h-auto"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <div className="w-full aspect-square">
+          <Image
+            src="/assets/images/images.png"
+            alt="project-item"
+            layout="responsive"
+            width={100}
+            height={100}
+          />
+        </div>
+        <div className="pt-5 space-y-3">
+          <div className="flex items-center gap-x-3 text-main-dark">
+            <span className="font-koulen tracking-wide text-lg">
+              Website Designer - 2020
+            </span>
+            <span className="w-5 h-5 rotate-45">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-full h-full"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
+                />
+              </svg>
+            </span>
+          </div>
+          <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+            BridgeZero - Website for work and visit visas
+          </h3>
+        </div>
+      </div>
+    </a>
+  );
+};

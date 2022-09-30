@@ -10,7 +10,7 @@ export const Hero = () => {
           </div>
         </div>
         <div className="mt-5 md:mt-10 w-full max-w-6xl">
-          <h1 className="font-bold font-koulen text-5xl md:text-6xl lg:text-7xl xl:text-[5vw] text-main-dark leading-[130%] tracking-wide">
+          <h1 className="font-bold font-koulen text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-main-dark leading-[130%] tracking-wide">
             Be Creative In Building A Unique and Quality WebApps
           </h1>
         </div>

@@ -13,11 +13,11 @@ export const QuoteOfTheDay = () => {
             out of control and at times hard to handle. But if you can't handle
             me at my worst, then you sure as hell don't deserve me at my best.”
           </p>
-          <div className="flex gap-5 items-start sm:items-center flex-col-reverse sm:flex-row">
+          <div className="flex gap-5 items-start md:items-center flex-col-reverse md:flex-row">
             <p className="text-xl lg:text-2xl text-main-dark leading-8 font-sen">
               Marilyn Monroe
             </p>
-            <div className="w-20 sm:w-40 h-1 bg-main-blue"></div>
+            <div className="w-40 h-1 bg-main-blue"></div>
           </div>
         </div>
       </div>

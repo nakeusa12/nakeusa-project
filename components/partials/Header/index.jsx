@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap, { Power2 } from "gsap";
+import Link from "next/link";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,47 +19,53 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed left-0 top-0 right-0 overflow-hidden py-5 px-6 md:h-screen md:w-20 border-b md:border-r border-gray-200 z-50 flex md:flex-col justify-between bg-white">
-        <div className="w-full gap-y-10 flex md:flex-col flex-row items-center justify-between">
-          <a href="#" className="w-10 h-10">
-            <img
-              src="/assets/svgs/logo.svg"
-              className="w-full h-full"
-              alt="logo-snakeusa"
-            />
-          </a>
-          <div className="inline-flex gap-x-6 items-center">
-            <div className="block md:hidden">
-              <button className="bg-black w-6 h-6 rounded-full"></button>
+      <header className="fixed left-0 top-0 right-0 overflow-hidden z-50 bg-white md:w-20">
+        <nav className="md:min-h-screen border-b md:border-r border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
+          <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
+            <a href="#" className="w-10 h-10 block md:hidden">
+              <img
+                src="/assets/svgs/logo.svg"
+                className="w-full h-full"
+                alt="logo-snakeusa"
+              />
+            </a>
+            <div className="inline-flex gap-x-6 items-center">
+              <div className="block md:hidden">
+                <button className="bg-black w-6 h-6 rounded-full"></button>
+              </div>
+              <button
+                className="inline-flex flex-col gap-1.5 transition-all duration-200 ease-in-out cursor-pointer"
+                onClick={handleOpen}
+              >
+                <div
+                  className={`w-4 h-[3px] rounded-full bg-black ml-auto ${
+                    menuOpen &&
+                    "-rotate-45 -mb-[3.3px] mr-[3px] duration-100 transition-all "
+                  }`}
+                />
+                <div
+                  className={`w-8 h-[3px] rounded-full bg-black ${
+                    menuOpen && "rotate-45 duration-100 transition-all"
+                  }`}
+                />
+                <div
+                  className={`w-4 h-[3px] rounded-full bg-black mr-auto ${
+                    menuOpen &&
+                    "-rotate-45 -mt-[3.5px] ml-[2.5px] duration-100 transition-all"
+                  }`}
+                />
+              </button>
             </div>
-            <button
-              className="inline-flex flex-col gap-1.5 transition-all duration-200 ease-in-out cursor-pointer"
-              onClick={handleOpen}
-            >
-              <div
-                className={`w-4 h-[3px] rounded-full bg-black ml-auto ${
-                  menuOpen &&
-                  "-rotate-45 -mb-[3.3px] mr-[3px] duration-150 transition-all "
-                }`}
-              />
-              <div
-                className={`w-8 h-[3px] rounded-full bg-black ${
-                  menuOpen && "rotate-45 duration-150 transition-all"
-                }`}
-              />
-              <div
-                className={`w-4 h-[3px] rounded-full bg-black mr-auto ${
-                  menuOpen &&
-                  "-rotate-45 -mt-[3.5px] ml-[2.5px] duration-150 transition-all"
-                }`}
-              />
-            </button>
           </div>
-        </div>
-        <div className="hidden md:block">
-          <button className="bg-black w-6 h-6 rounded-full"></button>
-        </div>
-        <div className="hidden md:block">UP</div>
+          <div className="hidden md:block -rotate-90">
+            <Link href={"/"}>
+              <a className="uppercase text-sm whitespace-nowrap tracking-widest text-main-blue font-medium cursor-pointer">Saiful Nakeusa</a>
+            </Link>
+          </div>
+          <div className="hidden md:block">
+            <div className="text-sm">DARK</div>
+          </div>
+        </nav>
       </header>
 
       <ShowMenu toggle={menuOpen} onClick={handleOpen} />

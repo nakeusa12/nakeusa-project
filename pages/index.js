@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Hero } from "@components/partials/Hero";
 import Layout from "@components/partials/Layout";
 import { BsTriangleFill } from "react-icons/bs";
@@ -22,17 +21,17 @@ export default function Home() {
 
         <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
-            <p className="font-sen text-base md:text-lg font-medium md:leading-8 whitespace-normal">
+            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <p className="font-sen text-base md:text-lg font-medium md:leading-8 whitespace-normal">
+            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </p>
-            <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border border-main-dark text-main-dark text-sm md:text-xl tracking-wider uppercase font-sen">
+            <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border border-main-dark text-main-dark text-sm md:text-xl tracking-wider uppercase font-k2d">
               Learn More
             </button>
           </div>
@@ -47,7 +46,7 @@ export default function Home() {
                 <h3 className="text-main-dark uppercase font-poppins font-bold text-lg tracking-wider">
                   TECH STACK
                 </h3>
-                <ul className="text-main-dark space-y-4 font-sen mt-5 text-base">
+                <ul className="text-main-dark space-y-4 font-k2d mt-5 text-base">
                   <li>HTML / CSS / Javascript</li>
                   <li>React / Next JS</li>
                   <li>Svelte / SvelteKit JS</li>
@@ -67,7 +66,7 @@ export default function Home() {
                 <h3 className="text-main-dark uppercase font-poppins font-bold text-lg tracking-wider">
                   ANIME STACK
                 </h3>
-                <ul className="text-main-dark space-y-4 font-sen mt-5 text-base">
+                <ul className="text-main-dark space-y-4 font-k2d mt-5 text-base">
                   <li>Framer Motion</li>
                   <li>GSAP</li>
                   <li>Lottie JS</li>
@@ -78,10 +77,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      {/* <div className="bg-white py-40">
         <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
 
-        <Project />
       </div>
       <div className="w-full h-full bg-white py-40">
         <MarqueeText text={"BLOGS • BLOGS • BLOGS • BLOGS • "} title={"LATEST NEWS"} />
@@ -142,14 +140,58 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 }
 
-// let MainHome = tw.main`
-//   opacity-100
-// `;
+const Project = () => {
+  const projectContainer = useRef();
+  const [activeImage, setActiveImage] = useState(1);
+
+  // useEffect(() => {
+  //   let sections = gsap.utils.toArray(".project-item-wrapper");
+
+  //   gsap.to(sections, {
+  //     xPercent: -100 * (sections.length - 1),
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: projectContainer.current,
+  //       start: "top top",
+  //       scrub: 1,
+  //       markers: true,
+  //       pin: true,
+  //       snap: 1 / (sections.length - 1),
+  //       end: () => `+=${projectContainer.current.offsetWidth}`,
+  //     },
+  //   });
+  // }, []);
+
+  const handleUpdateActiveImage = (index) => {
+    setActiveImage(index + 1);
+  };
+
+  return (
+      <div
+        className="h-screen w-[400%] flex flex-nowrap "
+        ref={projectContainer}
+      >
+        <div className="activeImageProject font-k2d">
+          <span>{activeImage}</span>
+          <span>/</span>
+          <span>{images.length}</span>
+        </div>
+        {images.map((image, index) => (
+          <ProjectItem
+            key={index}
+            index={index}
+            {...image}
+            updateActiveImage={handleUpdateActiveImage}
+          />
+        ))}
+      </div>
+  );
+};
 
 
 const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
@@ -166,78 +208,31 @@ const ProjectItem = ({ src, category, title, updateActiveImage, index }) => {
   return (
     <div
       className={cn(
-        "project-item-wrapper h-full grid w-full",
-        { "is-reveal": onScreen }
+        "project-item-wrapper h-full grid grid-cols-[10vw_minmax(300px,_1fr)_20%] w-full",
       )}
       ref={ref}
     >
-      <div className="w-full max-w-5xl h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0">
-        <div className="w-full h-full aspect-auto">
+      <div></div>
+      <div className="w-full h-auto mx-auto flex flex-col justify-center relative will-change-transform px-5 md:px-0 bg-teal-200">
+        <div className="h-full w-full aspect-video">
           <img
             src={src}
-            className="project-item-image object-contain object-center origin-center w-full h-full will-change-transform scale-y-75 -skew-y-2 transition-all duration-300 grayscale sepia-[20%] brightness-[80%] ease-in-out"
+            className="project-item-image object-contain object-center origin-center w-full h-full will-change-transform transition-all duration-300 ease-in-out"
             alt="project"
           />
         </div>
-        <div className="flex w-full items-center justify-between mt-5 absolute md:-bottom-20 md:-left-20 flex-col bottom-0">
-          <div className="font-sen relative">
+        <div className="flex w-full items-center justify-between mt-5 absolute flex-col bottom-2">
+          <div className="font-k2d relative">
             <h1 className="project-info-title text-4xl font-poppins md:text-7xl font-extrabold text-gray-50 ">{title}</h1>
             <p className="project-info-category relative font-normal text-xl md:text-3xl text-main-dark">2020 - {category}</p>
           </div>
         </div>
       </div>
+      <div></div>
     </div>
   );
 };
 
-const Project = () => {
-  const projectContainer = useRef();
-  const [activeImage, setActiveImage] = useState(1);
-
-  useEffect(() => {
-    let sections = gsap.utils.toArray(".project-item-wrapper");
-    console.log(sections);
-
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: projectContainer.current,
-        start: "top top",
-        scrub: 1,
-        markers: true,
-        pin: true,
-        snap: 1 / (sections.length - 1),
-        end: () => `+=${projectContainer.current.offsetWidth}`,
-      },
-    });
-  }, []);
-
-  const handleUpdateActiveImage = (index) => {
-    setActiveImage(index + 1);
-  };
-
-  return (
-      <div
-        className="h-screen w-[400%] flex flex-nowrap py-[20vh]"
-        ref={projectContainer}
-      >
-        <div className="activeImageProject font-sen">
-          <span>{activeImage}</span>
-          <span>/</span>
-          <span>{images.length}</span>
-        </div>
-        {images.map((image, index) => (
-          <ProjectItem
-            key={index}
-            index={index}
-            {...image}
-            updateActiveImage={handleUpdateActiveImage}
-          />
-        ))}
-      </div>
-  );
-};
 
 const images = [
   {

@@ -8,7 +8,7 @@ export const QuoteOfTheDay = () => {
           <span className="text-main-blue text-4xl lg:text-5xl">DAY</span>
         </div>
         <div className="w-full space-y-8">
-          <p className="font-bold font-sen text-2xl sm:text-3xl lg:text-4xl text-main-dark leading-9 sm:leading-10 lg:leading-[48px] whitespace-normal">
+          <p className="font-bold font-k2d text-2xl sm:text-3xl lg:text-4xl text-main-dark leading-9 sm:leading-10 lg:leading-[48px] whitespace-normal">
             “I'm selfish, impatient and a little insecure. I make mistakes, I am
             out of control and at times hard to handle. But if you can't handle
             me at my worst, then you sure as hell don't deserve me at my best.”

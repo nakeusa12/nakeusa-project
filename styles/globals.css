@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* font-family: 'Nunito', sans-serif;
+/* font-family: 'Quicksand', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Righteous', cursive; */
 /* font-family: 'Sen', sans-serif; */
@@ -13,7 +14,7 @@ font-family: 'Righteous', cursive; */
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'K2D', sans-serif;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -23,18 +24,17 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.font-nunito{
-  font-family: 'Nunito', sans-serif;
-}
-
 .font-poppins{
   font-family: 'Poppins', sans-serif;
 }
 .font-righteous{
   font-family: 'Righteous', cursive;
 }
-.font-sen{
-  font-family: 'Sen', sans-serif;
+.font-koulen{
+  font-family: 'Koulen', cursive;
+}
+.font-k2d{
+  font-family: 'K2D', sans-serif;
 }
 
 .noise::before{
@@ -98,4 +98,27 @@ img.img-project {
 
 .project-info-category {
   -webkit-font-smoothing: antialiased;
+}
+
+.wave {
+  display: inline-block;
+  -webkit-font-kerning: none;
+  font-kerning: none;
+  transform: translate3d(0px, 0px, 0.1px);
+  transform-origin: 60% 70%;
+  user-select: none;
+  animation: wave-animation 0.5s infinite ease-in-out ;
+}
+
+
+@keyframes wave-animation {
+    0%,100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg)
+    }
 }

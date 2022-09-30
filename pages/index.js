@@ -3,7 +3,12 @@ import Layout from "@components/partials/Layout";
 import { BsTriangleFill } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiMinutemailer } from "react-icons/si";
-import { FaTwitter, FaLinkedin, FaGithub, FaFacebookSquare } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaFacebookSquare,
+} from "react-icons/fa";
 import gsap from "gsap";
 // import { Project } from "@components/partials/Project";
 import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
@@ -83,66 +88,210 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="bg-white py-40">
-        <MarqueeText text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "} title={"LATEST WORKS"} />
-
-      </div> */}
+      <div className="bg-white py-40">
+        <MarqueeText
+          text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
+          title={"LATEST WORKS"}
+        />
+        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+          <a className="relative card-project">
+            <div className="w-full aspect-square">
+              <img
+                src="/assets/images/images.png"
+                className="w-full h-full object-cover"
+                alt="project"
+              />
+            </div>
+            <div className="pt-5 space-y-3">
+              <div className="flex items-center gap-x-3 text-main-dark">
+                <span className="font-koulen tracking-wide text-lg">
+                  2020 - Website Designer
+                </span>
+                <span className="w-5 h-5 rotate-45">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-full h-full"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+                BridgeZero - Website for work and visit visas
+              </h3>
+            </div>
+          </a>
+          <a className="relative card-project">
+            <div className="w-full aspect-square">
+              <img
+                src="/assets/images/images.png"
+                className="w-full h-full object-cover"
+                alt="project"
+              />
+            </div>
+            <div className="pt-5 space-y-3">
+              <div className="flex items-center gap-x-3 text-main-dark">
+                <span className="font-koulen tracking-wide text-lg">
+                  2020 - Website Designer
+                </span>
+                <span className="w-5 h-5 rotate-45">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-full h-full"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+                BridgeZero - Website for work and visit visas
+              </h3>
+            </div>
+          </a>
+          <a className="relative card-project">
+            <div className="w-full aspect-square">
+              <img
+                src="/assets/images/images.png"
+                className="w-full h-full object-cover"
+                alt="project"
+              />
+            </div>
+            <div className="pt-5 space-y-3">
+              <div className="flex items-center gap-x-3 text-main-dark">
+                <span className="font-koulen tracking-wide text-lg">
+                  2020 - Website Designer
+                </span>
+                <span className="w-5 h-5 rotate-45">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-full h-full"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+                BridgeZero - Website for work and visit visas
+              </h3>
+            </div>
+          </a>
+          <a className="relative card-project">
+            <div className="w-full aspect-square">
+              <img
+                src="/assets/images/images.png"
+                className="w-full h-full object-cover"
+                alt="project"
+              />
+            </div>
+            <div className="pt-5 space-y-3">
+              <div className="flex items-center gap-x-3 text-main-dark">
+                <span className="font-koulen tracking-wide text-lg">
+                  2020 - Website Designer
+                </span>
+                <span className="w-5 h-5 rotate-45">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-full h-full"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+                BridgeZero - Website for work and visit visas
+              </h3>
+            </div>
+          </a>
+        </div>
+      </div>
       <div className="w-full h-full bg-white py-40">
-        <MarqueeText text={"BLOGS • BLOGS • BLOGS • BLOGS • "} title={"LATEST NEWS"} />
+        <MarqueeText
+          text={"BLOGS • BLOGS • BLOGS • BLOGS • "}
+          title={"LATEST NEWS"}
+        />
 
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="group relative cursor-pointer">
-            <div className="w-full aspect-video md:aspect-square overflow-hidden rounded">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
-                src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full block space-y-5 relative py-5">
-              <div className="text-main-dark flex w-full items-center justify-between font-medium">
-                <span>Category</span>
-                <span>- July 4, 2022</span>
-              </div>
-              <h1 className="text-main-dark text-3xl font-semibold">
-                Disini Adalah untuk judul dari blog tersebut.
-              </h1>
+            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
+              <span className="font-koulen text-white tracking-wider">
+                Travelling
+              </span>
+              <h3 className="text-white text-3xl font-medium font-k2d">
+                Islands in the archipelago with very beautiful views
+              </h3>
             </div>
           </div>
           <div className="group relative cursor-pointer">
-            <div className="w-full aspect-video md:aspect-square overflow-hidden rounded">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
-                src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full block space-y-5 relative py-5">
-              <div className="text-main-dark flex w-full items-center justify-between font-medium">
-                <span>Category</span>
-                <span>- July 4, 2022</span>
-              </div>
-              <h1 className="text-main-dark text-3xl font-semibold">
-                Disini Adalah untuk judul dari blog tersebut.
-              </h1>
+            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
+              <span className="font-koulen text-white tracking-wider">
+                Travelling
+              </span>
+              <h3 className="text-white text-3xl font-medium font-k2d">
+                Islands in the archipelago with very beautiful views
+              </h3>
             </div>
           </div>
           <div className="group relative cursor-pointer">
-            <div className="w-full aspect-video md:aspect-square overflow-hidden rounded">
+            <div className="w-full aspect-square overflow-hidden rounded">
               <img
-                src="https://images.unsplash.com/photo-1664055258388-6efc6fbe0aa3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
                 className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
                 alt="post"
               />
             </div>
-            <div className="w-full block space-y-5 relative py-5">
-              <div className="text-main-dark flex w-full items-center justify-between font-medium">
-                <span>Category</span>
-                <span>- July 4, 2022</span>
-              </div>
-              <h1 className="text-main-dark text-3xl font-semibold">
-                Disini Adalah untuk judul dari blog tersebut.
-              </h1>
+            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
+              <span className="font-koulen text-white tracking-wider">
+                Travelling
+              </span>
+              <h3 className="text-white text-3xl font-medium font-k2d">
+                Islands in the archipelago with very beautiful views
+              </h3>
             </div>
           </div>
         </div>
@@ -151,7 +300,8 @@ export default function Home() {
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 grid md:grid-cols-2 gap-x-10">
           <div className="w-full flex flex-col gap-y-20">
             <span className="text-2xl sm:text-3xl lg:text-4xl">
-              For work enquiries or if you just want to say hello, email <a href="#">sfulnakeusa@gmail.com</a>
+              For work enquiries or if you just want to say hello, email{" "}
+              <a href="#">sfulnakeusa@gmail.com</a>
             </span>
             <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20">
               <li>
@@ -167,11 +317,11 @@ export default function Home() {
                 <SiMinutemailer className="text-3xl" />
               </li>
             </ul>
-            <p>Thanks grilledpixels and some other websites. coding by me</p>
+            <p>
+              Thanks to several websites for the inspiration. coding by me ©2022
+            </p>
           </div>
-          <div className="">
-           
-          </div>
+          <div className=""></div>
         </div>
       </section>
     </Layout>

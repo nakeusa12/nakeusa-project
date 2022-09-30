@@ -3,14 +3,14 @@ import Image from "next/image";
 export const Hero = () => {
   return (
     <section className="relative flex flex-row min-h-screen w-full">
-      <div className="relative max-w-7xl 2xl:max-w-[1440px] w-full md:w-4/5 mx-auto flex flex-col justify-center px-6 md:px-0 z-10">
+      <div className="relative max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto flex flex-col justify-center px-6 md:px-5 z-10">
         <div className="w-full block">
           <div className="inline-flex items-center bg-main-blue py-2 px-5 xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white font-medium uppercase tracking-[0.15rem]">
             HI EVERYONE <span className="wave text-3xl">👋</span>
           </div>
         </div>
         <div className="mt-5 md:mt-10 w-full max-w-6xl">
-          <h1 className="font-bold font-koulen text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-main-dark leading-[130%] tracking-wide">
+          <h1 className="font-bold font-koulen text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-main-dark leading-[130%] tracking-wider md:tracking-wide">
             Be Creative In Building A Unique and Quality WebApps
           </h1>
         </div>

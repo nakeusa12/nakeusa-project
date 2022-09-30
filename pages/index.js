@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <Layout title="Home">
       <Hero />
-      <div className="max-w-full md:max-w-[80%] mx-auto px-6 md:px-5 z-10 relative">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-0 z-10 relative">
         <QuoteOfTheDay />
       </div>
       <div className="w-full h-full bg-white">
         <MarqueeText text={"SERVICES • SERVICES • SERVICES • SERVICES • "} title={"WHAT CAN I DO"} />
 
-        <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+        <div className="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-6 md:px-5 my-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
             <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

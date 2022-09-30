@@ -10,11 +10,11 @@ export const Hero = () => {
           </div>
         </div>
         <div className="mt-5 md:mt-10 w-full max-w-6xl">
-          <h1 className="font-bold font-koulen text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-main-dark leading-[130%] tracking-wide">
+          <h1 className="font-bold font-koulen text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-main-dark leading-[130%] tracking-wide">
             Be Creative In Building A Unique and Quality WebApps
           </h1>
         </div>
-        <div className="mt-5 md:mt-10 flex w-full items-center flex-wrap gap-x-5">
+        <div className="mt-5 md:mt-10 flex w-full items-center flex-wrap gap-x-3 md:gap-x-5">
           <p className="font-semibold text-base sm:text-lg md:text-xl text-main-dark">
             {" "}
             WEB DESIGNER{" "}

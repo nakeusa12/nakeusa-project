@@ -13,19 +13,17 @@ import gsap from "gsap";
 // import { Project } from "@components/partials/Project";
 import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
 import { MarqueeText } from "@components/basics/MarqueeText";
-import { useRef, useState, useEffect } from "react";
-import { useOnScreen } from "@hooks/useOnScreen";
-import cn from "classnames";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout titlePage="Home">
       <Hero />
       <div className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative">
         <QuoteOfTheDay />
       </div>
-      <div className="w-full h-full bg-white">
+      <div className="w-full h-full">
         <MarqueeText
           text={"SERVICES • SERVICES • SERVICES • SERVICES • "}
           title={"WHAT CAN I DO"}
@@ -33,17 +31,17 @@ export default function Home() {
 
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
-            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal">
+            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal">
+            <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </p>
-            <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border border-main-dark text-main-dark text-sm md:text-xl tracking-wider uppercase font-k2d">
+            <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border dark:border-white border-main-dark dark:text-white text-main-dark text-sm md:text-xl tracking-wider uppercase font-k2d">
               Learn More
             </button>
           </div>
@@ -55,10 +53,10 @@ export default function Home() {
                 <BsTriangleFill className="w-4 h-4 rotate-180" />
               </div>
               <div>
-                <h3 className="text-main-dark uppercase font-poppins font-bold text-lg tracking-wider">
+                <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
                   TECH STACK
                 </h3>
-                <ul className="text-main-dark space-y-4 font-k2d mt-5 text-base">
+                <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
                   <li>HTML / CSS / Javascript</li>
                   <li>React / Next JS</li>
                   <li>Svelte / SvelteKit JS</li>
@@ -75,10 +73,10 @@ export default function Home() {
                 <BsTriangleFill className="w-4 h-4 rotate-180" />
               </div>
               <div>
-                <h3 className="text-main-dark uppercase font-poppins font-bold text-lg tracking-wider">
+                <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
                   ANIME STACK
                 </h3>
-                <ul className="text-main-dark space-y-4 font-k2d mt-5 text-base">
+                <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
                   <li>Framer Motion</li>
                   <li>GSAP</li>
                   <li>Lottie JS</li>
@@ -89,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white py-40">
+      <section className="py-40">
         <MarqueeText
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
@@ -107,8 +105,8 @@ export default function Home() {
             </button>
           </a>
         </div>
-      </div>
-      <div className="w-full h-full bg-white py-40">
+      </section>
+      <section className="w-full h-full py-40">
         <MarqueeText
           text={"BLOGS • BLOGS • BLOGS • BLOGS • "}
           title={"LATEST NEWS"}
@@ -127,7 +125,7 @@ export default function Home() {
               <span className="font-koulen text-white tracking-wider">
                 Travelling
               </span>
-              <h3 className="text-white text-3xl font-medium font-k2d">
+              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
                 Islands in the archipelago with very beautiful views
               </h3>
             </div>
@@ -144,7 +142,7 @@ export default function Home() {
               <span className="font-koulen text-white tracking-wider">
                 Travelling
               </span>
-              <h3 className="text-white text-3xl font-medium font-k2d">
+              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
                 Islands in the archipelago with very beautiful views
               </h3>
             </div>
@@ -161,21 +159,21 @@ export default function Home() {
               <span className="font-koulen text-white tracking-wider">
                 Travelling
               </span>
-              <h3 className="text-white text-3xl font-medium font-k2d">
+              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
                 Islands in the archipelago with very beautiful views
               </h3>
             </div>
           </div>
         </div>
-      </div>
-      <section className="w-full h-full bg-white z-10 relative pt-20 pb-10">
+      </section>
+      <section className="w-full h-full z-10 relative pt-20 pb-10">
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 grid md:grid-cols-2 gap-x-10">
           <div className="w-full flex flex-col gap-y-20">
-            <span className="text-2xl sm:text-3xl lg:text-4xl">
+            <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white text-main-dark">
               For work enquiries or if you just want to say hello, email{" "}
               <a href="#">sfulnakeusa@gmail.com</a>
             </span>
-            <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20">
+            <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20 dark:text-white text-main-dark">
               <li>
                 <FaTwitter className="text-3xl" />
               </li>
@@ -189,7 +187,7 @@ export default function Home() {
                 <SiMinutemailer className="text-3xl" />
               </li>
             </ul>
-            <p>
+            <p className="dark:text-white text-main-dark">
               Thanks to several websites for the inspiration. coding by me ©2022
             </p>
           </div>
@@ -230,7 +228,7 @@ const ProjectCard = () => {
           />
         </div>
         <div className="pt-5 space-y-3">
-          <div className="flex items-center gap-x-3 text-main-dark">
+          <div className="flex items-center gap-x-3 dark:text-white text-main-dark">
             <span className="font-koulen tracking-wide text-lg">
               Website Designer - 2020
             </span>
@@ -251,7 +249,7 @@ const ProjectCard = () => {
               </svg>
             </span>
           </div>
-          <h3 className="font-k2d font-semibold text-main-dark text-3xl">
+          <h3 className="font-k2d font-semibold text-main-dark dark:text-white text-3xl">
             BridgeZero - Website for work and visit visas
           </h3>
         </div>

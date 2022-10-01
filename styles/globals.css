@@ -58,14 +58,18 @@ body::-webkit-scrollbar {
 
 /* =============================================== */
 @layer base{
-  .activeImageProject{
+  /* .activeImageProject{
     @apply absolute left-5 md:left-20 -z-10 h-full leading-4 text-transparent font-extrabold flex flex-row justify-center md:justify-start gap-x-4 text-8xl opacity-10 top-[15%];
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke: 2px #2140F4;
-  }
+  } */
 
   .card-project:nth-of-type(even) {
     @apply md:mt-40;
+  }
+
+  body {
+    @apply transition-colors ease-linear;
   }
 }
 
@@ -100,4 +104,47 @@ body::-webkit-scrollbar {
         -webkit-transform: rotate(30deg);
         transform: rotate(30deg)
     }
+}
+
+
+#sun-moon {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f5f8f8;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color .5s ease;
+   z-index: 99;
+   overflow: hidden;
+}
+
+.sun {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  background: #A5ABB0;
+  transition: border-radius .5s ease, background-color .5s ease, width .5s ease, transform .5s ease;
+}
+.moon {
+  white-space: nowrap;
+  text-indent: 60px;
+  line-height: 45px;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #f5f8f8;
+  box-shadow: 0 0 0 0 #f5f8f8, 0 0 0 3px #a5abb0, 0 0 0 100px #f5f8f8;
+  box-sizing: border-box;
+  transition: border-color .5s ease,box-shadow .5s ease;
 }

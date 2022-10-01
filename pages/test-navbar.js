@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Navbar } from "@components/partials/Navbar";
 import Link from "next/link";
 import { forwardRef, useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cn from "classnames";
@@ -10,12 +11,22 @@ import Layout from "@components/partials/Layout";
 import { MarqueeText } from "@components/basics/MarqueeText";
 gsap.registerPlugin(ScrollTrigger);
 
+const themes = [
+  { name: "Light" },
+  { name: "Dark" },
+  { name: "Emerald" },
+  { name: "Pink" },
+];
+
 export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
   useEffect(() => {
     if (openMenu) {
       document.body.style.overflow = "hidden";
@@ -24,10 +35,15 @@ export default function TestNavbar() {
     }
   }, [openMenu]);
 
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <Layout title="Test">
-        <div className="mb-10">
+        <div className="mb-10 dark:bg-red-200">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
           explicabo a, non ullam tempore rem molestiae nesciunt officiis
           excepturi ad architecto et eaque rerum atque? Unde veniam nisi totam
@@ -151,6 +167,31 @@ export default function TestNavbar() {
           <Nyobain status={"selesai"} />
         </div>
 
+        <div className="p-8 flex justify-between items-center font-bold text-xl bg-th-background-secondary text-th-primary-dark">
+          <span>
+            The current theme is: <strong>{theme}</strong>
+          </span>
+          <div>
+            <label htmlFor="theme-select" className="sr-only mr-2">
+              Choose theme:
+            </label>
+            <select
+              name="theme"
+              id="theme-select"
+              className="bg-white text-gray-800 border-gray-800 border py-1 px-3"
+              onChange={(e) => setTheme(e.currentTarget.value)}
+              value={theme}
+            >
+              <option value="">Select Theme</option>
+              {themes.map((t) => (
+                <option key={t.name.toLowerCase()} value={t.name.toLowerCase()}>
+                  {t.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
         <div className="p-20">
           {/* <UploadImages /> */}
           tes
@@ -214,7 +255,6 @@ export default function TestNavbar() {
 }
 
 const Nyobain = ({ status }) => {
-
   return (
     <div
       className={`flex gap-x-4 items-center capitalize 
@@ -354,7 +394,6 @@ const images = [
   },
 ];
 
-
 const useArrayRef = () => {
   const refs = useRef([]);
   refs.current = [];
@@ -385,7 +424,7 @@ export const Project = () => {
   return (
     <div className="flex flex-nowrap h-screen w-[400%]" ref={projectContainer}>
       {projectData.map((card, index) => {
-        return(
+        return (
           <ProjectCard
             key={index}
             total={index + 1}
@@ -395,7 +434,7 @@ export const Project = () => {
             img={card.src}
             category={card.category}
           />
-        )
+        );
       })}
     </div>
   );
@@ -411,7 +450,13 @@ const ProjectCard = forwardRef(({ title, img, category, total }, ref) => {
         {total} <div className="w-40 h-1 bg-main-blue"></div>
       </div>
       <div className=" bg-green-400 w-96 h-40">
-        <Image src={img} width="100%" height="100%" layout="responsive" objectFit="contain" />
+        <Image
+          src={img}
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        />
       </div>
       <div className="mt-10 space-y-4">
         <h3 className="font-bold text-black text-4xl font-sen">{title}</h3>

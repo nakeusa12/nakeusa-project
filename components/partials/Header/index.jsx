@@ -21,37 +21,23 @@ export const Header = () => {
   return (
     <>
       <header className="fixed left-0 top-0 right-0 overflow-hidden z-50 dark:bg-black bg-white md:w-20">
-        <nav className="md:min-h-screen border-b md:border-r dark:border-gray-500 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
+        <nav className="md:min-h-screen border-b md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
-            <a href="#" className="block md:hidden text-3xl font-bold font-koulen tracking-wide dark:text-white text-main-dark">
+            <a
+              href="#"
+              className="block md:hidden text-3xl font-bold font-koulen tracking-wide dark:text-white text-main-dark"
+            >
               SN<span className="dark:text-main-blue text-main-red">.</span>
             </a>
             <div className="inline-flex gap-x-6 items-center">
               <div className="block md:hidden">
                 <SwicthTheme />
               </div>
-              <button
-                className="inline-flex flex-col gap-1.5 transition-all duration-300 ease-in-out cursor-pointer"
-                onClick={handleOpen}
-              >
-                <div
-                  className={`w-4 h-[3px] rounded-full dark:bg-white bg-black ml-auto ${
-                    menuOpen &&
-                    "-rotate-45 -mb-[3.3px] mr-[3px] duration-100 transition-all "
-                  }`}
-                />
-                <div
-                  className={`w-8 h-[3px] rounded-full dark:bg-white bg-black ${
-                    menuOpen && "rotate-45 duration-100 transition-all"
-                  }`}
-                />
-                <div
-                  className={`w-4 h-[3px] rounded-full dark:bg-white bg-black mr-auto ${
-                    menuOpen &&
-                    "-rotate-45 -mt-[3.5px] ml-[2.5px] duration-100 transition-all"
-                  }`}
-                />
-              </button>
+              <div className="inline-block cursor-pointer" onClick={handleOpen}>
+                <div className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${menuOpen ? "-rotate-45  -translate-x-[5px] translate-y-[6px]" : ""}`}></div>
+                <div className="w-6 h-[2.5px] my-1 mx-0"></div>
+                <div className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${menuOpen ? "rotate-45 -translate-x-[5px] -translate-y-[7px]" : ""}`}></div>
+              </div>
             </div>
           </div>
           <div className="hidden md:block -rotate-90">
@@ -115,19 +101,13 @@ const ShowMenu = ({ toggle, onClick }) => {
     <>
       {/* overlay */}
       <div className="overlay fixed w-full h-screen bg-main-red dark:bg-main-blue -translate-x-full z-30" />
-      <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 -translate-x-full bg-white z-40 menu">
+      <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 -translate-x-full bg-white dark:bg-black z-40 menu">
         {/* <MenuBackground>Menu</MenuBackground> */}
-        <div
-          className="cursor-pointer absolute right-12 top-11"
-          onClick={onClick}
-        >
-          <img src="assets/svgs/exit.svg" alt="" />
-        </div>
         <ul className="z-[3] space-y-10">
           <li className="-mb-5 opacity-0 nav">
             <a
               href="#"
-              className="text-5xl text-main-dark transition-all duration-200 ease-in-out hover:text-gray-640 "
+              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-640 "
               onClick={onClick}
             >
               Home
@@ -136,7 +116,7 @@ const ShowMenu = ({ toggle, onClick }) => {
           <li className="-mb-5 opacity-0 nav">
             <a
               href="#"
-              className="text-5xl text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
+              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
               onClick={onClick}
             >
               About
@@ -145,7 +125,7 @@ const ShowMenu = ({ toggle, onClick }) => {
           <li className="-mb-5 opacity-0 nav">
             <a
               href="#"
-              className="text-5xl text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
+              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
               onClick={onClick}
             >
               Portfolio
@@ -154,7 +134,7 @@ const ShowMenu = ({ toggle, onClick }) => {
           <li className="-mb-5 opacity-0 nav">
             <a
               href="#"
-              className="text-5xl text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
+              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
               onClick={onClick}
             >
               Blog
@@ -163,7 +143,7 @@ const ShowMenu = ({ toggle, onClick }) => {
           <li className="-mb-5 opacity-0 nav">
             <a
               href="#"
-              className="text-5xl text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
+              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
               onClick={onClick}
             >
               Contact
@@ -177,12 +157,12 @@ const ShowMenu = ({ toggle, onClick }) => {
 
 const SwicthTheme = () => {
   const { systemTheme, theme, setTheme } = useTheme();
-  const [ mounted, setMounted ] = useState(false);
-  const [ audio, setAudio ] = useState(null);
-  
+  const [mounted, setMounted] = useState(false);
+  const [audio, setAudio] = useState(null);
+
   const darkRef = useRef(null);
   const lightRef = useRef(null);
-  
+
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   useEffect(() => {
@@ -220,8 +200,8 @@ const SwicthTheme = () => {
         <a role={"button"} onClick={DarkTheme}>
           <svg
             className="scale-100 opacity-100"
-            width="30"
-            height="30"
+            width="25"
+            height="25"
             viewBox="0 0 30 30"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -237,8 +217,8 @@ const SwicthTheme = () => {
         <a role={"button"} onClick={LightTheme}>
           <svg
             className="scale-100 opacity-100"
-            width="30"
-            height="30"
+            width="25"
+            height="25"
             viewBox="0 0 40 40"
             fill="none"
             ref={lightRef}

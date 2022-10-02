@@ -11,7 +11,7 @@ export const Hero = () => {
         </div>
         <div className="mt-5 md:mt-10 w-full max-w-6xl">
           <h1 className="font-bold font-koulen text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl dark:text-white text-main-dark leading-[130%] tracking-wider md:tracking-wide">
-            Be Creative In Building A Unique and Quality WebApps
+            Being Creative In Building A Unique and Quality WebApps
           </h1>
         </div>
         <div className="mt-5 md:mt-10 flex w-full items-center flex-wrap gap-x-3 md:gap-x-5">

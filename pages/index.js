@@ -100,7 +100,7 @@ export default function Home() {
         </Project>
         <div className="text-center w-full pt-10">
           <a href="#">
-            <button className="py-3 md:py-4 font-sen px-10 md:px-12 inline-flex items-center justify-center border border-main-dark text-main-dark text-sm md:text-xl tracking-wider uppercase">
+            <button className="py-3 md:py-4 font-sen px-10 md:px-12 inline-flex items-center justify-center border dark:border-white border-main-dark dark:text-white text-main-dark text-sm md:text-xl tracking-wider uppercase">
               View All Projects
             </button>
           </a>

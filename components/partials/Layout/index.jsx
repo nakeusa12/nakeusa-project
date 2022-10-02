@@ -16,7 +16,7 @@ const Layout = ({children, titlePage, metaDescription}) => {
 
             <div className="noise"></div>
             <Header />
-            <main className="antialiased bg-white dark:bg-main-dark pl-0 md:pl-20 overflow-hidden" id="main-container">
+            <main className="antialiased bg-white dark:bg-black pl-0 md:pl-20 overflow-hidden" id="main-container">
                 {children}
             </main>
 

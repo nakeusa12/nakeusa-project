@@ -20,15 +20,11 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed left-0 top-0 right-0 overflow-hidden z-50 dark:bg-main-dark bg-white md:w-20">
+      <header className="fixed left-0 top-0 right-0 overflow-hidden z-50 dark:bg-black bg-white md:w-20">
         <nav className="md:min-h-screen border-b md:border-r dark:border-gray-500 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
-            <a href="#" className="w-10 h-10 block md:hidden">
-              <img
-                src="/assets/svgs/logo.svg"
-                className="w-full h-full"
-                alt="logo-snakeusa"
-              />
+            <a href="#" className="block md:hidden text-3xl font-bold font-koulen tracking-wide dark:text-white text-main-dark">
+              SN<span className="dark:text-main-blue text-main-red">.</span>
             </a>
             <div className="inline-flex gap-x-6 items-center">
               <div className="block md:hidden">
@@ -60,7 +56,7 @@ export const Header = () => {
           </div>
           <div className="hidden md:block -rotate-90">
             <Link href={"/"}>
-              <a className="uppercase text-sm whitespace-nowrap tracking-widest dark:text-white text-main-blue font-medium cursor-pointer">
+              <a className="uppercase text-sm whitespace-nowrap tracking-widest dark:text-main-blue text-main-red font-medium cursor-pointer">
                 Saiful Nakeusa
               </a>
             </Link>
@@ -118,7 +114,7 @@ const ShowMenu = ({ toggle, onClick }) => {
   return (
     <>
       {/* overlay */}
-      <div className="overlay fixed w-full h-screen bg-main-blue -translate-x-full z-30" />
+      <div className="overlay fixed w-full h-screen bg-main-red dark:bg-main-blue -translate-x-full z-30" />
       <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 -translate-x-full bg-white z-40 menu">
         {/* <MenuBackground>Menu</MenuBackground> */}
         <div

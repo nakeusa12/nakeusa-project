@@ -34,9 +34,21 @@ export const Header = () => {
                 <SwicthTheme />
               </div>
               <div className="inline-block cursor-pointer" onClick={handleOpen}>
-                <div className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${menuOpen ? "-rotate-45  -translate-x-[5px] translate-y-[6px]" : ""}`}></div>
+                <div
+                  className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
+                    menuOpen
+                      ? "-rotate-45  -translate-x-[5px] translate-y-[6px]"
+                      : ""
+                  }`}
+                ></div>
                 <div className="w-6 h-[2.5px] my-1 mx-0"></div>
-                <div className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${menuOpen ? "rotate-45 -translate-x-[5px] -translate-y-[7px]" : ""}`}></div>
+                <div
+                  className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
+                    menuOpen
+                      ? "rotate-45 -translate-x-[5px] -translate-y-[7px]"
+                      : ""
+                  }`}
+                ></div>
               </div>
             </div>
           </div>
@@ -63,17 +75,24 @@ const ShowMenu = ({ toggle, onClick }) => {
 
   useEffect(() => {
     tl.current = gsap.timeline({ paused: true, ease: Power2.easeInOut });
-    tl.current.to(".overlay", {
-      opacity: 1,
-      duration: 1,
-      x: 0,
-    });
-    tl.current.to(
-      ".menu",
+    tl.current.fromTo(
+      ".overlay",
+      0.8,
       {
-        opacity: 1,
-        duration: 0.5,
-        x: 0,
+        xPercent: -100,
+      },
+      {
+        xPercent: 0,
+      }
+    );
+    tl.current.fromTo(
+      ".menu",
+      0.5,
+      {
+        xPercent: -100,
+      },
+      {
+        xPercent: 0,
       },
       ">-0.7"
     );
@@ -93,6 +112,7 @@ const ShowMenu = ({ toggle, onClick }) => {
     if (toggle) {
       tl.current.play().timeScale(1);
     } else {
+      tl.current.timeScale(2);
       tl.current.reverse();
     }
   }, [toggle]);
@@ -100,8 +120,8 @@ const ShowMenu = ({ toggle, onClick }) => {
   return (
     <>
       {/* overlay */}
-      <div className="overlay fixed w-full h-screen bg-main-red dark:bg-main-blue -translate-x-full z-30" />
-      <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 -translate-x-full bg-white dark:bg-black z-40 menu">
+      <div className="overlay fixed w-full h-screen bg-main-red dark:bg-main-blue z-30" />
+      <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 bg-white dark:bg-black z-40 menu">
         {/* <MenuBackground>Menu</MenuBackground> */}
         <ul className="z-[3] space-y-10">
           <li className="-mb-5 opacity-0 nav">

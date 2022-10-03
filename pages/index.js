@@ -17,8 +17,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+
+  const description = "Hey Everyone! I'm Saiful Nakeusa and I’m from Indonesia.I have been working as an Web Designer and Frontend Web Developer with more than 2 years of experience and still learning and exploring.";
+
   return (
-    <Layout titlePage="Home">
+    <Layout titlePage="Home" metaDescription={description}>
       <Hero />
       <div className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative">
         <QuoteOfTheDay />
@@ -113,12 +116,14 @@ export default function Home() {
         />
 
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="group relative cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden rounded">
-              <img
-                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
-                className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
+          <div className="group relative cursor-pointer overflow-hidden rounded">
+            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+              <Image 
+                src="/assets/images/img-travelling.png"
                 alt="post"
+                layout="responsive"
+                width={100}
+                height={100}
               />
             </div>
             <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
@@ -130,12 +135,14 @@ export default function Home() {
               </h3>
             </div>
           </div>
-          <div className="group relative cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden rounded">
-              <img
-                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
-                className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
+          <div className="group relative cursor-pointer overflow-hidden rounded">
+            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+              <Image 
+                src="/assets/images/img-travelling.png"
                 alt="post"
+                layout="responsive"
+                width={100}
+                height={100}
               />
             </div>
             <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
@@ -147,12 +154,14 @@ export default function Home() {
               </h3>
             </div>
           </div>
-          <div className="group relative cursor-pointer">
-            <div className="w-full aspect-square overflow-hidden rounded">
-              <img
-                src="https://uploads-ssl.webflow.com/61c1d79ddb7d937624ed3ec6/61d5fede6bf47be8b9768556_s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash%202-p-800.png"
-                className="w-full h-full object-cover scale-100 group-hover:scale-110 duration-300 ease-out "
+          <div className="group relative cursor-pointer overflow-hidden rounded">
+            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+              <Image 
+                src="/assets/images/img-travelling.png"
                 alt="post"
+                layout="responsive"
+                width={100}
+                height={100}
               />
             </div>
             <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">

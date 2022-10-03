@@ -38,7 +38,7 @@ export const Hero = () => {
       </div>
 
         {/* <img src="/assets/images/photo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', opacity: 1, transition: 'opacity 500ms ease 0s'}} /> */}
-      <div className="absolute right-0 top-[10%] md:top-[30%] z-0 inline-block opacity-25 aspect-square w-[850px]">
+      <div className="absolute right-0 top-0 md:top-[30%] z-0 inline-block opacity-25 aspect-square w-[850px]">
         <Image
           src="/assets/images/photo.png"
           alt="Picture of the author"

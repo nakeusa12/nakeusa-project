@@ -6,6 +6,18 @@ import Link from "next/link";
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [solidHeader, setSolidHeader] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setSolidHeader(true);
+      } else {
+        setSolidHeader(false);
+      }
+    });
+  }, []);
+
   const handleOpen = () => {
     setMenuOpen(!menuOpen);
   };
@@ -20,8 +32,8 @@ export const Header = () => {
 
   return (
     <>
-      <header className="fixed left-0 top-0 right-0 overflow-hidden z-50 dark:bg-black bg-white md:w-20">
-        <nav className="md:min-h-screen border-b md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
+      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50  md:w-20 duration-300 ease-in-out ${solidHeader ? "md:dark:bg-black md:bg-white dark:bg-black bg-white" : "bg-transparent"}`}>
+        <nav className="md:min-h-screen  md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
             <a
               href="#"
@@ -217,7 +229,7 @@ const SwicthTheme = () => {
   return (
     <>
       {currentTheme === "dark" ? (
-        <a role={"button"} onClick={DarkTheme}>
+        <button type="button" onClick={DarkTheme}>
           <svg
             className="scale-100 opacity-100"
             width="25"
@@ -232,9 +244,9 @@ const SwicthTheme = () => {
               fill="#ffffff"
             />
           </svg>
-        </a>
+        </button>
       ) : (
-        <a role={"button"} onClick={LightTheme}>
+        <button type="button" onClick={LightTheme}>
           <svg
             className="scale-100 opacity-100"
             width="25"
@@ -254,7 +266,7 @@ const SwicthTheme = () => {
             <circle cx="7.33333" cy="31.3333" r="3.33333" fill="#272727" />
             <circle cx="3.33333" cy="20.0001" r="3.33333" fill="#272727" />
           </svg>
-        </a>
+        </button>
       )}
     </>
   );

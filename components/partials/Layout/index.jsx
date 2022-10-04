@@ -46,9 +46,7 @@ const Layout = ({ children, titlePage, metaDescription }) => {
             className="flex-center fixed right-5 md:right-8 bottom-5 md:bottom-8 z-10 rounded-full bg-main-purple text-xl text-white btn-gotop duration-300 ease-in-out"
             onClick={goToTop}
           >
-            <span className="inline-flex flex-col gap-y-2.5">
-              <BsTriangleFill className="w-3 h-3" />
-              <BsTriangleFill className="w-3 h-3" />
+            <span className="">
               <BsTriangleFill className="w-3 h-3" />
             </span>
           </button>

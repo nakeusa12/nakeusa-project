@@ -35,14 +35,10 @@ export default function Home() {
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
             <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Starting from UI Design as a static and dynamic page, animated interaction becomes an attraction for users. WebApps that can be accessed when offline on mobile.
             </p>
             <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+            I advise you on what improvements to make to your site, while staying within the "custom made" vision. According to your philosophy and goals.
             </p>
             <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border dark:border-white border-main-dark dark:text-white text-main-dark text-sm md:text-xl tracking-wider uppercase font-k2d">
               Learn More

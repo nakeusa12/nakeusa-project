@@ -15,10 +15,13 @@ import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
 import { MarqueeText } from "@components/basics/MarqueeText";
 import { useState } from "react";
 import Image from "next/image";
+import { ButtonLink } from "@components/basics/ButtonLink";
+import Link from "next/link";
+import { ProjectCard } from "@components/partials/ProjectCard";
 
 export default function Home() {
-
-  const description = "Hey Everyone! I'm Saiful Nakeusa and I’m from Indonesia.I have been working as an Web Designer and Frontend Web Developer with more than 2 years of experience and still learning and exploring.";
+  const description =
+    "Hey Everyone! I'm Saiful Nakeusa and I’m from Indonesia.I have been working as an Web Designer and Frontend Web Developer with more than 2 years of experience and still learning and exploring.";
 
   return (
     <Layout titlePage="Home" metaDescription={description}>
@@ -35,14 +38,16 @@ export default function Home() {
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
           <div className="w-full space-y-10">
             <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
-            Starting from UI Design as a static and dynamic page, animated interaction becomes an attraction for users. WebApps that can be accessed when offline on mobile.
+              Starting from UI Design as a static and dynamic page, animated
+              interaction becomes an attraction for users. WebApps that can be
+              accessed when offline on mobile.
             </p>
             <p className="font-k2d text-base md:text-lg font-medium md:leading-8 whitespace-normal text-main-dark dark:text-white">
-            I advise you on what improvements to make to your site, while staying within the "custom made" vision. According to your philosophy and goals.
+              I advise you on what improvements to make to your site, while
+              staying within the "custom made" vision. According to your
+              philosophy and goals.
             </p>
-            <button className="py-3 md:py-4 px-10 md:px-12 inline-flex items-center justify-center border dark:border-white border-main-dark dark:text-white text-main-dark text-sm md:text-xl tracking-wider uppercase font-k2d">
-              Learn More
-            </button>
+            <ButtonLink href={"/"} value={"Learn More"} />
           </div>
           <div className="w-full gap-x-20 xl:gap-x-40 gap-y-10 flex sm:flex-row flex-col">
             <div className="inline-flex flex-row gap-x-6">
@@ -91,18 +96,14 @@ export default function Home() {
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
         />
-        <Project>
+         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
-        </Project>
-        <div className="text-center w-full pt-10">
-          <a href="#">
-            <button className="py-3 md:py-4 font-sen px-10 md:px-12 inline-flex items-center justify-center border dark:border-white border-main-dark dark:text-white text-main-dark text-sm md:text-xl tracking-wider uppercase">
-              View All Projects
-            </button>
-          </a>
+        </div>
+        <div className="flex justify-center w-full pt-10">
+          <ButtonLink href={"/"} value={"View All Projects"} />
         </div>
       </section>
       <section className="w-full h-full py-40">
@@ -114,7 +115,7 @@ export default function Home() {
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="group relative cursor-pointer overflow-hidden rounded">
             <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
-              <Image 
+              <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
@@ -133,7 +134,7 @@ export default function Home() {
           </div>
           <div className="group relative cursor-pointer overflow-hidden rounded">
             <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
-              <Image 
+              <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
@@ -152,7 +153,7 @@ export default function Home() {
           </div>
           <div className="group relative cursor-pointer overflow-hidden rounded">
             <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
-              <Image 
+              <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
@@ -176,7 +177,14 @@ export default function Home() {
           <div className="w-full flex flex-col gap-y-20">
             <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white text-main-dark">
               For work enquiries or if you just want to say hello, email{" "}
-              <a href="#">sfulnakeusa@gmail.com</a>
+              <Link href={"mailto:sfulnakeusa@gmail.com"}>
+                <a className="inline-block relative cursor-pointer top-1.5 overflow-hidden group">
+                  <span className="dark:bg-main-blue bg-main-red w-full h-full absolute -bottom-12 duration-200 ease-out group-hover:bottom-0 opacity-0 group-hover:opacity-100"></span>
+                  <span className="block relative duration-200 ease-out group-hover:text-white">
+                    sfulnakeusa@gmail.com
+                  </span>
+                </a>
+              </Link>
             </span>
             <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20 dark:text-white text-main-dark">
               <li>
@@ -203,62 +211,3 @@ export default function Home() {
   );
 }
 
-const Project = ({ children }) => {
-  return (
-    <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20  ">
-      {children}
-    </div>
-  );
-};
-
-const ProjectCard = () => {
-  const [isHovering, setIsHovered] = useState(false);
-  const onMouseEnter = () => setIsHovered(true);
-  const onMouseLeave = () => setIsHovered(false);
-
-  return (
-    <a href="#" className="card-project">
-      <div
-        className="relative group w-full h-auto"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <div className="w-full aspect-square">
-          <Image
-            src="/assets/images/images.png"
-            alt="project-item"
-            layout="responsive"
-            width={100}
-            height={100}
-          />
-        </div>
-        <div className="pt-5 space-y-3">
-          <div className="flex items-center gap-x-3 dark:text-white text-main-dark">
-            <span className="font-koulen tracking-wide text-lg">
-              Website Designer - 2020
-            </span>
-            <span className="w-5 h-5 rotate-45">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-full h-full"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                />
-              </svg>
-            </span>
-          </div>
-          <h3 className="font-k2d font-semibold text-main-dark dark:text-white text-3xl">
-            BridgeZero - Website for work and visit visas
-          </h3>
-        </div>
-      </div>
-    </a>
-  );
-};

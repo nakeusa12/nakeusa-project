@@ -32,7 +32,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50  md:w-20 duration-300 ease-in-out ${solidHeader ? "md:dark:bg-black md:bg-white dark:bg-black bg-white" : "bg-transparent"}`}>
+      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50  md:w-20 duration-300 ease-in-out md:dark:bg-black md:bg-white ${solidHeader ? "dark:bg-black bg-white" : "bg-transparent"}`}>
         <nav className="md:min-h-screen  md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
             <a
@@ -190,16 +190,16 @@ const ShowMenu = ({ toggle, onClick }) => {
 const SwicthTheme = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [audio, setAudio] = useState(null);
+  // const [audio, setAudio] = useState(null);
 
   const darkRef = useRef(null);
   const lightRef = useRef(null);
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  useEffect(() => {
-    setAudio(new Audio("https://www.fesliyanstudios.com/play-mp3/387"));
-  }, []);
+  // useEffect(() => {
+  //   setAudio(new Audio("https://www.fesliyanstudios.com/play-mp3/387"));
+  // }, []);
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
@@ -212,7 +212,7 @@ const SwicthTheme = () => {
       ease: Power2.easeInOut,
     });
     setTheme("light");
-    audio.play();
+    // audio.play();
   };
 
   const LightTheme = () => {
@@ -223,7 +223,7 @@ const SwicthTheme = () => {
       ease: Power2.easeInOut,
     });
     setTheme("dark");
-    audio.play();
+    // audio.play();
   };
 
   return (

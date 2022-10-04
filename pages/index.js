@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <Layout titlePage="Home" metaDescription={description}>
       <Hero />
-      <div className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative">
+      <div className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
         <QuoteOfTheDay />
       </div>
       <div className="w-full h-full">

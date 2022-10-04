@@ -32,7 +32,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50  md:w-20 duration-300 ease-in-out md:dark:bg-black md:bg-white ${solidHeader ? "dark:bg-black bg-white" : "bg-transparent"}`}>
+      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50 md:w-20 md:dark:bg-black md:bg-white ${solidHeader ? "dark:bg-black bg-white" : "bg-transparent"}`}>
         <nav className="md:min-h-screen  md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
             <a
@@ -66,7 +66,7 @@ export const Header = () => {
           </div>
           <div className="hidden md:block -rotate-90">
             <Link href={"/"}>
-              <a className="uppercase text-sm whitespace-nowrap tracking-widest dark:text-main-blue text-main-red font-medium cursor-pointer">
+              <a className="uppercase text-sm whitespace-nowrap tracking-widest dark:text-white text-main-dark font-medium cursor-pointer">
                 Saiful Nakeusa
               </a>
             </Link>
@@ -229,7 +229,7 @@ const SwicthTheme = () => {
   return (
     <>
       {currentTheme === "dark" ? (
-        <button type="button" onClick={DarkTheme}>
+        <button type="button" aria-label="moon" onClick={DarkTheme}>
           <svg
             className="scale-100 opacity-100"
             width="25"
@@ -246,7 +246,7 @@ const SwicthTheme = () => {
           </svg>
         </button>
       ) : (
-        <button type="button" onClick={LightTheme}>
+        <button type="button" aria-label="sun" onClick={LightTheme}>
           <svg
             className="scale-100 opacity-100"
             width="25"

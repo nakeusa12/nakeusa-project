@@ -167,6 +167,7 @@ export default function TestNavbar() {
           <Nyobain status={"selesai"} />
         </div>
 
+
         <div className="p-8 flex justify-between items-center font-bold text-xl bg-th-background-secondary text-th-primary-dark">
           <span>
             The current theme is: <strong>{theme}</strong>
@@ -492,3 +493,4 @@ const projectData = [
     category: "Shooting / Adv.Campaing",
   },
 ];
+

@@ -26,10 +26,10 @@ export default function Home() {
   return (
     <Layout titlePage="Home" metaDescription={description}>
       <Hero />
-      <div className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
+      <section className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
         <QuoteOfTheDay />
-      </div>
-      <div className="w-full h-full">
+      </section>
+      <section className="w-full h-full">
         <MarqueeText
           text={"SERVICES • SERVICES • SERVICES • SERVICES • "}
           title={"WHAT CAN I DO"}
@@ -50,53 +50,39 @@ export default function Home() {
             <ButtonLink href={"/"} value={"Learn More"} />
           </div>
           <div className="w-full gap-x-20 xl:gap-x-40 gap-y-10 flex sm:flex-row flex-col">
-            <div className="inline-flex flex-row gap-x-6">
-              <div className="inline-flex flex-col gap-y-2.5 pt-2">
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-              </div>
-              <div>
-                <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
-                  TECH STACK
-                </h3>
-                <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
-                  <li>HTML / CSS / Javascript</li>
-                  <li>React / Next JS</li>
-                  <li>Svelte / SvelteKit JS</li>
-                  <li>Alphine JS</li>
-                  <li>Tailwind CSS</li>
-                  <li>Styled Components</li>
-                </ul>
-              </div>
+            <div>
+              <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
+                TECH STACK
+              </h3>
+              <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
+                <li>HTML / CSS / Javascript</li>
+                <li>React / Next JS</li>
+                <li>Svelte / SvelteKit JS</li>
+                <li>Alphine JS</li>
+                <li>Tailwind CSS</li>
+                <li>Styled Components</li>
+              </ul>
             </div>
-            <div className="inline-flex flex-row gap-x-6">
-              <div className="inline-flex flex-col gap-y-2.5 pt-2">
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-                <BsTriangleFill className="w-4 h-4 rotate-180" />
-              </div>
-              <div>
-                <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
-                  ANIME STACK
-                </h3>
-                <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
-                  <li>Framer Motion</li>
-                  <li>GSAP</li>
-                  <li>Lottie JS</li>
-                  <li>ScrollReveal JS</li>
-                </ul>
-              </div>
+            <div>
+              <h3 className="text-main-dark dark:text-white uppercase font-poppins font-bold text-lg tracking-wider">
+                ANIME STACK
+              </h3>
+              <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
+                <li>Framer Motion</li>
+                <li>GSAP</li>
+                <li>Lottie JS</li>
+                <li>ScrollReveal JS</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section className="py-40">
         <MarqueeText
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
         />
-         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20">
+        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
@@ -178,7 +164,7 @@ export default function Home() {
             <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white text-main-dark">
               For work enquiries or if you just want to say hello, email{" "}
               <Link href={"mailto:sfulnakeusa@gmail.com"}>
-                <a className="inline-block relative cursor-pointer top-1.5 overflow-hidden group">
+                <a className="inline-block relative cursor-pointer top-1.5 md:py-0.5 overflow-hidden group">
                   <span className="dark:bg-main-blue bg-main-red w-full h-full absolute -bottom-12 duration-200 ease-out group-hover:bottom-0 opacity-0 group-hover:opacity-100"></span>
                   <span className="block relative duration-200 ease-out group-hover:text-white">
                     sfulnakeusa@gmail.com
@@ -210,4 +196,3 @@ export default function Home() {
     </Layout>
   );
 }
-

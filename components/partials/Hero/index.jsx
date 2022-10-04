@@ -11,8 +11,6 @@ export const Hero = () => {
   const revealImg = useRef(null);
   const image = useRef(null);
 
-  console.log(image);
-
   useEffect(() => {
     let tl = gsap.timeline();
     tl.to(containerImg.current, { duration: 0.5, visibility: "visible" })

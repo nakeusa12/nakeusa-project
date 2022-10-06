@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import gsap, { Power2 } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { forwardRef, useEffect, useRef, useState } from "react";
@@ -7,27 +7,62 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectCard = () => {
   const [isHovering, setIsHovered] = useState(false);
+  const cardProject = useRef(null);
+  const containerProject = useRef(null);
+  const revealProject = useRef(null);
+  const imgProject = useRef(null);
+
   const onMouseEnter = () => setIsHovered(true);
   const onMouseLeave = () => setIsHovered(false);
 
+  useEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: cardProject.current,
+        markers: true,
+        start: "top +=500",
+      },
+    });
+    tl.to(containerProject.current, { duration: 0.5, visibility: "visible" })
+      .to(revealProject.current, {
+        duration: 0.5,
+        height: "0%",
+        ease: Power2.easeInOut,
+      })
+      .from(imgProject.current, {
+        duration: 0.7,
+        ease: Power2.easeInOut,
+        delay: -1,
+      })
+  }, []);
+
   return (
-    <a href="#" className="card-project">
-      <div
-        className="relative group w-full h-auto"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <div className="w-full aspect-square">
-          <Image
-            src="/assets/images/images.png"
-            alt="project-item"
-            layout="responsive"
-            width={100}
-            height={100}
+    <a href="#" className="card-project" ref={cardProject}>
+      <div className="relative group w-full h-auto" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        {/* <div className="absolute z-[2] -top-2 left-0 overflow-hidden">
+          <span className="font-koulen block text-main-red text-8xl font-extrabold tracking-wider translate-y-full opacity-0" ref={splitText}>
+            02
+          </span>
+          <span
+            className="w-full h-0.5 invisible block bg-main-red"
+            ref={line}
+          ></span>
+        </div> */}
+        <div className="relative w-full h-full" ref={containerProject}>
+          <div
+            className="absolute dark:bg-black bg-white w-full h-full z-[1]"
+            ref={revealProject}
           />
+          <div className={`w-full aspect-square duration-500 ease-in-out ${isHovering && "scale-95 opacity-70"}`} ref={imgProject}>
+            <Image
+              src="/assets/images/images.png"
+              alt="project-item"
+              layout="fill"
+            />
+          </div>
         </div>
         <div className="pt-5 space-y-3">
-          <div className="flex items-center gap-x-3 dark:text-white text-main-dark">
+          <div className={`flex items-center gap-x-3 dark:text-white text-main-dark`}>
             <span className="font-koulen tracking-wide text-lg">
               Website Designer - 2020
             </span>
@@ -48,7 +83,7 @@ export const ProjectCard = () => {
               </svg>
             </span>
           </div>
-          <h3 className="font-k2d font-semibold text-main-dark dark:text-white text-3xl">
+          <h3 className={`font-k2d font-semibold text-main-dark dark:text-white text-3xl duration-500 ease-in-out`}>
             BridgeZero - Website for work and visit visas
           </h3>
         </div>
@@ -56,8 +91,6 @@ export const ProjectCard = () => {
     </a>
   );
 };
-
-
 
 const projectData = [
   {

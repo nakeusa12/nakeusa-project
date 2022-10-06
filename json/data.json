@@ -1,0 +1,370 @@
+{
+    "projects": [
+      {
+        "name": "KRL Access App Redesign",
+        "slug": "krl-access",
+        "category": "UI/UX Design",
+        "image": "krl-access-app.png",
+        "description": "The KRL access app is an application that is used to help commuter line users view schedules, routes, prices, positions, density, and news about the commuter line.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "krl-access-app-1.png",
+              "alt": "KRL Access App",
+              "width": 30,
+              "height": 19
+            },
+            {
+              "src": "krl-access-app-2.png",
+              "alt": "KRL Access App",
+              "width": 360,
+              "height": 697
+            },
+            {
+              "src": "krl-access-app-3.png",
+              "alt": "KRL Access App",
+              "width": 180,
+              "height": 47
+            }
+          ],
+          "figma": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FW4ZUDKe2oJbYmMojBz5zCC%2FKRL-ACCESS-REDESIGN%3Fpage-id%3D0%253A1%26node-id%3D30%253A1278%26starting-point-node-id%3D30%253A1278%26scaling%3Dscale-down",
+          "tool": "Figma",
+          "date": "March 2022"
+        }
+      },
+      {
+        "name": "Cleaning Mobile App",
+        "slug": "cleaning-app",
+        "category": "UI/UX Design",
+        "image": "cleaning-app.png",
+        "description": "Berisihin cleaning app is an application that provides various kinds of cleaning services according to your needs, the role I do here is to make Illustrations and UI UX designs.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "cleaning-app-1.png",
+              "alt": "Cleaning App",
+              "width": 2880,
+              "height": 5251
+            },
+            {
+              "src": "cleaning-app-2.png",
+              "alt": "Cleaning App",
+              "width": 160,
+              "height": 153
+            }
+          ],
+          "figma": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FNJXgcrsn1yxHmLWC2IhsVj%2Fbersihin-cleaning-app%3Fpage-id%3D0%253A1%26node-id%3D27%253A372%26starting-point-node-id%3D27%253A372%26scaling%3Dscale-down",
+          "tool": "Figma & Adobe illustrator",
+          "date": "March 2022"
+        }
+      },
+      {
+        "name": "Sport Field Booking App",
+        "slug": "sportfield-app",
+        "category": "UI/UX Design",
+        "image": "sportfield.png",
+        "description": "Sportfield is an application service for field bookings without having to book directly to the place, in this application we provide many sports fields from various sports field owners. This application was also made to help field owners so that they can be easily booked.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "sportfield-1.png",
+              "alt": "",
+              "width": 240,
+              "height": 677
+            },
+            {
+              "src": "sportfield-2.png",
+              "alt": "",
+              "width": 1200,
+              "height": 1391
+            }
+          ],
+          "figma": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FBv2feeQdIbtEsO1oXPM8m5%2FBookingfield-App-(Copy)%3Fpage-id%3D116%253A296%26node-id%3D163%253A687%26viewport%3D1275%252C582%252C0.25%26scaling%3Dscale-down%26starting-point-node-id%3D163%253A687",
+          "tool": "Figma & Adobe illustrator",
+          "date": "April 2022"
+        }
+      },
+      {
+        "name": "Walking In The Junggle",
+        "slug": "walkinthejunggle",
+        "category": "Illustration",
+        "image": "walkinthejunggle.png",
+        "description": "Exploration illustration walking in the forest, I made this illustration to train my hands and I just have fun when I make this illustration, this illustration i made full on procreate.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "walkinthejunggle.png",
+              "alt": "",
+              "width": 1335,
+              "height": 997
+            }
+          ],
+          "figma": "",
+          "tool": "Procreate",
+          "date": "April 2022"
+        }
+      },
+      {
+        "name": "Weather App Mobile",
+        "slug": "weather-app",
+        "category": "UI/UX Design",
+        "image": "weather-app.png",
+        "description": "weather app mobile design, this application is made to see the current weather conditions by providing details of the weather itself, this design is made with colors that are pleasing to the eye and also easy to use.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "weather-app.png",
+              "alt": "",
+              "width": 590,
+              "height": 533
+            },
+            {
+              "src": "weather-app-1.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            }
+          ],
+          "figma": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fm8a5oe3rBGaGjqf5d1KHQ2%2FWEATHER-APP%3Fpage-id%3D0%253A1%26node-id%3D2%253A2%26starting-point-node-id%3D2%253A2%26scaling%3Dscale-down",
+          "tool": "Figma & Adobe Illustrator",
+          "date": "June 2022"
+        }
+      },
+      {
+        "name": "Website Planner Landing Page",
+        "slug": "website-planner",
+        "category": "UI/UX Design",
+        "image": "website-planner.png",
+        "description": "This is web planner app landing page exploration, this design I made with beautiful gradient matching colors, and the illustration I made by myself.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "website-planner.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "website-planner-1.png",
+              "alt": "",
+              "width": 142,
+              "height": 287
+            }
+          ],
+          "figma": "",
+          "tool": "Figma & Adobe Illustrator",
+          "date": "June 2022"
+        }
+      },
+      {
+        "name": "Enjoy Working Illustration",
+        "slug": "enjoy-working",
+        "category": "Illustration",
+        "image": "enjoy-working.png",
+        "description": "",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "enjoy-working.png",
+              "alt": "",
+              "width": 1240,
+              "height": 1119
+            }
+          ],
+          "figma": "",
+          "tool": "Adobe Illustrator",
+          "date": "May 2022"
+        }
+      },
+      {
+        "name": "Enjoying The Work With Nature",
+        "slug": "enjoying-llustration",
+        "category": "Illustration",
+        "image": "enjoying-llustration.png",
+        "description": "",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "enjoying-llustration.png",
+              "alt": "",
+              "width": 1241,
+              "height": 1120
+            }
+          ],
+          "figma": "",
+          "tool": "Adobe Illustrator",
+          "date": "May 2022"
+        }
+      },
+      {
+        "name": "Real Estate Landing Page",
+        "slug": "realestate-website",
+        "category": "UI/UX Design",
+        "image": "realestate-website-1.png",
+        "description": "This is my exploration design for the real estate and property website landing page, I make this design to keep clean and simple so it will make it easy on eye.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "realestate-website-1.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "realestate-website.png",
+              "alt": "",
+              "width": 240,
+              "height": 703
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "July 2022"
+        }
+      },
+      {
+        "name": "Creative Agency Webiste Landing Page",
+        "slug": "creative-agency-website",
+        "category": "UI/UX Design",
+        "image": "creative-agency-website .png",
+        "description": "This is my exploration design for creative agency, this design i got inspired by one of designer indonesia who playing with beuatiful gradient and blur.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "creative-agency-website .png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "creative-agency-website-1.png",
+              "alt": "",
+              "width": 1440,
+              "height": 4187
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "July 2022"
+        }
+      },
+      {
+        "name": "Payment Mobile App",
+        "slug": "payment-app",
+        "category": "UI/UX Design",
+        "image": "payment-app-1.png",
+        "description": "This is my exploration about payment app, i build this design with simple and clean design i really like this exploration.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "payment-app-1.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "payment-app-2.png",
+              "alt": "",
+              "width": 244,
+              "height": 355
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "August 2022"
+        }
+      },
+      {
+        "name": "Dashboard Sales",
+        "slug": "dashboard-sales",
+        "category": "UI/UX Design",
+        "image": "dashboard-sales.png",
+        "description": "This is my dashboard design about sales proggress, you can see what product are sold.",
+        "featured": false,
+        "data": {
+          "images": [
+            {
+              "src": "dashboard-sales-1.png",
+              "alt": "",
+              "width": 1,
+              "height": 1
+            },
+            {
+              "src": "dashboard-sales-2.png",
+              "alt": "",
+              "width": 45,
+              "height": 32
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "July 2022"
+        }
+      },
+      {
+        "name": "Social Media Talent Management",
+        "slug": "Talent-management",
+        "category": "UI/UX Design",
+        "image": "Talent-management-2.png",
+        "description": "Lot of people want to be a influencer,instagramer or youtuber but they dont know how to manage they social media to reach many people, this website is about to help a good talent to improve they followers with our social media management we can reach that.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "Talent-management-2.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "Talent-management-1.png",
+              "alt": "",
+              "width": 280,
+              "height": 891
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "August 2022"
+        }
+      },
+      {
+        "name": "Cloud Storage Mobile App Design",
+        "slug": "cloud-storage-app",
+        "category": "UI/UX Design",
+        "image": "cloud-storage-app-1.png",
+        "description": "This is my exploration about cloud storage mobile app design, playing with shape and colors combination i really love it.",
+        "featured": true,
+        "data": {
+          "images": [
+            {
+              "src": "cloud-storage-app-1.png",
+              "alt": "",
+              "width": 4,
+              "height": 3
+            },
+            {
+              "src": "cloud-storage-app-2.png",
+              "alt": "",
+              "width": 140,
+              "height": 141
+            }
+          ],
+          "figma": "",
+          "tool": "Figma",
+          "date": "August 2022"
+        }
+      }
+    ]
+  }

@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: 0.05;
+  opacity: 0.04;
   z-index: 1000;
   pointer-events: none;
   background: url("/assets/static.gif");

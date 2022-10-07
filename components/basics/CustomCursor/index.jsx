@@ -31,9 +31,9 @@ export const CustomCursor = () => {
         mainCursor.current.clientHeight / 2}px, 0)`;
     });
 
-    const year = document.querySelectorAll(".content-card-project");
+    const cardProject = document.querySelectorAll(".content-card-project");
 
-    year.forEach((el) => {
+    cardProject.forEach((el) => {
       el.addEventListener("mouseenter", () => {
         mainCursor.current.classList.add("active");
         secondaryCursor.current.classList.add("active");

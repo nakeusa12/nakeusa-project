@@ -84,11 +84,6 @@ export default function Home() {
         />
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40">
           <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
         </div>
         {/* <div className="flex justify-center w-full pt-10">
           <ButtonLink href={"/"} value={"View All Projects"} />

@@ -232,7 +232,7 @@ body::-webkit-scrollbar {
   -moz-transform: scale(2.5);
   -ms-transform: scale(2.5);
   -o-transform: scale(2.5);
-  animation: viewProject .5s ease-out;
+  /* animation: viewProject .3s ease-in-out; */
 } 
 
 .secondary-cursor.active {
@@ -243,16 +243,16 @@ body::-webkit-scrollbar {
   -ms-transform: scale(0);
   -o-transform: scale(0);
 }
-
+/* 
 @keyframes viewProject {
   0% {
-    transform: scale(0);
+    transform: scale(1);
   }
 
   100% {
     transform: scale(2.5);
   }
-}
+} */
 
 @keyframes fadeIn {
   0% {
@@ -332,4 +332,13 @@ body::-webkit-scrollbar {
   to {
     transform: translate(0px, -50%);
   }
+}
+
+.titleProject{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char{
+  transform: translateY(115px);;
+  transition: transform .5s;
 }

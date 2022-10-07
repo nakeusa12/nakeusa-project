@@ -2,18 +2,26 @@ import gsap, { Power2 } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import SplitType from 'split-type'
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectCard = () => {
-  const [isHovering, setIsHovered] = useState(false);
   const cardProject = useRef(null);
   const containerProject = useRef(null);
+  const contentProject = useRef(null);
   const revealProject = useRef(null);
   const imgProject = useRef(null);
+  const cardTL = useRef(null);
 
-  const onMouseEnter = () => setIsHovered(true);
-  const onMouseLeave = () => setIsHovered(false);
+
+  const onMouseEnter = () => {
+    cardTL.current.play();
+  };
+  const onMouseLeave = () => {
+    cardTL.current.timeScale(2);
+    cardTL.current.reverse();
+  };
 
   useEffect(() => {
     let tl = gsap.timeline({
@@ -37,6 +45,34 @@ export const ProjectCard = () => {
       });
   }, []);
 
+  useEffect(() => {
+    let title = new SplitType(".titleProject")
+    let titleProject = document.querySelectorAll(".titleProject .char")
+    let categoryProject = document.querySelector(".categoryProject")
+    let yearProject = document.querySelector(".yearProject")
+    console.log(titleProject);
+
+    cardTL.current = gsap
+      .timeline({ paused: true, ease: Power2.easeInOut })
+      .to(imgProject.current, {
+        scale: 1.05,
+        duration: 0.2,
+      })
+      .to(contentProject.current, { visibility: "visible", duration: 0.2 })
+      .to(titleProject, {
+        duration: 0.1,
+        y: 0,
+        stagger: 0.1
+      }, "-=1")
+      .to([categoryProject, yearProject], {
+        duration: 0.3,
+        y: 0,
+        stagger: 0.5,
+        opacity: 1
+      });
+
+  }, []);
+
   return (
     <>
       <article
@@ -58,9 +94,7 @@ export const ProjectCard = () => {
               ref={revealProject}
             />
             <div
-              className={`w-full aspect-square md:aspect-video duration-500 ease-in-out ${
-                isHovering ? "scale-105" : "scale-100"
-              }`}
+              className={`w-full aspect-square md:aspect-video duration-500 ease-in-out`}
               ref={imgProject}
             >
               <Image
@@ -72,19 +106,18 @@ export const ProjectCard = () => {
             </div>
           </div>
           <div
-            className={`absolute top-0 left-0 w-full h-full bg-black/50 flex items-end content-card-project  ${
-              isHovering ? "visible" : "invisible"
-            }`}
+            className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-end content-card-project invisible"
+            ref={contentProject}
           >
             <div className="w-full h flex flex-col p-5 md:p-10">
-              <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase">
-                BridgeZero
+              <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase titleProject">
+                BrigeZero
               </h1>
-              <div className="w-full flex justify-between items-center mt-1">
-                <span className="font-k2d tracking-wide text-base">
+              <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
+                <span className="font-k2d tracking-wide text-base inline-block translate-y-full categoryProject opacity-0">
                   Website Designer
                 </span>
-                <span className="font-koulen tracking-wide text-2xl">2020</span>
+                <span className="font-koulen tracking-wide text-2xl inline-block translate-y-full yearProject  opacity-0">2020</span>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export const ProjectCard = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: cardProject.current,
-        markers: true,
+        // markers: true,
         start: "top +=650",
       },
     });

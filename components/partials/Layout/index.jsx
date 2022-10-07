@@ -3,6 +3,7 @@ import gsap, { TweenMax } from "gsap";
 import { Header } from "../Header";
 import { useEffect, useRef, useState } from "react";
 import { BsTriangleFill } from "react-icons/bs";
+import { CustomCursor } from "@components/basics/CustomCursor";
 
 const Layout = ({ children, titlePage, metaDescription }) => {
   const title = titlePage ? `${titlePage} - Saiful Nakeusa` : "Saiful Nakeusa";
@@ -61,63 +62,3 @@ const Layout = ({ children, titlePage, metaDescription }) => {
 };
 
 export default Layout;
-
-
-const CustomCursor = () => {
-  const cursor = useRef(null);
-  const cursorFollower = useRef(null)
-
-  useEffect(() => {
-    const year = document.querySelectorAll(".content-card-project");
-    let posX = 0,
-      posY = 0,
-      mouseX = 0,
-      mouseY = 0;
-
-    TweenMax.to({}, 0.016, {
-      repeat: -1,
-      onRepeat: function () {
-        posX += (mouseX - posX) / 9;
-        posY += (mouseY - posY) / 9;
-
-        TweenMax.set(cursorFollower.current, {
-          css: {
-            left: posX - 20,
-            top: posY - 20,
-          },
-        });
-
-        TweenMax.set(cursor.current, {
-          css: {
-            left: mouseX,
-            top: mouseY,
-          },
-        });
-      },
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.pageX;
-      mouseY = e.pageY;
-    });
-
-    year.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursor.current.classList.add("active");
-        cursorFollower.current.classList.add("active");
-      });
-
-      el.addEventListener("mouseleave", () => {
-        cursor.current.classList.remove("active");
-        cursorFollower.current.classList.remove("active");
-      });
-    });
-  }, []);
-
-  return (
-    <>
-      <div class="cursor" ref={cursor} />
-      <div class="cursor-follower" ref={cursorFollower}/>
-    </>
-  );
-};

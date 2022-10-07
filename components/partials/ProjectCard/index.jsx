@@ -45,7 +45,7 @@ export const ProjectCard = () => {
       >
         <a
           href="#"
-          className="relative group w-full h-auto"
+          className="relative group w-full h-auto cursor-none"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >

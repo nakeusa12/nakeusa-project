@@ -87,6 +87,8 @@ export default function Home() {
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
         {/* <div className="flex justify-center w-full pt-10">
           <ButtonLink href={"/"} value={"View All Projects"} />

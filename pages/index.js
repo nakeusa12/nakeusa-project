@@ -77,20 +77,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-40">
+      <section>
         <MarqueeText
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
         />
-        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-20">
+        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
         </div>
-        <div className="flex justify-center w-full pt-10">
+        {/* <div className="flex justify-center w-full pt-10">
           <ButtonLink href={"/"} value={"View All Projects"} />
-        </div>
+        </div> */}
       </section>
       <section className="w-full h-full py-40">
         <MarqueeText

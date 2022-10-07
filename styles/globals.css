@@ -65,7 +65,7 @@ body::-webkit-scrollbar {
   } */
 
   .card-project:nth-of-type(even) {
-    @apply md:mt-40;
+    @apply ml-auto md:flex-row-reverse;
   }
 
   body {

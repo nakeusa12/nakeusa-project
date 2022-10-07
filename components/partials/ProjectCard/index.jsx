@@ -1,7 +1,7 @@
 import gsap, { Power2 } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,72 +23,61 @@ export const ProjectCard = () => {
         start: "top +=500",
       },
     });
-    tl.to(containerProject.current, { duration: 0.5, visibility: "visible" })
+    tl.from(cardProject.current, { scale: 0 })
+      .to(containerProject.current, { duration: 0.5, visibility: "visible" })
       .to(revealProject.current, {
         duration: 0.5,
-        height: "0%",
+        width: "0%",
         ease: Power2.easeInOut,
       })
       .from(imgProject.current, {
         duration: 0.7,
         ease: Power2.easeInOut,
         delay: -1,
-      })
+      });
   }, []);
 
   return (
-    <a href="#" className="card-project" ref={cardProject}>
-      <div className="relative group w-full h-auto" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-        {/* <div className="absolute z-[2] -top-2 left-0 overflow-hidden">
-          <span className="font-koulen block text-main-red text-8xl font-extrabold tracking-wider translate-y-full opacity-0" ref={splitText}>
-            02
-          </span>
-          <span
-            className="w-full h-0.5 invisible block bg-main-red"
-            ref={line}
-          ></span>
-        </div> */}
-        <div className="relative w-full h-full" ref={containerProject}>
+    <article
+      className="card-project flex max-w-4xl w-full gap-5 scale-100 flex-col-reverse md:flex-row"
+      ref={cardProject}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <a href="#" className="relative group w-full h-auto">
+        <div className="relative w-full h-full overflow-hidden" ref={containerProject}>
           <div
-            className="absolute dark:bg-black bg-white w-full h-full z-[1]"
+            className="absolute bg-main-dark w-full h-full z-[1]"
             ref={revealProject}
           />
-          <div className={`w-full aspect-square duration-500 ease-in-out ${isHovering && "scale-95 opacity-70"}`} ref={imgProject}>
+          <div
+            className={`w-full aspect-video duration-500 ease-in-out ${isHovering ? 'scale-105' : 'scale-100'}`}
+            ref={imgProject}
+          >
             <Image
-              src="/assets/images/images.png"
+              src="/assets/images/project-img.png"
               alt="project-item"
               layout="fill"
+              objectFit="cover"
             />
           </div>
         </div>
-        <div className="pt-5 space-y-3">
-          <div className={`flex items-center gap-x-3 dark:text-white text-main-dark`}>
-            <span className="font-koulen tracking-wide text-lg">
-              Website Designer - 2020
-            </span>
-            <span className="w-5 h-5 rotate-45">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-full h-full"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"
-                />
-              </svg>
-            </span>
+        <div className={`absolute top-0 left-0 w-full h-full bg-black/50 flex items-end  ${isHovering ? 'visible' : 'invisible'}`}>
+          <div className="w-full h flex flex-col p-5 md:p-10">
+            <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase">
+              BridgeZero
+            </h1>
+            <div className="w-full flex justify-between items-center mt-1">
+              <span className="font-k2d tracking-wide text-base">
+                Website Designer
+              </span>
+              <span className="font-koulen tracking-wide text-2xl">2020</span>
+            </div>
           </div>
-          <h3 className={`font-k2d font-semibold text-main-dark dark:text-white text-3xl duration-500 ease-in-out`}>
-            BridgeZero - Website for work and visit visas
-          </h3>
         </div>
-      </div>
-    </a>
+      </a>
+      <span className="text-base sm:text-lg md:text-xl lg:text-2xl">01/06</span>
+    </article>
   );
 };
 

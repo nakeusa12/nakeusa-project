@@ -37,13 +37,13 @@ export default function Home() {
       <section className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
         <QuoteOfTheDay />
       </section>
-      <section className="w-full h-full">
+      <section className="w-full h-full mt-40">
         <MarqueeText
           text={"SERVICES • SERVICES • SERVICES • SERVICES • "}
           title={"WHAT CAN I DO"}
         />
 
-        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 serviceExplain-wrapper">
+        <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 mt-20 mb-40 md:mb-60 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 serviceExplain-wrapper">
           <ServiceExplain />
           <div className="w-full gap-x-20 xl:gap-x-40 gap-y-10 flex sm:flex-row flex-col">
             <TechList
@@ -57,7 +57,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="w-full h-full mt-40">
         <MarqueeText
           text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
           title={"LATEST WORKS"}
@@ -111,8 +111,8 @@ const TechList = ({ title, item }) => {
         {title}
       </h3>
       <ul className="text-main-dark dark:text-white space-y-4 font-k2d mt-5 text-base">
-        {item.map((item) => (
-          <li>{item}</li>
+        {item.map((item,index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>

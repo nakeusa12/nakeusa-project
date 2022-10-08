@@ -82,7 +82,7 @@ export const ProjectCard = () => {
             ref={containerProject}
           >
             <div
-              className="absolute bg-main-dark w-full h-full z-[1]"
+              className="absolute bg-gray-200 dark:bg-main-dark w-full h-full z-[1]"
               ref={revealProject}
             />
             <div
@@ -104,7 +104,7 @@ export const ProjectCard = () => {
             ref={contentProject}
           >
             <div className="w-full h flex flex-col p-5 md:p-10">
-              <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase relative overflow-hidden">
+              <h1 className="font-k2d tracking-wide text-main-dark dark:text-white text-5xl uppercase relative overflow-hidden">
                 <span
                   className="inline-block translate-y-full opacity-0"
                   ref={titleProject}
@@ -114,13 +114,13 @@ export const ProjectCard = () => {
               </h1>
               <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
                 <span
-                  className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0"
+                  className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
                   ref={categoryProject}
                 >
                   Website Designer
                 </span>
                 <span
-                  className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0"
+                  className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
                   ref={yearProject}
                 >
                   2020

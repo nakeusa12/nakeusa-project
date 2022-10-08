@@ -49,7 +49,7 @@ const Layout = ({ children, titlePage, metaDescription }) => {
 
         {showTopButton && (
           <button
-            className="flex-center fixed right-5 md:right-8 bottom-5 md:bottom-8 z-10 rounded-full bg-main-purple text-xl text-white btn-gotop duration-300 ease-in-out"
+            className="flex-center fixed right-5 md:right-8 bottom-5 md:bottom-8 z-10 rounded-full bg-main-purple text-xl text-main-dark dark:text-white btn-gotop duration-300 ease-in-out"
             onClick={goToTop}
           >
             <span className="">

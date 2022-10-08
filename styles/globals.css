@@ -331,3 +331,9 @@ body::-webkit-scrollbar {
     transform: translate(0px, -50%);
   }
 }
+
+.marquee {
+  font-weight: bold;
+  white-space: nowrap;
+  width: max-content;
+}

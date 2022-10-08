@@ -4,6 +4,7 @@ import { Header } from "../Header";
 import { useEffect, useRef, useState } from "react";
 import { BsTriangleFill } from "react-icons/bs";
 import { CustomCursor } from "@components/basics/CustomCursor";
+import { Footer } from "../Footer";
 
 const Layout = ({ children, titlePage, metaDescription }) => {
   const title = titlePage ? `${titlePage} - Saiful Nakeusa` : "Saiful Nakeusa";
@@ -43,6 +44,8 @@ const Layout = ({ children, titlePage, metaDescription }) => {
         id="main-container"
       >
         {children}
+
+        <Footer />
 
         {showTopButton && (
           <button

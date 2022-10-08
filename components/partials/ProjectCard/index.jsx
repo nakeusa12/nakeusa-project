@@ -31,8 +31,7 @@ export const ProjectCard = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: cardProject.current,
-        // markers: true,
-        start: "top +=650",
+        start: "top +=900",
       },
     });
     tl.from(cardProject.current, { scale: 0, duration: 0.4 })

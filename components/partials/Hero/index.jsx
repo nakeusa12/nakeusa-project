@@ -14,7 +14,7 @@ export const Hero = () => {
 
   useEffect(() => {
     let tl = gsap.timeline();
-    tl.from(heroRef.current, { duration: 0.5, y: 150})
+    tl.from(heroRef.current, { duration: 0.5, y: 200})
       .to(containerImg.current, { duration: 0.5, visibility: "visible" }, "-=1")
       .to(revealImg.current, {
         duration: 0.7,
@@ -35,8 +35,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-row min-h-screen w-full">
-      <div className="relative max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto flex flex-col justify-center px-6 md:px-5 z-10" ref={heroRef}>
+    <section className="relative flex flex-row min-h-screen w-full" ref={heroRef}>
+      <div className="relative max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto flex flex-col justify-center px-6 md:px-5 z-10" >
         <div className="w-full block">
           <div className="inline-flex items-center dark:bg-main-blue bg-main-red py-2 px-5 xs:text-base sm:text-lg md:text-xl text-white font-medium uppercase tracking-[0.15rem]">
             HI EVERYONE <span className="wave text-xl md:text-2xl">👋</span>

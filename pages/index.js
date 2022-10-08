@@ -84,6 +84,11 @@ export default function Home() {
         />
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40">
           <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
         {/* <div className="flex justify-center w-full pt-10">
           <ButtonLink href={"/"} value={"View All Projects"} />
@@ -96,66 +101,108 @@ export default function Home() {
         />
 
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="group relative cursor-pointer overflow-hidden rounded">
-            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+          <div className="relative cursor-pointer rounded border-2 dark:border-main-dark border-gray-200 p-10 group">
+            <span className="text-sm text-main-dark/70 dark:text-white/70">
+              08 Oct, 2022 &#9679; 4 minutes ago
+            </span>
+            <div className="w-full aspect-auto my-5 group-hover:scale-105 duration-500 ease-in-out">
               <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
                 width={100}
-                height={100}
+                height={40}
+                objectFit={"cover"}
+                objectPosition={"center"}
               />
             </div>
-            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
-              <span className="font-koulen text-white tracking-wider">
-                Travelling
-              </span>
-              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
-                Islands in the archipelago with very beautiful views
-              </h3>
+            <div className="flex-col flex justify-between gap-y-10">
+              <div className="w-full space-y-3 relative">
+                <h3 className="text-main-dark dark:text-white text-xl font-semibold font-k2d">
+                  Islands in the archipelago with very beautiful views
+                </h3>
+                <p className="text-sm text-main-dark/70 dark:text-white/70 text-justify">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
+              </div>
+              <div className="w-full text-left">
+                <a href="#" className="inline-flex items-center ">
+                  <span className="w-0 h-[3px] group-hover:w-16  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                  <span className="relative mx-2 text-main-dark dark:text-white">Read More</span>
+                  <span className="w-16 h-[3px] group-hover:w-0  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                </a>
+              </div>
             </div>
           </div>
-          <div className="group relative cursor-pointer overflow-hidden rounded">
-            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+          <div className="relative cursor-pointer rounded border-2 dark:border-main-dark border-gray-200 p-10 group">
+            <span className="text-sm text-main-dark/70 dark:text-white/70">
+              08 Oct, 2022 &#9679; 4 minutes ago
+            </span>
+            <div className="w-full aspect-auto my-5 group-hover:scale-105 duration-500 ease-in-out">
               <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
                 width={100}
-                height={100}
+                height={40}
+                objectFit={"cover"}
+                objectPosition={"center"}
               />
             </div>
-            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
-              <span className="font-koulen text-white tracking-wider">
-                Travelling
-              </span>
-              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
-                Islands in the archipelago with very beautiful views
-              </h3>
+            <div className="flex-col flex justify-between gap-y-10">
+              <div className="w-full space-y-3 relative">
+                <h3 className="text-main-dark dark:text-white text-xl font-semibold font-k2d">
+                  Islands in the archipelago with very beautiful views
+                </h3>
+                <p className="text-sm text-main-dark/70 dark:text-white/70 text-justify">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
+              </div>
+              <div className="w-full text-left">
+                <a href="#" className="inline-flex items-center ">
+                  <span className="w-0 h-[3px] group-hover:w-16  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                  <span className="relative mx-2">Read More</span>
+                  <span className="w-16 h-[3px] group-hover:w-0  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                </a>
+              </div>
             </div>
           </div>
-          <div className="group relative cursor-pointer overflow-hidden rounded">
-            <div className="w-full aspect-square scale-100 group-hover:scale-110 duration-300 ease-out">
+          <div className="relative cursor-pointer rounded border-2 dark:border-main-dark border-gray-200 p-10 group">
+            <span className="text-sm text-main-dark/70 dark:text-white/70">
+              08 Oct, 2022 &#9679; 4 minutes ago
+            </span>
+            <div className="w-full aspect-auto my-5 group-hover:scale-105 duration-500 ease-in-out">
               <Image
                 src="/assets/images/img-travelling.png"
                 alt="post"
                 layout="responsive"
                 width={100}
-                height={100}
+                height={40}
+                objectFit={"cover"}
+                objectPosition={"center"}
               />
             </div>
-            <div className="w-full space-y-2 absolute top-0 left-0 h-full flex flex-col justify-end bg-gradient-to-b from-white/30 to-black/60 p-10">
-              <span className="font-koulen text-white tracking-wider">
-                Travelling
-              </span>
-              <h3 className="text-white text-xl md:text-3xl font-medium font-k2d">
-                Islands in the archipelago with very beautiful views
-              </h3>
+            <div className="flex-col flex justify-between gap-y-10">
+              <div className="w-full space-y-3 relative">
+                <h3 className="text-main-dark dark:text-white text-xl font-semibold font-k2d">
+                  Islands in the archipelago with very beautiful views
+                </h3>
+                <p className="text-sm text-main-dark/70 dark:text-white/70 text-justify">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
+              </div>
+              <div className="w-full text-left">
+                <a href="#" className="inline-flex items-center ">
+                  <span className="w-0 h-[3px] group-hover:w-16  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                  <span className="relative mx-2">Read More</span>
+                  <span className="w-16 h-[3px] group-hover:w-0  duration-500 ease-in-out bg-main-dark dark:bg-white"></span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="w-full h-full z-10 relative pt-20 pb-10">
+      <section className="w-full h-full z-10 relative pt-16 pb-10">
         <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 grid md:grid-cols-2 gap-x-10">
           <div className="w-full flex flex-col gap-y-20">
             <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white text-main-dark">

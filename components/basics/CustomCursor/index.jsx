@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import { useEffect, useRef } from "react";
 // import CustomCursorContext from "./context/CustomCursorContext";
 
 export const CustomCursor = () => {
   // const { type } = useContext(CustomCursorContext);
-  const secondaryCursor = React.useRef(null);
-  const mainCursor = React.useRef(null);
-  const positionRef = React.useRef({
+  const secondaryCursor = useRef(null);
+  const mainCursor = useRef(null);
+  const positionRef = useRef({
     mouseX: 0,
     mouseY: 0,
     destinationX: 0,
@@ -15,7 +15,7 @@ export const CustomCursor = () => {
     key: -1,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
 
@@ -23,9 +23,9 @@ export const CustomCursor = () => {
       const mouseY = clientY;
 
       positionRef.current.mouseX =
-        mouseX - secondaryCursor.current.clientWidth / 2;
+        mouseX - secondaryCursor.current.clientWidth / 1.5;
       positionRef.current.mouseY =
-        mouseY - secondaryCursor.current.clientHeight / 2;
+        mouseY - secondaryCursor.current.clientHeight / 1.15;
       mainCursor.current.style.transform = `translate3d(${mouseX -
         mainCursor.current.clientWidth / 2}px, ${mouseY -
         mainCursor.current.clientHeight / 2}px, 0)`;
@@ -49,7 +49,7 @@ export const CustomCursor = () => {
     return () => {};
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
       const {
@@ -84,7 +84,7 @@ export const CustomCursor = () => {
   }, []);
   return (
     // <div className={`cursor-wrapper ${type}`}>
-    <div className={`cursor-wrapper absolute`}>
+    <div className={`cursor-wrapper absolute hidden md:block`}>
       <div className="main-cursor before:bg-[url('/assets/images/view-project.png')]" ref={mainCursor} />
       <div className="secondary-cursor" ref={secondaryCursor}>
         <div className="cursor-background"></div>

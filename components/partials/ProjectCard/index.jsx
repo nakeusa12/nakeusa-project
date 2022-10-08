@@ -2,28 +2,29 @@ import gsap, { Power2 } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import SplitType from 'split-type'
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectCard = () => {
-  const [isHover, setIsHover] = useState(false)
+  const [isHover, setIsHover] = useState(false);
   const cardProject = useRef(null);
   const containerProject = useRef(null);
+  const categoryProject = useRef(null);
   const contentProject = useRef(null);
   const revealProject = useRef(null);
+  const titleProject = useRef(null);
+  const yearProject = useRef(null);
   const imgProject = useRef(null);
   const cardTL = useRef(null);
-
 
   const onMouseEnter = () => {
     cardTL.current.play();
     setIsHover(true);
   };
   const onMouseLeave = () => {
-    cardTL.current.timeScale(1);
+    cardTL.current.timeScale(1.5);
     cardTL.current.reverse();
-    setIsHover(false)
+    setIsHover(false);
   };
 
   useEffect(() => {
@@ -34,8 +35,8 @@ export const ProjectCard = () => {
         start: "top +=650",
       },
     });
-    tl.from(cardProject.current, { scale: 0 })
-      .to(containerProject.current, { duration: 0.5, visibility: "visible" })
+    tl.from(cardProject.current, { scale: 0, duration: 0.4 })
+      .to(containerProject.current, { duration: 0.2, visibility: "visible" })
       .to(revealProject.current, {
         duration: 0.5,
         width: "0%",
@@ -49,26 +50,20 @@ export const ProjectCard = () => {
   }, []);
 
   useEffect(() => {
-    let title = new SplitType(".titleProject")
-    let titleProject = document.querySelectorAll(".titleProject .char")
-    let categoryProject = document.querySelector(".categoryProject")
-    let yearProject = document.querySelector(".yearProject")
-    console.log(titleProject);
-
     cardTL.current = gsap
       .timeline({ paused: true, ease: Power2.easeInOut })
-      .to(contentProject.current, { visibility: "visible", duration: 0.2 }, "-=0.6")
-      .to(titleProject, {
+      .to(contentProject.current, { visibility: "visible", duration: 0.2 })
+      .to(titleProject.current, {
+        duration: 0.3,
         y: 0,
-        stagger: 0.1
-      }, "-=0.5")
-      .to([categoryProject, yearProject], {
+        opacity: 1,
+      })
+      .to([categoryProject.current, yearProject.current], {
         duration: 0.3,
         y: 0,
         stagger: 0.3,
-        opacity: 1
+        opacity: 1,
       });
-
   }, []);
 
   return (
@@ -92,7 +87,9 @@ export const ProjectCard = () => {
               ref={revealProject}
             />
             <div
-              className={`w-full aspect-square md:aspect-video duration-700 ease-in-out ${isHover ? "scale-105" : "scale-100"}`}
+              className={`w-full aspect-square md:aspect-video duration-700 ease-in-out ${
+                isHover ? "scale-105" : "scale-100"
+              }`}
               ref={imgProject}
             >
               <Image
@@ -104,18 +101,31 @@ export const ProjectCard = () => {
             </div>
           </div>
           <div
-            className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-end invisible"
+            className="absolute top-0 left-0 w-full h-full bg-white/50 dark:bg-black/50 flex items-end invisible"
             ref={contentProject}
           >
             <div className="w-full h flex flex-col p-5 md:p-10">
-              <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase titleProject">
-                BrigeZero
+              <h1 className="font-poppins tracking-wide font-koulen text-main-dark dark:text-white text-5xl uppercase relative overflow-hidden">
+                <span
+                  className="inline-block translate-y-full opacity-0"
+                  ref={titleProject}
+                >
+                  BrigeZero
+                </span>
               </h1>
               <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
-                <span className="font-k2d tracking-wide text-base inline-block translate-y-full categoryProject opacity-0">
+                <span
+                  className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0"
+                  ref={categoryProject}
+                >
                   Website Designer
                 </span>
-                <span className="font-koulen tracking-wide text-2xl inline-block translate-y-full yearProject  opacity-0">2020</span>
+                <span
+                  className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0"
+                  ref={yearProject}
+                >
+                  2020
+                </span>
               </div>
             </div>
           </div>

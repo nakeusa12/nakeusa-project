@@ -7,6 +7,7 @@ import SplitType from 'split-type'
 gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectCard = () => {
+  const [isHover, setIsHover] = useState(false)
   const cardProject = useRef(null);
   const containerProject = useRef(null);
   const contentProject = useRef(null);
@@ -17,10 +18,12 @@ export const ProjectCard = () => {
 
   const onMouseEnter = () => {
     cardTL.current.play();
+    setIsHover(true);
   };
   const onMouseLeave = () => {
-    cardTL.current.timeScale(2);
+    cardTL.current.timeScale(1);
     cardTL.current.reverse();
+    setIsHover(false)
   };
 
   useEffect(() => {
@@ -54,20 +57,15 @@ export const ProjectCard = () => {
 
     cardTL.current = gsap
       .timeline({ paused: true, ease: Power2.easeInOut })
-      .to(imgProject.current, {
-        scale: 1.05,
-        duration: 0.2,
-      })
-      .to(contentProject.current, { visibility: "visible", duration: 0.2 })
+      .to(contentProject.current, { visibility: "visible", duration: 0.2 }, "-=0.6")
       .to(titleProject, {
-        duration: 0.1,
         y: 0,
         stagger: 0.1
-      }, "-=1")
+      }, "-=0.5")
       .to([categoryProject, yearProject], {
         duration: 0.3,
         y: 0,
-        stagger: 0.5,
+        stagger: 0.3,
         opacity: 1
       });
 
@@ -81,7 +79,7 @@ export const ProjectCard = () => {
       >
         <a
           href="#"
-          className="relative group w-full h-auto cursor-none"
+          className="relative group w-full h-auto cursor-none content-card-project"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
@@ -94,7 +92,7 @@ export const ProjectCard = () => {
               ref={revealProject}
             />
             <div
-              className={`w-full aspect-square md:aspect-video duration-500 ease-in-out`}
+              className={`w-full aspect-square md:aspect-video duration-700 ease-in-out ${isHover ? "scale-105" : "scale-100"}`}
               ref={imgProject}
             >
               <Image
@@ -106,7 +104,7 @@ export const ProjectCard = () => {
             </div>
           </div>
           <div
-            className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-end content-card-project invisible"
+            className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-end invisible"
             ref={contentProject}
           >
             <div className="w-full h flex flex-col p-5 md:p-10">

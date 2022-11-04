@@ -53,7 +53,7 @@ const Layout = ({ children, titlePage, metaDescription }) => {
             onClick={goToTop}
           >
             <span className="">
-              <BsTriangleFill className="w-3 h-3" />
+              <BsTriangleFill className="w-3 h-3 md:w-5 md:h-5" />
             </span>
           </button>
         )}

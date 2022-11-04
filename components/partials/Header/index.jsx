@@ -18,9 +18,7 @@ export const Header = () => {
     });
   }, []);
 
-  const handleOpen = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const handleOpen = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
     if (menuOpen) {

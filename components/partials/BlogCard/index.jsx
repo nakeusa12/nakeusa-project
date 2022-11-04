@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const BlogCard = () => {
   return (
-    <div className="relative cursor-pointer rounded border-2 dark:border-main-dark border-gray-200 p-10 group">
+    <div className="relative cursor-pointer rounded border-2 dark:border-main-dark border-gray-200 p-8 group">
       <span className="text-sm text-main-dark/70 dark:text-white/70">
         08 Oct, 2022 &#9679; 4 minutes ago
       </span>

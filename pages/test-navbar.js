@@ -9,6 +9,7 @@ import cn from "classnames";
 import { useOnScreen } from "@hooks/useOnScreen";
 import Layout from "@components/partials/Layout";
 import { MarqueeText } from "@components/basics/MarqueeText";
+import { useRouter } from "next/router";
 gsap.registerPlugin(ScrollTrigger);
 
 const themes = [
@@ -22,6 +23,9 @@ export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const nav = ["Home", "test-navbar", "Works"];
+  const router = useRouter();
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -167,6 +171,20 @@ export default function TestNavbar() {
           <Nyobain status={"selesai"} />
         </div>
 
+        <ul className="flex gap-10">
+          {nav.map((href, index) => (
+            <li key={index}>
+              <Link href={`/${href}`}>
+                <a
+                  className={`${router.pathname === href ? "text-blue-500" : "text-zinc-400"} text-red-500 text-xs lg:text-base font-semibold cursor-pointer hover:text-primary transition duration-300 ease-in-out`}
+                >
+                  {href}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        {/* ${router.pathname === item.toLowerCase() ? "text-blue-500" : "text-zinc-400"}  */}
 
         <div className="p-8 flex justify-between items-center font-bold text-xl bg-th-background-secondary text-th-primary-dark">
           <span>
@@ -493,4 +511,3 @@ const projectData = [
     category: "Shooting / Adv.Campaing",
   },
 ];
-

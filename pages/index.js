@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { ButtonLink } from "@components/atoms/ButtonLink";
 import { ProjectCard } from "@components/molecules/ProjectCard";
 import { BlogCard } from "@components/molecules/BlogCard";
+import { QuoteSection } from "@components/organisms/QuoteSection";
 
 export default function Home() {
   const description =
@@ -34,9 +35,7 @@ export default function Home() {
   return (
     <Layout titlePage="Home" metaDescription={description}>
       <Hero />
-      <section className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
-        <QuoteOfTheDay />
-      </section>
+      <QuoteSection />
       <section className="w-full h-full mt-40">
         <MarqueeText
           text={"SERVICES • SERVICES • SERVICES • SERVICES • "}

@@ -1,7 +1,15 @@
 import quotes from "../../../json/quote.json";
 import { useEffect, useState } from "react";
 
-export const QuoteOfTheDay = () => {
+export const QuoteSection = () => {
+  return (
+    <section className="max-w-7xl 2xl:max-w-[1440px] w-full mx-auto px-6 md:px-5 z-10 relative mt-40 md:mt-0">
+      <QuoteOfTheDay />
+    </section>
+  );
+};
+
+const QuoteOfTheDay = () => {
   const [quote, setQuote] = useState(quotes);
 
   useEffect(() => {

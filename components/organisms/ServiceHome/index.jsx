@@ -1,7 +1,26 @@
 import { ButtonLink } from "@components/atoms/ButtonLink";
 import { MarqueeText } from "@components/atoms/MarqueeText";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 export const ServiceHome = () => {
+  useEffect(() => {
+    const serviceExplainWrap = document.querySelector(
+      ".serviceExplain-wrapper"
+    );
+    const serviceExplain = document.querySelector(".serviceExplain");
+    const techList = document.querySelectorAll(".tech-list");
+    let serviceTL = new gsap.timeline({
+      scrollTrigger: {
+        trigger: serviceExplainWrap,
+        start: "top bottom",
+      },
+    });
+
+    serviceTL.from(serviceExplain, { y: 200, opacity: 0, duration: 0.7 });
+    serviceTL.from(techList, { y: 200, opacity: 0, duration: 0.5, stagger: 0.1 }, "-=0.5");
+  }, []);
+
   return (
     <section className="w-full h-full mt-40">
       <MarqueeText

@@ -6,6 +6,7 @@
       "category": "WebApps",
       "image": "kaguka-foramu.png",
       "description": "The KRL access app is an application that is used to help commuter line users view schedules, routes, prices, positions, density, and news about the commuter line.",
+      "url": "https://kaguka-foramu.vercel.app/",
       "latest": true
     },
     {
@@ -14,6 +15,7 @@
       "category": "WebApps",
       "image": "tiphaus.png",
       "description": "The KRL access app is an application that is used to help commuter line users view schedules, routes, prices, positions, density, and news about the commuter line.",
+      "url": "https://tiphaus.com/",
       "latest": true
     },
     {
@@ -22,6 +24,7 @@
       "category": "WebApps",
       "image": "autoproctor.png",
       "description": "The KRL access app is an application that is used to help commuter line users view schedules, routes, prices, positions, density, and news about the commuter line.",
+      "url": "https://www.autoproctor.co/",
       "latest": true
     }
   ]

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar } from "@components/partials/Navbar";
+import { Navbar } from "@components/molecules/Navbar";
 import Link from "next/link";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
@@ -7,7 +7,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cn from "classnames";
 import { useOnScreen } from "@hooks/useOnScreen";
-import Layout from "@components/partials/Layout";
+import Layout from "@components/molecules/Layout";
 import { MarqueeText } from "@components/basics/MarqueeText";
 import { useRouter } from "next/router";
 gsap.registerPlugin(ScrollTrigger);

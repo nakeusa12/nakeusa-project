@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomCursorContext, {
   CursorLookType,
-} from "../context/CustomCursorContext";
+} from "./CustomCursorContext";
 
 const CustomCursorManager = ({ children }) => {
   const [type, setType] = useState<CursorLookType>("default");

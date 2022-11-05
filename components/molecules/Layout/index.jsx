@@ -1,10 +1,10 @@
 import Head from "next/head";
 import gsap, { TweenMax } from "gsap";
-import { Header } from "../Header";
+import { Header } from "../../organisms/Header";
 import { useEffect, useRef, useState } from "react";
 import { BsTriangleFill } from "react-icons/bs";
-import { CustomCursor } from "@components/basics/CustomCursor";
-import { Footer } from "../Footer";
+import { CustomCursor } from "@components/atoms/CustomCursor";
+import { Footer } from "../../organisms/Footer";
 
 const Layout = ({ children, titlePage, metaDescription }) => {
   const title = titlePage ? `${titlePage} - Saiful Nakeusa` : "Saiful Nakeusa";
@@ -58,8 +58,6 @@ const Layout = ({ children, titlePage, metaDescription }) => {
           </button>
         )}
       </main>
-
-      {/* <Footer /> */}
     </>
   );
 };

@@ -1,14 +1,14 @@
-import { Hero } from "@components/partials/Hero";
-import Layout from "@components/partials/Layout";
+import { Hero } from "@components/organisms/Hero";
+import Layout from "@components/molecules/Layout";
 
 import gsap from "gsap";
 // import { Project } from "@components/partials/Project";
-import { QuoteOfTheDay } from "@components/partials/QuoteOfTheDay";
-import { MarqueeText } from "@components/basics/MarqueeText";
+import { QuoteOfTheDay } from "@components/molecules/QuoteOfTheDay";
+import { MarqueeText } from "@components/atoms/MarqueeText";
 import { useEffect } from "react";
-import { ButtonLink } from "@components/basics/ButtonLink";
-import { ProjectCard } from "@components/partials/ProjectCard";
-import { BlogCard } from "@components/partials/BlogCard";
+import { ButtonLink } from "@components/atoms/ButtonLink";
+import { ProjectCard } from "@components/molecules/ProjectCard";
+import { BlogCard } from "@components/molecules/BlogCard";
 
 export default function Home() {
   const description =

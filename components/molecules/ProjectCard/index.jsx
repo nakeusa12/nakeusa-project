@@ -109,7 +109,7 @@ export const ProjectCard = () => {
                   className="inline-block translate-y-full opacity-0"
                   ref={titleProject}
                 >
-                  BrigeZero
+                  BridgeZero
                 </span>
               </h1>
               <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
@@ -117,7 +117,7 @@ export const ProjectCard = () => {
                   className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
                   ref={categoryProject}
                 >
-                  Website Designer
+                 Website UI UX Design
                 </span>
                 <span
                   className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
@@ -136,30 +136,3 @@ export const ProjectCard = () => {
     </>
   );
 };
-
-const projectData = [
-  {
-    src: "/assets/images/images.png",
-    title: "Dracaena Trifasciata",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
-  },
-  {
-    src: "/assets/images/images.png",
-    title: "Cereus Penuvianus",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
-  },
-  {
-    src: "/assets/images/images.png",
-    title: "Calliope",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
-  },
-  {
-    src: "/assets/images/images.png",
-    title: "Golden Pothos",
-    subtitle: "Living Room",
-    category: "Shooting / Adv.Campaing",
-  },
-];

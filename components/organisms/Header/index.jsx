@@ -47,7 +47,7 @@ export const Header = () => {
                 <div
                   className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
                     menuOpen
-                      ? "-rotate-45  -translate-x-[5px] translate-y-[6px]"
+                      ? "-rotate-45  translate-y-[6px]"
                       : ""
                   }`}
                 ></div>
@@ -55,7 +55,7 @@ export const Header = () => {
                 <div
                   className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
                     menuOpen
-                      ? "rotate-45 -translate-x-[5px] -translate-y-[7px]"
+                      ? "rotate-45 -translate-y-[7px]"
                       : ""
                   }`}
                 ></div>

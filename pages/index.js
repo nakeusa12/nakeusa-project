@@ -6,6 +6,7 @@ import { QuoteSection } from "@components/organisms/QuoteSection";
 import { ServiceHome } from "@components/organisms/ServiceHome";
 import { LatestProject } from "@components/organisms/LatestProject";
 import { LatestBlog } from "@components/organisms/LatestBlog";
+import { Footer } from "@components/organisms/Footer";
 
 export default function Home() {
   const description =
@@ -18,6 +19,7 @@ export default function Home() {
       <ServiceHome />
       <LatestProject />
       <LatestBlog />
+      <Footer />
     </Layout>
   );
 }

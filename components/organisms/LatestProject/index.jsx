@@ -1,11 +1,7 @@
 import { MarqueeText } from "@components/atoms/MarqueeText";
 import { ProjectCard } from "@components/molecules/ProjectCard";
-import { useState } from "react";
-import data from "../../../json/data.json";
 
 export const LatestProject = () => {
-  const [project, setProject] = useState(data.projects);
-
   return (
     <section className="w-full h-full mt-40">
       <MarqueeText

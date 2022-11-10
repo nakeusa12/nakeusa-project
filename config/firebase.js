@@ -1,9 +1,16 @@
 import { initializeApp, getApps } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzlhEaulB9UW3fWv64t4ixgVodXknDXTU",
   authDomain: "nakeusa-project.firebaseapp.com",
+  databaseURL: "https://nakeusa-project-default-rtdb.firebaseio.com",
   projectId: "nakeusa-project",
   storageBucket: "nakeusa-project.appspot.com",
   messagingSenderId: "591243211429",
@@ -12,44 +19,47 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
 if (!getApps().length) {
-  initializeApp(firebaseConfig);
+  firebaseApp
 }
+
+export const database = getDatabase(firebaseApp)
+export default firebaseApp;
 
 export const FirebaseAuth = getAuth();
 
 export const Authentication = () => {
-    return FirebaseAuth
-}
+  return FirebaseAuth;
+};
 
 export const SignUp = async (email, password) => {
-    await createUserWithEmailAndPassword(FirebaseAuth, email, password)
-}
+  await createUserWithEmailAndPassword(FirebaseAuth, email, password);
+};
 
 export const SignIn = async (email, password) => {
-    await signInWithEmailAndPassword(FirebaseAuth, email, password)
-}
+  await signInWithEmailAndPassword(FirebaseAuth, email, password);
+};
 
 export const SignOut = async () => {
-    await signOut(FirebaseAuth);
-}
-
+  await signOut(FirebaseAuth);
+};
 
 export const getSignInErrorMessage = (code) => {
-    switch (code) {
-        case 'auth/user-not-found':
-            return 'Email tidak terdaftar'
-        case 'auth/wrong-password':
-        default:
-            return 'Email atau password salah'
-    }
-}
+  switch (code) {
+    case "auth/user-not-found":
+      return "Email tidak terdaftar";
+    case "auth/wrong-password":
+    default:
+      return "Email atau password salah";
+  }
+};
 
 export const getSignUpErrorMessage = (code) => {
-    switch (code) {
-        case 'auth/email-already-in-use':
-            return 'Email sudah terdaftar'
-        default:
-            return 'Terjadi kesalahan saat proses sign up.'
-    }
-}
+  switch (code) {
+    case "auth/email-already-in-use":
+      return "Email sudah terdaftar";
+    default:
+      return "Terjadi kesalahan saat proses sign up.";
+  }
+};

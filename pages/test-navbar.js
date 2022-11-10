@@ -8,8 +8,11 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cn from "classnames";
 import { useOnScreen } from "@hooks/useOnScreen";
 import Layout from "@components/molecules/Layout";
-import { MarqueeText } from "@components/basics/MarqueeText";
 import { useRouter } from "next/router";
+import { MarqueeText } from "@components/atoms/MarqueeText";
+import useGetValue from "hooks/useGetValue";
+import useCreateValue from "@hooks/useCreateValue";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const themes = [
@@ -23,9 +26,34 @@ export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const posts = useGetValue("posts", false);
+  const create = useCreateValue();
+  const createProduct = useCreateValue();
+
+  console.log(createProduct);
 
   const nav = ["Home", "test-navbar", "Works"];
   const router = useRouter();
+
+  const createPost = async () => {
+    const path = '/posts';
+    const value = { title: 'Post dari create value', content: 'Ini adalah hasilnya'}
+
+    await create.pushValue(path, value)
+  }
+
+  const createNewProduct = async () => {
+    const path = '/products';
+    const value = { 
+      name: 'Jam Tangan', 
+      category: "Aksesoris",
+      price: '70000',
+      timestamp: Date.now(),
+      userId: '001'
+    }
+
+    await createProduct.setValueWithKey(path, value)
+  }
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -44,9 +72,28 @@ export default function TestNavbar() {
 
   if (!mounted) return null;
 
+  if (posts.isLoading) {
+    return <p>Fetching data...</p>;
+  }
+  // const data = Object.values(posts.snapshot);
+
   return (
     <>
       <Layout title="Test">
+        <div className="p-10">
+          <button onClick={createPost}>
+            Push Value
+          </button>
+          <button onClick={createNewProduct} className="ml-2">
+            Add Product
+          </button>
+          {/* {data.map((item, index) => (
+            <div key={index}>
+              <h2 className="font-bold">{item.title}</h2>
+              <p className="text-sm">{item.content}</p>
+            </div>
+          ))} */}
+        </div>
         <div className="mb-10 dark:bg-red-200">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
           explicabo a, non ullam tempore rem molestiae nesciunt officiis
@@ -176,7 +223,9 @@ export default function TestNavbar() {
             <li key={index}>
               <Link href={`/${href}`}>
                 <a
-                  className={`${router.pathname === href ? "text-blue-500" : "text-zinc-400"} text-red-500 text-xs lg:text-base font-semibold cursor-pointer hover:text-primary transition duration-300 ease-in-out`}
+                  className={`${
+                    router.pathname === href ? "text-blue-500" : "text-zinc-400"
+                  } text-red-500 text-xs lg:text-base font-semibold cursor-pointer hover:text-primary transition duration-300 ease-in-out`}
                 >
                   {href}
                 </a>
@@ -273,6 +322,17 @@ export default function TestNavbar() {
   );
 }
 
+const CreateValue = () => {
+  return(
+    <p>lorem</p>
+  )
+}
+const PushValue = () => {
+  return(
+    <p>lorem</p>
+  )
+}
+
 const Nyobain = ({ status }) => {
   return (
     <div
@@ -341,7 +401,6 @@ const Gallery = () => {
 
   useEffect(() => {
     let sections = gsap.utils.toArray(".gallery-item-wrapper");
-    console.log(sections);
 
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
@@ -425,7 +484,6 @@ export const Project = () => {
 
   useEffect(() => {
     const totalProjects = projects.current.length;
-    console.log(totalProjects);
 
     gsap.to(projects.current, {
       xPercent: -100 * (totalProjects - 1),

@@ -69,8 +69,11 @@ body::-webkit-scrollbar {
     @apply ml-auto md:flex-row-reverse;
   }
 
-  body {
+  /* body {
     @apply transition-colors ease-linear cursor-default md:cursor-none;
+  } */
+  body {
+    @apply transition-colors ease-linear cursor-default;
   }
 }
 

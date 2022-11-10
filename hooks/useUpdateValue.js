@@ -1,25 +1,21 @@
 import { database } from "config/firebase";
-import { push, set, ref, child } from "firebase/database";
+import { update, ref, child } from "firebase/database";
 import { useRef, useState } from "react";
-import useKey from "./useKey";
 
 // push = menambah data baru
 // set = replace data, menghapus yg sudah ada lalu diganti dengan yg baru
 
-const useCreateValue = () => {
+const useUpdateValue = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const data = useRef(null);
   const error = useRef(null);
   const success = useRef(null);
-  const key = useKey()
 
-  const pushValue = async (path, value) => {
+  const updateDoc = async (path, value) => {
     setIsLoading(true);
     try {
       const rootReference = ref(database);
       const dbPath = child(rootReference, path);
-      const dbPush = await push(dbPath, value);
-      data.current = { key: dbPush.key, value}
+      await update(dbPath, value);
       success.current = true;
     } catch (pushError) {
       error.current = pushError.message;
@@ -27,13 +23,11 @@ const useCreateValue = () => {
     setIsLoading(false);
   };
 
-  const setValueWithKey = async (path, value) => {
+  const updateField = async (updates) => {
     setIsLoading(true);
     try {
       const rootReference = ref(database);
-      const dbKey = key.generate(path)
-      const dbPath = child(rootReference, `${path}/${dbKey}`);
-      await set(dbPath, value);
+      await update(rootReference, updates);
       success.current = true;
     } catch (pushError) {
       error.current = pushError.message;
@@ -43,12 +37,11 @@ const useCreateValue = () => {
 
   return {
     isLoading,
-    data: data.current,
     error: error.current,
     success: success.current,
-    pushValue,
-    setValueWithKey,
+    updateDoc,
+    updateField    
   };
 };
 
-export default useCreateValue;
+export default useUpdateValue;

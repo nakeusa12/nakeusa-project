@@ -21,6 +21,7 @@ const useCreateValue = () => {
       const dbPush = await push(dbPath, value);
       data.current = { key: dbPush.key, value}
       success.current = true;
+      window.location.reload(false)
     } catch (pushError) {
       error.current = pushError.message;
     }

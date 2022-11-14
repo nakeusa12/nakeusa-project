@@ -16,6 +16,8 @@ import useUpdateValue from "@hooks/useUpdateValue";
 import useRemoveValue from "@hooks/useRemoveValue";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { database, storage } from "config/firebase";
+import useQuery from "@hooks/useQuery";
+import { equalTo, limitToFirst, limitToLast, startAt } from "firebase/database";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,12 +31,19 @@ const themes = [
 export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
+
   const posts = useGetValue("posts");
   const create = useCreateValue();
   const createProduct = useCreateValue();
-
   const update = useUpdateValue();
   const remove = useRemoveValue("posts/-NGVcIbVzKF1Pi3-r_W1");
+  const query = useQuery({
+    path: "posts",
+    type: "value",
+    queries: [limitToFirst(2)],
+  });
+
+  console.log(query);
 
   const form = useRef();
 

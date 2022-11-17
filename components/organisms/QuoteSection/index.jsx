@@ -18,6 +18,10 @@ const QuoteOfTheDay = () => {
     setInterval(() => {
       filterQuote();
     }, 60000);
+
+    return function cleanup() {
+      clearInterval(loop);
+    };
   }, []);
 
   const filterQuote = () => {

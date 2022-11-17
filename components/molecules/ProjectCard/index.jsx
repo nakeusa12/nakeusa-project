@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ProjectCard = () => {
+export const ProjectCard = ({ item, index, totalKey }) => {
   const [isHover, setIsHover] = useState(false);
   const cardProject = useRef(null);
   const containerProject = useRef(null);
@@ -86,13 +86,13 @@ export const ProjectCard = () => {
               ref={revealProject}
             />
             <div
-              className={`w-full aspect-square md:aspect-video duration-700 ease-in-out ${
+              className={`w-full aspect-square md:aspect-video duration-700 ease-in-out relative ${
                 isHover ? "scale-105" : "scale-100"
               }`}
               ref={imgProject}
             >
               <Image
-                src="/assets/images/project-img.png"
+                src={item.image}
                 alt="project-item"
                 layout="fill"
                 objectFit="cover"
@@ -109,7 +109,7 @@ export const ProjectCard = () => {
                   className="inline-block translate-y-full opacity-0"
                   ref={titleProject}
                 >
-                  BridgeZero
+                  {item.name}
                 </span>
               </h1>
               <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
@@ -117,7 +117,7 @@ export const ProjectCard = () => {
                   className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
                   ref={categoryProject}
                 >
-                 Website UI UX Design
+                  {item.category}
                 </span>
                 <span
                   className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
@@ -130,7 +130,7 @@ export const ProjectCard = () => {
           </div>
         </a>
         <span className="text-base sm:text-lg md:text-xl lg:text-2xl">
-          01/06
+          0{index + 1}/0{totalKey}
         </span>
       </article>
     </>

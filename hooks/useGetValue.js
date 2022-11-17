@@ -2,8 +2,8 @@ import { getDatabase, ref, get, child } from "firebase/database";
 import firebaseApp from "config/firebase";
 import { useEffect, useRef, useState } from "react";
 
-const useGetValue = (path, initialLoad = true) => {
-  const [isLoading, setIsLoading] = useState(initialLoad);
+const useGetValue = (path) => {
+  const [isLoading, setIsLoading] = useState(true);
   const snapshot = useRef(null);
   const error = useRef(null);
   const isEmpty = useRef(null);
@@ -27,17 +27,17 @@ const useGetValue = (path, initialLoad = true) => {
     setIsLoading(false);
   };
 
-  const getValueLater = () => setIsLoading(true);
+  // const getValueLater = () => setIsLoading(true);
 
   useEffect(() => {
-    if (isLoading) {
+    // if (isLoading) {
       getValue();
-    }
-  }, [isLoading]);
+    // }
+  }, []);
 
   return {
     isLoading,
-    getValueLater,
+    // getValueLater,
     snapshot: snapshot.current,
     error: error.current,
     isEmpty: isEmpty.current,

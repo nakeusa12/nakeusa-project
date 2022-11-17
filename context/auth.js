@@ -10,11 +10,8 @@ const AuthStateChangeProvider = ({ children }) => {
   const InitiateAuthStateChange = () => {
     Authentication().onAuthStateChanged((user) => {
       if (user) {
-        console.log("User Login");
-        console.log(user);
         SetUser({ email: user.email, uid: user.uid })
       } else {
-        console.log("User Tidak Login");
         SetUser(initialUserState)
       }
       setIsLoading(false)

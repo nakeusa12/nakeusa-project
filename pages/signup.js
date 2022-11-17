@@ -30,7 +30,6 @@ const SignUp = () => {
       await SignUpToFirebase(email, password);
     } catch (error) {
       const message = getSignUpErrorMessage(error.code);
-      console.log(message);
     //   alert(message);
       setIsLoading(false);
     }

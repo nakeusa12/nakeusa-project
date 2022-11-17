@@ -39,7 +39,7 @@ const Layout = ({ children, titlePage, metaDescription }) => {
       {/* <CustomCursor /> */}
       <Header />
       <main
-        className="antialiased bg-white dark:bg-black pl-0 md:pl-20 overflow-hidden"
+        className="antialiased bg-white dark:bg-black pl-0 md:pl-20 overflow-hidden relative"
         id="main-container"
       >
         {children}

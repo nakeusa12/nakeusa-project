@@ -32,18 +32,16 @@ export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const posts = useGetValue("posts");
+  const posts = useGetValue("projects");
   const create = useCreateValue();
   const createProduct = useCreateValue();
   const update = useUpdateValue();
   const remove = useRemoveValue("posts/-NGVcIbVzKF1Pi3-r_W1");
-  const query = useQuery({
-    path: "posts",
-    type: "value",
-    queries: [limitToFirst(2)],
-  });
-
-  console.log(query);
+  // const query = useQuery({
+  //   path: "posts",
+  //   type: "value",
+  //   queries: [limitToFirst(2)],
+  // });
 
   const form = useRef();
 
@@ -167,10 +165,13 @@ export default function TestNavbar() {
           </button>
           {data.map((item, index) => (
             <div key={index}>
-              <h2 className="font-bold">{item.title || item.name}</h2>
-              <p className="text-sm">{item.content || item.desc}</p>
-              <p className="text-sm">{item.url}</p>
+              <h2 className="font-bold">{item.name}</h2>
+              <p className="text-sm">{item.description}</p>
+              <p className="text-sm">{item.urlWebsite}</p>
               <img src={item.image} alt="image" />
+              {item.stack.map(stack => (
+                <p>{stack.label}</p>
+              ))}
             </div>
           ))}
 

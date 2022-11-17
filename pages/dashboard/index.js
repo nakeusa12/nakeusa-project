@@ -120,7 +120,7 @@ const Dashboard = () => {
               ))}
             </select>
             <MultiSelect
-              options={options}
+              options={optionsStack}
               value={stackSelected}
               onChange={setStackSelected}
               labelledBy="Select"
@@ -136,13 +136,6 @@ const Dashboard = () => {
                 <img src={imagePreview} alt="test" className="mt-4" />
               )}
             </div>
-            {/* <textarea
-              name="description"
-              id="description"
-              value={form.description}
-              onChange={handleChange}
-              className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            /> */}
             <Editor
               name="description"
               value={dataDescription}
@@ -150,8 +143,6 @@ const Dashboard = () => {
                 setDataDescription(data);
               }}
             />
-
-            {JSON.stringify(dataDescription)}
 
             <div className="text-center lg:text-left">
               <button
@@ -194,8 +185,25 @@ const optionsCaterory = [
   { label: "Web Design", value: "Web Design" },
   { label: "Progressive Web Apps", value: "Progressive Web Apps" },
 ];
-const options = [
-  { label: "React Js", value: "reactjs" },
-  { label: "Svelte Js", value: "sveltejs" },
-  { label: "Vue Js", value: "vuejs" },
+
+const optionsStack = [
+  { label: "HTML5", value: "HTML5" },
+  { label: "CSS3", value: "CSS3" },
+  { label: "JavaScript", value: "JavaScript" },
+  { label: "TypeScript", value: "TypeScript" },
+  { label: "React JS", value: "ReactJS" },
+  { label: "Next JS", value: "NextJS" },
+  { label: "Gatsby JS", value: "GatsbyJS" },
+  { label: "Vue JS", value: "VueJS" },
+  { label: "Nuxt JS", value: "NuxtJS" },
+  { label: "SvelteJS", value: "Svelte JS" },
+  { label: "SvelteKit", value: "SvelteKit" },
+  { label: "TailwindCSS", value: "TailwindCSS" },
+  { label: "Styled-components", value: "Styled-components" },
+  { label: "Bootstrap", value: "Bootstrap" },
+  { label: "GSAP", value: "GSAP" },
+  { label: "Framer Motion", value: "FramerMotion" },
+  { label: "Express JS", value: "ExpressJS" },
+  { label: "MongoDB", value: "MongoDB" },
+  { label: "Firebase", value: "Firebase" },
 ];

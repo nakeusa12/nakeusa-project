@@ -18,6 +18,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { database, storage } from "config/firebase";
 import useQuery from "@hooks/useQuery";
 import { equalTo, limitToFirst, limitToLast, startAt } from "firebase/database";
+import parse from 'html-react-parser'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,7 +167,7 @@ export default function TestNavbar() {
           {data.map((item, index) => (
             <div key={index}>
               <h2 className="font-bold">{item.name}</h2>
-              <p className="text-sm">{item.description}</p>
+              <div className="prose prose-a:text-blue-500">{parse(item.description)}</div>
               <p className="text-sm">{item.urlWebsite}</p>
               <img src={item.image} alt="image" />
               {item.stack.map(stack => (

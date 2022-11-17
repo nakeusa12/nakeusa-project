@@ -1,3 +1,4 @@
+import Editor from "@components/atoms/Editor";
 import FormError from "@components/molecules/Forms/Error";
 import Layout from "@components/molecules/Layout";
 import useCreateValue from "@hooks/useCreateValue";
@@ -11,16 +12,15 @@ import Select from "react-select";
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const create = useCreateValue();
-
   const [imagePreview, setImagePreview] = useState(null);
   const [file, setFile] = useState("");
-  const [per, setPerc] = useState(null);
+  const [dataDescription, setDataDescription] = useState("");
   const [stackSelected, setStackSelected] = useState([]);
   const [form, setForm] = useState({
     name: "",
     urlWebsite: "",
     category: "",
-    description: "",
+    // description: "",
   });
 
   const handleChange = (e) => {
@@ -38,9 +38,11 @@ const Dashboard = () => {
     const name = form.name;
     const urlWebsite = form.urlWebsite;
     const category = form.category;
-    const description = form.description;
+    const description = dataDescription;
     const stack = stackSelected;
     const image = file;
+
+    console.log({category, description});
 
     const storageRef = ref(storage, `projects/${image.name}`);
 
@@ -130,15 +132,26 @@ const Dashboard = () => {
                 placeholder="image"
                 onChange={(e) => onImageUpload(e)}
               />
-              {imagePreview && <img src={imagePreview} alt="test" className="mt-4" />}
+              {imagePreview && (
+                <img src={imagePreview} alt="test" className="mt-4" />
+              )}
             </div>
-            <textarea
+            {/* <textarea
               name="description"
               id="description"
               value={form.description}
               onChange={handleChange}
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            /> */}
+            <Editor
+              name="description"
+              value={dataDescription}
+              onChange={(data) => {
+                setDataDescription(data);
+              }}
             />
+
+            {JSON.stringify(dataDescription)}
 
             <div className="text-center lg:text-left">
               <button

@@ -96,6 +96,7 @@ export const ProjectCard = ({ item, index, totalKey }) => {
                 alt="project-item"
                 layout="fill"
                 objectFit="cover"
+                priority
               />
             </div>
           </div>

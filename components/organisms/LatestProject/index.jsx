@@ -10,8 +10,6 @@ export const LatestProject = () => {
   const data = Object.values(posts.snapshot);
   let totalKey = Object.keys(data).length
 
-  console.log(data);
-
   return (
     <section className="w-full h-full mt-40">
       <MarqueeText

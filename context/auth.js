@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { initialUserState, useUser } from "./user";
 
 const AuthStateChangeProvider = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(false); //before true
+  const [isLoading, setIsLoading] = useState(true); //before true
   const user = useUser();
   const { SetUser } = user;
 
@@ -23,7 +23,7 @@ const AuthStateChangeProvider = ({ children }) => {
   }, []);
 
   if(isLoading){
-    return <h1>Loading...</h1>
+    return <h1></h1>
   }
 
   return children;

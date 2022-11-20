@@ -1,4 +1,4 @@
-import quotes from "../../../json/quote.json";
+import quotes from "json/quote.json";
 import { useEffect, useState } from "react";
 
 export const QuoteSection = () => {
@@ -20,7 +20,7 @@ const QuoteOfTheDay = () => {
     }, 60000);
 
     return function cleanup() {
-      clearInterval(loop);
+      clearInterval();
     };
   }, []);
 

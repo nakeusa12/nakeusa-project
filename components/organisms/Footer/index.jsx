@@ -1,12 +1,5 @@
-import { BsTriangleFill } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
-import { SiMinutemailer } from "react-icons/si";
-import {
-  FaTwitter,
-  FaLinkedin,
-  FaGithub,
-  FaFacebookSquare,
-} from "react-icons/fa";
+import { IoDocumentText } from "react-icons/io5";
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -26,20 +19,32 @@ export const Footer = () => {
             </Link>
           </span>
           <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20 dark:text-white text-main-dark">
-            <li>
-              <FaTwitter className="text-3xl" />
-            </li>
-            <li>
-              <FaLinkedin className="text-3xl" />
-            </li>
-            <li>
-              <FaGithub className="text-3xl" />
-            </li>
-            <li>
-              <SiMinutemailer className="text-3xl" />
-            </li>
+            <Link href={"https://twitter.com/nakeusaa"}>
+              <a target="_blank">
+                <FaTwitter className="text-3xl" />
+              </a>
+            </Link>
+            <Link href={"https://www.linkedin.com/in/nakeusa09/"}>
+              <a target="_blank">
+                <FaLinkedin className="text-3xl" />
+              </a>
+            </Link>
+            <Link href={"https://github.com/nakeusa12"}>
+              <a target="_blank">
+                <FaGithub className="text-3xl" />
+              </a>
+            </Link>
+            <Link
+              href={
+                "https://drive.google.com/file/d/1mXB2BXdFI2BjquCVnhAiNdxoEDCI01TR/view?usp=share_link"
+              }
+            >
+              <a target="_blank">
+                <IoDocumentText className="text-3xl text-main-dark dark:text-white" />
+              </a>
+            </Link>
           </ul>
-          <p className="dark:text-white text-main-dark">
+          <p className="dark:text-white text-main-dark ">
             Thanks to several websites for the inspiration. coding by me ©2022
           </p>
         </div>

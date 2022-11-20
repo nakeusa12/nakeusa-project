@@ -121,7 +121,7 @@ export const ProjectCard = ({ item, index }) => {
                     ref={categoryProject}
                   >
                     {item.stack.map(stack => (
-                      <span className="mr-3">
+                      <span className="mr-3" key={stack.value}>
                       #{stack.label}
                       </span>
                     ))}

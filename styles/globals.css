@@ -59,22 +59,22 @@ body::-webkit-scrollbar {
 
 /* =============================================== */
 @layer base {
-  /* .activeImageProject{
+  .activeImageProject{
     @apply absolute left-5 md:left-20 -z-10 h-full leading-4 text-transparent font-extrabold flex flex-row justify-center md:justify-start gap-x-4 text-8xl opacity-10 top-[15%];
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke: 2px #2140F4;
-  } */
+  }
 
   .card-project:nth-of-type(even) {
     @apply ml-auto md:flex-row-reverse;
   }
 
-  /* body {
-    @apply transition-colors ease-linear cursor-default md:cursor-none;
-  } */
   body {
-    @apply transition-colors ease-linear cursor-default;
+    @apply transition-colors ease-linear cursor-default md:cursor-none;
   }
+  /* body {
+    @apply transition-colors ease-linear cursor-default;
+  } */
 
 }
 
@@ -233,7 +233,7 @@ body::-webkit-scrollbar {
   -moz-transform: scale(2.5);
   -ms-transform: scale(2.5);
   -o-transform: scale(2.5);
-  /* animation: viewProject .3s ease-in-out; */
+  animation: viewProject .3s ease-in-out;
 }
 
 .secondary-cursor.active {
@@ -244,7 +244,7 @@ body::-webkit-scrollbar {
   -ms-transform: scale(0);
   -o-transform: scale(0);
 }
-/* 
+
 @keyframes viewProject {
   0% {
     transform: scale(1);
@@ -253,7 +253,7 @@ body::-webkit-scrollbar {
   100% {
     transform: scale(2.5);
   }
-} */
+}
 
 @keyframes fadeIn {
   0% {

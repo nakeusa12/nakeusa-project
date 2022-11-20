@@ -1,15 +1,9 @@
 import { MarqueeText } from "@components/atoms/MarqueeText";
 import { ProjectCard } from "@components/molecules/ProjectCard";
-import useGetValue from "@hooks/useGetValue";
+
+import { projects } from "json/data.json";
 
 export const LatestProject = () => {
-  const posts = useGetValue("projects");
-  if (posts.isLoading) {
-    return <p>Fetching data...</p>;
-  }
-  const data = Object.values(posts.snapshot);
-  let totalKey = Object.keys(data).length
-
   return (
     <section className="w-full h-full mt-40">
       <MarqueeText
@@ -17,11 +11,11 @@ export const LatestProject = () => {
         title={"LATEST WORKS"}
       />
       <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40">
-        {data.map((item, index) => {
-          return(
-            <ProjectCard key={index} item={item} index={index} totalKey={totalKey} />
-          )
-        })}
+        {projects
+          // .filter((project) => project.latest)
+          .map((project, index) => (
+            <ProjectCard item={project} key={index} index={index} />
+          ))}
       </div>
     </section>
   );

@@ -26,9 +26,9 @@ export const CustomCursor = () => {
         mouseX - secondaryCursor.current.clientWidth / 1.5;
       positionRef.current.mouseY =
         mouseY - secondaryCursor.current.clientHeight / 1.15;
-      mainCursor.current.style.transform = `translate3d(${mouseX -
-        mainCursor.current.clientWidth / 2}px, ${mouseY -
-        mainCursor.current.clientHeight / 2}px, 0)`;
+      mainCursor.current.style.transform = `translate3d(${
+        mouseX - mainCursor.current.clientWidth / 2
+      }px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
     });
 
     const cardProject = document.querySelectorAll(".content-card-project");
@@ -44,7 +44,6 @@ export const CustomCursor = () => {
         secondaryCursor.current.classList.remove("active");
       });
     });
-
 
     return () => {};
   }, []);
@@ -85,7 +84,10 @@ export const CustomCursor = () => {
   return (
     // <div className={`cursor-wrapper ${type}`}>
     <div className={`cursor-wrapper absolute hidden md:block`}>
-      <div className="main-cursor before:bg-[url('/assets/images/view-project.png')]" ref={mainCursor} />
+      <div
+        className="main-cursor before:bg-[url('/assets/images/view-project.png')]"
+        ref={mainCursor}
+      />
       <div className="secondary-cursor" ref={secondaryCursor}>
         <div className="cursor-background"></div>
       </div>

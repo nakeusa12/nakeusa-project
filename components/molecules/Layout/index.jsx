@@ -36,7 +36,7 @@ const Layout = ({ children, titlePage, metaDescription }) => {
       </Head>
 
       <div className="noise"></div>
-      {/* <CustomCursor /> */}
+      <CustomCursor />
       <Header />
       <main
         className="antialiased bg-white dark:bg-black pl-0 md:pl-20 overflow-hidden relative"

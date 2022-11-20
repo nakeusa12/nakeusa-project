@@ -42,8 +42,6 @@ const Dashboard = () => {
     const stack = stackSelected;
     const image = file;
 
-    console.log({category, description});
-
     const storageRef = ref(storage, `projects/${image.name}`);
 
     uploadBytes(storageRef, image).then(
@@ -206,4 +204,5 @@ const optionsStack = [
   { label: "Express JS", value: "ExpressJS" },
   { label: "MongoDB", value: "MongoDB" },
   { label: "Firebase", value: "Firebase" },
+  { label: "Wordpress", value: "Wordpress" },
 ];

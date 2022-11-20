@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { initialUserState, useUser } from "./user";
 
 const AuthStateChangeProvider = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); //before true
   const user = useUser();
   const { SetUser } = user;
 

@@ -10,14 +10,6 @@ import { useOnScreen } from "@hooks/useOnScreen";
 import Layout from "@components/molecules/Layout";
 import { useRouter } from "next/router";
 import { MarqueeText } from "@components/atoms/MarqueeText";
-import useGetValue from "hooks/useGetValue";
-import useCreateValue from "@hooks/useCreateValue";
-import useUpdateValue from "@hooks/useUpdateValue";
-import useRemoveValue from "@hooks/useRemoveValue";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { database, storage } from "config/firebase";
-import useQuery from "@hooks/useQuery";
-import { equalTo, limitToFirst, limitToLast, startAt } from "firebase/database";
 import parse from 'html-react-parser'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -32,105 +24,6 @@ const themes = [
 export default function TestNavbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
-
-  const posts = useGetValue("projects");
-  const create = useCreateValue();
-  const createProduct = useCreateValue();
-  const update = useUpdateValue();
-  const remove = useRemoveValue("posts/-NGVcIbVzKF1Pi3-r_W1");
-  // const query = useQuery({
-  //   path: "posts",
-  //   type: "value",
-  //   queries: [limitToFirst(2)],
-  // });
-
-  const form = useRef();
-
-  const createPost = async () => {
-    const path = "/posts";
-    const value = { title: "Dicoba dulu", content: "Gimana kah hasilnya" };
-
-    await create.pushValue(path, value);
-  };
-
-  const submitPost = (e) => {
-    e.preventDefault();
-    const name = form.current[0]?.value;
-    const desc = form.current[1]?.value;
-    const url = form.current[2]?.value;
-    const image = form.current[3]?.files[0];
-
-    const storageRef = ref(storage, `post/${image.name}`);
-
-    uploadBytes(storageRef, image).then(
-      (snapshot) => {
-        getDownloadURL(snapshot.ref).then(
-          (downloadUrl) => {
-            savePost({
-              name,
-              desc,
-              url,
-              image: downloadUrl,
-            });
-          },
-          () => {
-            savePost({
-              name,
-              desc,
-              url,
-              image: null,
-            });
-          }
-        );
-      },
-      (error) => {
-        console.log(error);
-        savePost({
-          name,
-          desc,
-          url,
-          image: null,
-        });
-      }
-    );
-
-    // const path = "/posts";
-    // const value = { title: name, content: desc, url: url, image: image };
-    // await create.pushValue(path, value);
-    // console.log(name, desc, url, image);
-  };
-
-  const savePost = async (post) => {
-    const path = "/posts";
-    const value = post;
-
-    await create.pushValue(path, value);
-  };
-
-  const createNewProduct = async () => {
-    const path = "/products";
-    const value = {
-      name: "Jam Tangan",
-      category: "Aksesoris",
-      price: "70000",
-      timestamp: Date.now(),
-      userId: "001",
-    };
-
-    await createProduct.setValueWithKey(path, value);
-  };
-
-  const UpdatePost = async () => {
-    const path = "/posts/-NGRToS1f3FOMUBIESG6";
-    const value = {
-      title: "Post dari update Value",
-      category: "Olahraga",
-      content: "Ini adalah hasil dari update",
-      updatedAt: new Date(),
-    };
-
-    await update.updateDoc(path, value);
-  };
 
   useEffect(() => {
     if (openMenu) {
@@ -153,54 +46,6 @@ export default function TestNavbar() {
   return (
     <>
       <Layout title="Test">
-        <div className="p-10">
-          <button onClick={createPost}>Push Value</button>
-          <button onClick={createNewProduct} className="ml-2">
-            Add Product
-          </button>
-          <button onClick={UpdatePost} className="ml-2">
-            Update Post
-          </button>
-          <button onClick={() => remove.withRemove()} className="ml-2">
-            Remove Post
-          </button>
-          {data.map((item, index) => (
-            <div key={index}>
-              <h2 className="font-bold">{item.name}</h2>
-              <div className="prose prose-a:text-blue-500">{parse(item.description)}</div>
-              <p className="text-sm">{item.urlWebsite}</p>
-              <img src={item.image} alt="image" />
-              {item.stack.map(stack => (
-                <p>{stack.label}</p>
-              ))}
-            </div>
-          ))}
-
-          <form
-            ref={form}
-            onSubmit={submitPost}
-            className="border p-4 border-black flex flex-col gap-3"
-          >
-            <input
-              type="text"
-              className="border border-gray-400 p-2"
-              placeholder="Name"
-            />
-            <textarea
-              className="border border-gray-400 p-2"
-              placeholder="Desc"
-            />
-            <input
-              type="text"
-              className="border border-gray-400 p-2"
-              placeholder="url"
-            />
-            <input type="file" placeholder="image" />
-            <button type="submit" className="bg-gray-400 p-2">
-              Submit
-            </button>
-          </form>
-        </div>
         <div className="mb-10 dark:bg-red-200">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
           explicabo a, non ullam tempore rem molestiae nesciunt officiis

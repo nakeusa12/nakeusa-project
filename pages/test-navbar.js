@@ -1,6 +1,3 @@
-import Head from "next/head";
-import { Navbar } from "@components/molecules/Navbar";
-import Link from "next/link";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import gsap from "gsap";
@@ -41,7 +38,6 @@ export default function TestNavbar() {
   if (posts.isLoading) {
     return <p>Fetching data...</p>;
   }
-  const data = Object.values(posts.snapshot);
 
   return (
     <>

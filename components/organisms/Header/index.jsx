@@ -199,9 +199,6 @@ const SwicthTheme = () => {
   //   setAudio(new Audio("https://www.fesliyanstudios.com/play-mp3/387"));
   // }, []);
 
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
   const DarkTheme = () => {
     gsap.from(darkRef.current, {
       scale: 0.8,
@@ -223,6 +220,9 @@ const SwicthTheme = () => {
     setTheme("dark");
     // audio.play();
   };
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
     <>

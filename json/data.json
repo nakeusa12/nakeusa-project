@@ -77,37 +77,25 @@
       "latest": true
     },
     {
-      "name": "Kaguka Foramu",
-      "slug": "kaguka-foramu",
+      "name": "Bridge Zero",
+      "slug": "bridge-zero",
       "category": "WebApps",
-      "image": "/projects/kaguka-foramu.png",
+      "image": "/projects/bridgezero.png",
       "description": "",
-      "url": "https://kaguka-foramu.vercel.app/",
-      "year": 2021,
+      "url": "https://bridgezero.com/",
+      "year": 2020,
       "stack": [
         {
-          "label": "ReactJS",
-          "value": "ReactJS" 
-        },
-        {
-          "label": "NextJS",
-          "value": "NextJS" 
+          "label": "HTML5",
+          "value": "HTML5" 
         },
         {
           "label": "TailwindCSS",
           "value": "TailwindCSS" 
         },
         {
-          "label": "Boostrap",
-          "value": "Boostrap" 
-        },
-        {
-          "label": "Express JS",
-          "value": "ExpressJS" 
-        },
-        {
-          "label": "MongoDB",
-          "value": "MongoDB" 
+          "label": "AlphineJS",
+          "value": "AlphineJS" 
         }
       ],
       "latest": true

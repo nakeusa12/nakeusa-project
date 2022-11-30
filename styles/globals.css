@@ -70,12 +70,8 @@ body::-webkit-scrollbar {
   }
 
   body {
-    @apply transition-colors ease-linear cursor-default md:cursor-none;
+    @apply cursor-default md:cursor-none;
   }
-  /* body {
-    @apply transition-colors ease-linear cursor-default;
-  } */
-
 }
 
 .project-info-title {

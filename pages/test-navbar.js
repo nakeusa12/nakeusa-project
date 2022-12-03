@@ -34,42 +34,14 @@ export default function TestNavbar() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
-
-  if (posts.isLoading) {
-    return <p>Fetching data...</p>;
-  }
+  
 
   return (
     <>
       <Layout title="Test">
         <div className="mb-10 dark:bg-red-200">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-          explicabo a, non ullam tempore rem molestiae nesciunt officiis
-          excepturi ad architecto et eaque rerum atque? Unde veniam nisi totam
-          aut facere dolores nam error, architecto quidem eos beatae temporibus
-          tempora, sequi vitae esse eius officia, aperiam doloribus id. Optio
-          reiciendis natus, veritatis, dolor consectetur perspiciatis molestias
-          adipisci accusamus porro facere impedit debitis dolores similique!
-          Esse consequatur, nihil autem reprehenderit sunt minima aut officia
-          dicta porro nobis quisquam, dolorem, eligendi cum ducimus facilis.
-          Cupiditate numquam maiores minima possimus. Tenetur dignissimos a quo
-          quam doloribus aspernatur non, ex modi. Aliquam consequatur
-          doloremque, nostrum ad voluptate, dolorum sapiente repellat culpa
-          voluptatum eveniet nobis itaque at explicabo eum enim facere beatae
-          tempore harum. Possimus voluptatibus nemo beatae blanditiis tempora
-          dolorem, dolor excepturi modi! Ea nulla sit id, obcaecati tenetur
-          omnis nemo magni asperiores? Inventore, quod repellendus molestiae
-          quisquam repellat fuga odio quam beatae qui modi necessitatibus
-          excepturi, cumque eum eaque sit ut sequi placeat! Consequatur
-          voluptatum dignissimos doloremque, id hic quasi sint officiis ducimus
-          veniam qui, temporibus saepe nemo quidem illum maiores voluptas
-          consequuntur eius. Sit eveniet atque aperiam accusantium!
-          Perspiciatis, aliquid! Ipsa voluptas reiciendis velit asperiores
-          placeat iusto, dolores voluptates sequi nemo quas illo labore rem
-          facilis odio corporis quidem. Repellat doloribus nulla maxime, modi
-          porro obcaecati qui sapiente alias omnis sint voluptates expedita
         </div>
-        <div className="p-10">
+        <div className="p-10" style={{ zindex: `999 - ${index}`}}>
           <Nyobain status={"belum dimulai"} />
           <Nyobain status={"proses"} />
           <Nyobain status={"selesai"} />

@@ -2,6 +2,7 @@ import gsap, { Power2 } from "gsap";
 import { useState, useEffect, useRef } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +62,6 @@ const ShowMenu = ({ toggle, onClick }) => {
       },
       ">-0.5"
     );
-
   }, []);
 
   useEffect(() => {
@@ -82,58 +82,21 @@ const ShowMenu = ({ toggle, onClick }) => {
       <MenuOverlay className="overlay" />
       <MenuShowNavbar className="bg-slate-800 menu">
         <MenuBackground>Menu</MenuBackground>
-        <MenuClose
-          className="menuClose"
-          onClick={onClick}
-        >
+        <MenuClose className="menuClose" onClick={onClick}>
           <img src="assets/svgs/exit.svg" alt="" />
         </MenuClose>
         <ul className="z-[3] space-y-10">
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-640 "
-              onClick={onClick}
-            >
-              Home
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              About
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Portfolio
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Blog
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Contact
-            </a>
-          </li>
+          {ListMenu.map((item, index) => (
+            <li className="-mb-5 opacity-0 nav">
+              <Link
+                href={item.href}
+                className="text-5xl text-white transition-all duration-200 ease-in-out hover:text-gray-640"
+                onClick={onClick}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </MenuShowNavbar>
     </>
@@ -171,3 +134,26 @@ let MenuBackground = styled.div`
   user-select: none;
   z-index: 1;
 `;
+
+const ListMenu = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/about",
+    name: "About",
+  },
+  {
+    href: "/projects",
+    name: "Project",
+  },
+  {
+    href: "/blogs",
+    name: "Blog",
+  },
+  {
+    href: "/contact",
+    name: "Contact",
+  },
+];

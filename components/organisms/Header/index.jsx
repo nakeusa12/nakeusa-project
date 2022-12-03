@@ -30,7 +30,11 @@ export const Header = () => {
 
   return (
     <>
-      <header className={`fixed left-0 top-0 right-0 overflow-hidden z-50 md:w-20 md:dark:bg-black md:bg-white ${solidHeader ? "dark:bg-black bg-white" : "bg-transparent"}`}>
+      <header
+        className={`fixed left-0 top-0 right-0 overflow-hidden z-50 md:w-20 md:dark:bg-black md:bg-white ${
+          solidHeader ? "dark:bg-black bg-white" : "bg-transparent"
+        }`}
+      >
         <nav className="md:min-h-screen  md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
             <a
@@ -46,17 +50,13 @@ export const Header = () => {
               <div className="inline-block cursor-pointer" onClick={handleOpen}>
                 <div
                   className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
-                    menuOpen
-                      ? "-rotate-45  translate-y-[6px]"
-                      : ""
+                    menuOpen ? "-rotate-45  translate-y-[6px]" : ""
                   }`}
                 ></div>
                 <div className="w-6 h-[2.5px] my-1 mx-0"></div>
                 <div
                   className={`w-6 h-[2.5px] bg-main-dark dark:bg-white my-1 mx-0 duration-300 ${
-                    menuOpen
-                      ? "rotate-45 -translate-y-[7px]"
-                      : ""
+                    menuOpen ? "rotate-45 -translate-y-[7px]" : ""
                   }`}
                 ></div>
               </div>
@@ -134,51 +134,18 @@ const ShowMenu = ({ toggle, onClick }) => {
       <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 bg-white dark:bg-black z-40 menu">
         {/* <MenuBackground>Menu</MenuBackground> */}
         <ul className="z-[3] space-y-10">
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-640 "
-              onClick={onClick}
-            >
-              Home
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              About
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Portfolio
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Blog
-            </a>
-          </li>
-          <li className="-mb-5 opacity-0 nav">
-            <a
-              href="#"
-              className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-400"
-              onClick={onClick}
-            >
-              Contact
-            </a>
-          </li>
+          {ListMenu.map((item, index) => (
+            <li className="-mb-5 opacity-0 nav" key={index}>
+              <Link href={item.href}>
+                <a
+                  className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-640 "
+                  onClick={onClick}
+                >
+                  {item.name}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </>
@@ -269,3 +236,26 @@ const SwicthTheme = () => {
     </>
   );
 };
+
+const ListMenu = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/about",
+    name: "About",
+  },
+  {
+    href: "/projects",
+    name: "Project",
+  },
+  {
+    href: "/blogs",
+    name: "Blog",
+  },
+  {
+    href: "/contact",
+    name: "Contact",
+  },
+];

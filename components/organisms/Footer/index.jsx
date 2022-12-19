@@ -1,6 +1,7 @@
 import { IoDocumentText } from "react-icons/io5";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -36,10 +37,10 @@ export const Footer = () => {
             </Link>
             <Link
               href={
-                "https://drive.google.com/file/d/1mXB2BXdFI2BjquCVnhAiNdxoEDCI01TR/view?usp=share_link"
+                "https://drive.google.com/file/d/1ysWp7qah9Thgqi1qRSxKkVXo8eie9eZz/view?usp=sharing"
               }
             >
-              <a target="_blank">
+              <a target="_blank" style={{}}>
                 <IoDocumentText className="text-3xl text-main-dark dark:text-white" />
               </a>
             </Link>

@@ -7,7 +7,7 @@ import { useOnScreen } from "@hooks/useOnScreen";
 import Layout from "@components/molecules/Layout";
 import { useRouter } from "next/router";
 import { MarqueeText } from "@components/atoms/MarqueeText";
-import parse from 'html-react-parser'
+import parse from "html-react-parser";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,72 +34,90 @@ export default function TestNavbar() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
-  
 
   return (
     <>
       <Layout title="Test">
-        <div className="mb-10 dark:bg-red-200">
-        </div>
-        <div className="p-10" style={{ zindex: `999 - ${index}`}}>
+        <div className="mb-10 dark:bg-red-200"></div>
+        <div className="p-10">
           <Nyobain status={"belum dimulai"} />
           <Nyobain status={"proses"} />
           <Nyobain status={"selesai"} />
         </div>
-        <div>
-          <MarqueeText
-            text={"PROJECTS • PROJECTS • PROJECTS • PROJECTS • "}
-            title={"LATEST WORKS"}
-          />
+        <div className="p-10 flex flex-col gap-10">
+          <div className="inline-flex">
+            <div className="text-5xl dark:text-white text-main-dark transition-all duration-200 overflow-hidden pb-5 ease-in-out relative before:content-['aaaaaaaaaaaaaaa'] before:w-full before:absolute before:bottom-3 before:left-0 before:text-transparent before:decoration-main-dark before:underline before:decoration-wavy wavy">
+              Home
+            </div>
+          </div>
+          <div className="inline-flex">
+            <div className="text-5xl dark:text-white text-main-dark transition-all duration-200 overflow-hidden pb-5 ease-in-out relative before:content-[''] before:absolute before:h-[4px] before:bg-main-dark before:w-full before:bottom-2 before:left-0 before:origin-left before:transform before:duration-200 before:ease-out before:scale-x-0 before:hover:scale-x-100">
+              About
+            </div>
+          </div>
+          <div className="inline-flex">
+            <div className="text-5xl dark:text-white text-main-dark transition-all duration-200 overflow-hidden pb-5 ease-in-out relative before:content-[''] before:absolute before:h-[4px] before:bg-main-dark before:w-full before:bottom-2 before:left-0 before:origin-left before:transform before:duration-200 before:ease-out before:scale-x-0 before:hover:scale-x-100">
+              Project
+            </div>
+          </div>
+          <div className="inline-flex">
+            <div className="text-5xl dark:text-white text-main-dark transition-all duration-200 overflow-hidden pb-5 ease-in-out relative before:content-[''] before:absolute before:h-[4px] before:bg-main-dark before:w-full before:bottom-2 before:left-0 before:origin-left before:transform before:duration-200 before:ease-out before:scale-x-0 before:hover:scale-x-100">
+              Contact
+            </div>
+          </div>
         </div>
-        <div className="pt-40 mb-10">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-          explicabo a, non ullam tempore rem molestiae nesciunt officiis
-          excepturi ad architecto et eaque rerum atque? Unde veniam nisi totam
-          aut facere dolores nam error, architecto quidem eos beatae temporibus
-          tempora, sequi vitae esse eius officia, aperiam doloribus id. Optio
-          reiciendis natus, veritatis, dolor consectetur perspiciatis molestias
-          adipisci accusamus porro facere impedit debitis dolores similique!
-          Esse consequatur, nihil autem reprehenderit sunt minima aut officia
-          dicta porro nobis quisquam, dolorem, eligendi cum ducimus facilis.
-          Cupiditate numquam maiores minima possimus. Tenetur dignissimos a quo
-          quam doloribus aspernatur non, ex modi. Aliquam consequatur
-          doloremque, nostrum ad voluptate, dolorum sapiente repellat culpa
-          voluptatum eveniet nobis itaque at explicabo eum enim facere beatae
-          tempore harum. Possimus voluptatibus nemo beatae blanditiis tempora
-          dolorem, dolor excepturi modi! Ea nulla sit id, obcaecati tenetur
-          omnis nemo magni asperiores? Inventore, quod repellendus molestiae
-          quisquam repellat fuga odio quam beatae qui modi necessitatibus
-          excepturi, cumque eum eaque sit ut sequi placeat! Consequatur
-          voluptatum dignissimos doloremque, id hic quasi sint officiis ducimus
-          veniam qui, temporibus saepe nemo quidem illum maiores voluptas
-          consequuntur eius. Sit eveniet atque aperiam accusantium!
-          Perspiciatis, aliquid! Ipsa voluptas reiciendis velit asperiores
-          placeat iusto, dolores voluptates sequi nemo quas illo labore rem
-          facilis odio corporis quidem. Repellat doloribus nulla maxime, modi
-          porro obcaecati qui sapiente alias omnis sint voluptates expedita
-          quasi architecto officia illo reiciendis cupiditate debitis
-          consectetur nemo quisquam harum quos mollitia. Repellat qui totam
-          perferendis aspernatur doloribus illum iusto nam pariatur. Eveniet rem
-          corporis sint laborum consequuntur repellendus? Molestias tempore eum
-          ullam minus quibusdam reprehenderit dolorem animi cum voluptate,
-          adipisci officia voluptatibus dicta esse porro aut culpa doloremque
-          quasi, aliquid, facere id voluptates ex sit! Reiciendis doloremque
-          fugiat blanditiis delectus incidunt nobis voluptatem quam perferendis
-          sint necessitatibus sequi ipsum quisquam recusandae, quod nam ducimus
-          accusantium nihil autem. Quam animi inventore molestias suscipit sint
-          voluptatibus esse iusto natus tempora distinctio, ducimus ipsa
-          incidunt ipsum modi dolorum quibusdam, tenetur ea, tempore voluptatem
-          voluptates! Omnis, repellendus, animi rem, itaque laudantium fugit
-          nostrum sequi mollitia atque sunt perferendis molestias error
-          assumenda! Earum enim harum praesentium laborum molestias possimus
-          vero, sequi alias rerum, quos maiores distinctio recusandae nostrum
-          amet odio, corrupti voluptates nemo maxime aut fuga facere magni.
-        </div>
+        <HoverImage />
       </Layout>
     </>
   );
 }
+
+const HoverImage = () => {
+  useEffect(() => {
+    const links = [...document.querySelectorAll("li")];
+
+    for (let i = 0; i < links.length; i++) {
+      links[i].addEventListener("mouseover", () => {
+        for (let j = 0; j < links.length; j++) {
+          if (j !== i) {
+            links[j].style.opacity = 0.2;
+            links[j].style.zIndex = 0;
+          } else {
+            links[j].style.opacity = 1;
+            links[j].style.zIndex = 3;
+          }
+        }
+      });
+
+      links[i].addEventListener("mouseleave", () => {
+        for (let i = 0; i < links.length; i++) {
+          links[i].style.opacity = 1;
+        }
+      });
+
+    }
+
+  }, []);
+
+  return (
+    <div className="p-10">
+      <canvas></canvas>
+
+      <section class="projects-section">
+        <div class="projects">
+          <ul>
+            <li>PROJECT ONE</li>
+            <li>PROJECT TWO</li>
+            <li>PROJECT THREE</li>
+            <li>PROJECT FOUR</li>
+            <li>PROJECT FIVE</li>
+            <li>PROJECT SIX</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+};
 
 const Nyobain = ({ status }) => {
   return (

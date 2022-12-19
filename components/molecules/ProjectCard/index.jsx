@@ -120,11 +120,7 @@ export const ProjectCard = ({ item, index }) => {
                     className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
                     ref={categoryProject}
                   >
-                    {item.stack.map(stack => (
-                      <span className="mr-3" key={stack.value}>
-                      #{stack.label}
-                      </span>
-                    ))}
+                    {item.category}
                   </span>
                   <span
                     className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0 text-main-dark dark:text-white"

@@ -59,10 +59,10 @@ body::-webkit-scrollbar {
 
 /* =============================================== */
 @layer base {
-  .activeImageProject{
+  .activeImageProject {
     @apply absolute left-5 md:left-20 -z-10 h-full leading-4 text-transparent font-extrabold flex flex-row justify-center md:justify-start gap-x-4 text-8xl opacity-10 top-[15%];
     -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke: 2px #2140F4;
+    -webkit-text-stroke: 2px #2140f4;
   }
 
   .card-project:nth-of-type(even) {
@@ -158,8 +158,8 @@ body::-webkit-scrollbar {
 }
 
 .main-cursor {
-  transition: opacity 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-  animation: fadeIn 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  /* transition: opacity 0.7s cubic-bezier(0.77, 0, 0.175, 1); */
+  /* animation: fadeIn 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards; */
   mix-blend-mode: difference;
   width: 40px;
   height: 40px;
@@ -229,7 +229,7 @@ body::-webkit-scrollbar {
   -moz-transform: scale(2.5);
   -ms-transform: scale(2.5);
   -o-transform: scale(2.5);
-  animation: viewProject .3s ease-in-out;
+  animation: viewProject 0.3s ease-in-out;
 }
 
 .secondary-cursor.active {
@@ -335,4 +335,80 @@ body::-webkit-scrollbar {
   font-weight: bold;
   white-space: nowrap;
   width: max-content;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#f2c, #f2c);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+.wavy::before{
+  animation: wavyUnderline 1.5s linear infinite;
+}
+
+@keyframes wavyUnderline {
+  0%{
+    transform: translateX(-1px);
+  }
+  100%{
+    transform: translateX(-70px);
+  }
+}
+
+canvas.canvap-area {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+section.project-test {
+  position: relative;
+  padding: 10vh 2vw;
+  height: 100vh;
+  width: 100vw;
+}
+
+.projects {
+  width: 100%;
+  height: 100%;
+}
+
+.projects ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.projects ul li {
+  position: relative;
+  border-bottom: 1px solid #d8fa3054;
+  cursor: pointer;
+  font-size: 6vw;
+  font-weight: 400;
+}
+
+.project-image {
+  opacity: 0%;
+  position: absolute;
+  top: -100%;
+  pointer-events: none;
+  user-select: none;
 }

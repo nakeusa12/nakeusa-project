@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import gsap, { Power2 } from "gsap";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,6 +82,7 @@ export const Header = () => {
 };
 
 const ShowMenu = ({ toggle, onClick }) => {
+  const router = useRouter()
   let tl = useRef();
 
   useEffect(() => {
@@ -138,7 +140,7 @@ const ShowMenu = ({ toggle, onClick }) => {
             <li className="-mb-5 opacity-0 nav" key={index}>
               <Link href={item.href}>
                 <a
-                  className="text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out hover:text-gray-640 "
+                  className={`${router.pathname === item.href ? "" : ""} text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out relative after:content-[''] after:w-full after:absolute after:h-[4px] after:bg-main-dark dark:after:bg-main-whiteGray after:-bottom-2.5 after:left-0 after:origin-left after:transform after:duration-200 after:ease-out after:scale-x-0 after:hover:scale-x-100`}
                   onClick={onClick}
                 >
                   {item.name}

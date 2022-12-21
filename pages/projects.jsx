@@ -1,18 +1,18 @@
+import React, { useEffect } from "react";
+import gsap from "gsap";
+
 import Layout from "@components/molecules/Layout";
 import { Footer } from "@components/organisms/Footer";
-import gsap from "gsap";
-import React, { useRef } from "react";
-import { useEffect } from "react";
+
 import { projects } from "../json/data.json";
 
 const Projects = () => {
 
   useEffect(() => {
     const itemList = [...document.querySelectorAll(".listProject")];
-    // gsap.set(".showImage", { yPercent: -50, xPercent: -50 });
 
     for (let i = 0; i < itemList.length; i++) {
-      itemList[i].addEventListener("mousemove", () => {
+      itemList[i].addEventListener("mouseenter", () => {
         for (let j = 0; j < itemList.length; j++) {
           if (j !== i) {
             gsap.to(itemList[j], 0.5, { opacity: 0.2, zIndex: 0 });
@@ -26,34 +26,32 @@ const Projects = () => {
         for (let i = 0; i < itemList.length; i++) {
           gsap.to(itemList[i], 0.5, { opacity: 1, zIndex: 1 });
         }
+
+        gsap.to(".showImage", 0.5, { autoAlpha: 0 });        
+      });
+
+      itemList[i].addEventListener("mousemove", (e) => {
+        const image = itemList[i].querySelector(".showImage"),
+          setX = gsap.quickSetter(image, "x", "px"),
+          setY = gsap.quickSetter(image, "y", "px"),
+          align = (e) => {
+            setX(e.clientX - 200);
+            setY(e.clientY - 160);
+          },
+          startFollow = () => document.addEventListener("mousemove", align),
+          stopFollow = () => document.removeEventListener("mousemove", align),
+          fade = gsap.to(image, {
+            autoAlpha: 1,
+            ease: "none",
+            paused: true,
+            onReverseComplete: stopFollow,
+          });
+
+        startFollow();
+        align(e);
+        fade.play();
       });
     }
-
-    // itemList.forEach((el) => {
-    //   const image = el.querySelector(".showImage"),
-    //     setX = gsap.quickSetter(image, "x", "px"),
-    //     setY = gsap.quickSetter(image, "y", "px"),
-    //     align = (e) => {
-    //       setX(e.clientX);
-    //       setY(e.clientY);
-    //     },
-    //     startFollow = () => document.addEventListener("mousemove", align),
-    //     stopFollow = () => document.removeEventListener("mousemove", align),
-    //     fade = gsap.to(image, {
-    //       autoAlpha: 1,
-    //       ease: "none",
-    //       paused: true,
-    //       onReverseComplete: stopFollow,
-    //     });
-
-    //   el.addEventListener("mouseenter", (e) => {
-    //     fade.play();
-    //     startFollow();
-    //     align(e);
-    //   });
-
-    //   el.addEventListener("mouseleave", () => fade.reverse());
-    // });
   }, []);
 
   return (
@@ -85,8 +83,8 @@ const Projects = () => {
                 </div>
                 <img
                   src={item.image}
-                  className="fixed w-96 h-96 object-cover top-0 left-0 opacity-0 invisible z-10 pointer-events-none showImage"
-                  alt=""
+                  className="fixed max-w-md object-cover top-0 left-0 opacity-0 invisible z-30 pointer-events-none showImage"
+                  alt={item.name}
                 />
               </div>
               <div className="w-full h-px bg-main-dark"></div>

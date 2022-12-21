@@ -46,6 +46,18 @@ export const CustomCursor = () => {
       });
     });
 
+    const listProject = document.querySelectorAll(".listProject");
+
+    listProject.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to([mainCursor.current, secondaryCursor.current], 0.5, { autoAlpha: 0 });
+      });
+
+      el.addEventListener("mouseleave", () => {
+        gsap.to([mainCursor.current, secondaryCursor.current], 0.5, { autoAlpha: 1 });
+      });
+    })
+
     return () => {};
   }, []);
 

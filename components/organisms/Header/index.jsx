@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
-import gsap, { Power2 } from "gsap";
+import gsap, { Expo, Power2 } from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -38,12 +38,11 @@ export const Header = () => {
       >
         <nav className="md:min-h-screen  md:border-r dark:border-gray-900/50 border-gray-200 flex flex-col w-full justify-between items-center py-6 md:py-10">
           <div className="w-full flex md:flex-col flex-row items-center justify-between px-5 m:px-0">
-            <a
-              href="#"
-              className="block md:hidden text-3xl font-bold font-koulen tracking-wide dark:text-white text-main-dark"
-            >
-              SN<span className="dark:text-main-blue text-main-red">.</span>
-            </a>
+            <Link href={"/"}>
+              <a className="block md:hidden text-3xl font-bold font-koulen tracking-wide dark:text-white text-main-dark">
+                SN<span className="dark:text-main-blue text-main-red">.</span>
+              </a>
+            </Link>
             <div className="inline-flex gap-x-6 items-center">
               <div className="block md:hidden">
                 <SwicthTheme />
@@ -82,49 +81,34 @@ export const Header = () => {
 };
 
 const ShowMenu = ({ toggle, onClick }) => {
-  const router = useRouter()
+  const router = useRouter();
   let tl = useRef();
+  let menu = useRef();
+  let imgMenu = useRef();
 
   useEffect(() => {
-    tl.current = gsap.timeline({ paused: true, ease: Power2.easeInOut });
+    tl.current = gsap.timeline({ paused: true, reversed: true });
     tl.current.fromTo(
-      ".overlay",
-      0.8,
-      {
-        xPercent: -100,
-      },
-      {
-        xPercent: 0,
-      }
+      menu.current,
+      1,
+      { xPercent: -100, ease: Expo.easeInOut },
+      { xPercent: 0, ease: Expo.easeInOut }
     );
-    tl.current.fromTo(
-      ".menu",
-      0.5,
-      {
-        xPercent: -100,
-      },
-      {
-        xPercent: 0,
-      },
-      ">-0.7"
-    );
-    tl.current.to(
-      ".nav",
-      {
-        opacity: 1,
-        marginBottom: 0,
-        duration: 1,
-        stagger: 0.2,
-      },
-      ">-0.5"
-    );
+    tl.current.from(".nav", {
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      ease: Expo.easeOut,
+    });
+    tl.current.to(imgMenu.current, 1, { width: "100%", ease: Expo.easeInOut }, "-=0.5");
   }, []);
 
   useEffect(() => {
     if (toggle) {
       tl.current.play().timeScale(1);
     } else {
-      tl.current.timeScale(2);
+      tl.current.timeScale(1.5);
       tl.current.reverse();
     }
   }, [toggle]);
@@ -132,23 +116,37 @@ const ShowMenu = ({ toggle, onClick }) => {
   return (
     <>
       {/* overlay */}
-      <div className="overlay fixed w-full h-screen bg-main-red dark:bg-main-blue z-30" />
-      <div className="fixed flex flex-row items-center justify-center sm:justify-start w-full h-screen px-40 bg-white dark:bg-black z-40 menu">
+      <div
+        ref={menu}
+        className="fixed h-screen pl-20 bg-white dark:bg-black z-40 w-full"
+      >
         {/* <MenuBackground>Menu</MenuBackground> */}
-        <ul className="z-[3] space-y-10">
-          {ListMenu.map((item, index) => (
-            <li className="-mb-5 opacity-0 nav" key={index}>
-              <Link href={item.href}>
-                <a
-                  className={`${router.pathname === item.href ? "" : ""} text-5xl dark:text-white text-main-dark transition-all duration-200 ease-in-out relative after:content-[''] after:w-full after:absolute after:h-[4px] after:bg-main-dark dark:after:bg-main-whiteGray after:-bottom-2.5 after:left-0 after:origin-left after:transform after:duration-200 after:ease-out after:scale-x-0 after:hover:scale-x-100`}
-                  onClick={onClick}
-                >
-                  {item.name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="h-screen w-full grid grid-cols-12">
+          <ul className="z-[3] col-span-12 lg:col-span-6 w-full flex h-full flex-col justify-center px-20">
+            {ListMenu.map((item, index) => (
+              <li className="py-4 nav" key={index}>
+                <Link href={item.href}>
+                  <a
+                    className={`${
+                      router.pathname === item.href ? "" : ""
+                    } text-5xl dark:text-white text-main-dark transition-all duration-200 overflow-hidden pb-5 ease-in-out relative before:content-[''] before:absolute before:inset-x-0 before:bottom-3 before:bg-main-dark dark:before:bg-white before:transition-transform before:duration-300 before:ease-linear before:scale-x-0 before:origin-bottom-right before:hover:scale-x-100 before:hover:origin-bottom-left before:h-[4px]`}
+                    onClick={onClick}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden lg:block lg:col-span-6 w-full overflow-hidden">
+            <img
+              ref={imgMenu}
+              src="/assets/images/img-travelling.png"
+              className="w-0 scale-100 h-full object-cover"
+              alt="img"
+            />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,12 +1,27 @@
 import React, { useEffect } from "react";
-import gsap from "gsap";
+import gsap, { Linear, TimelineLite } from "gsap";
 
 import Layout from "@components/molecules/Layout";
 import { Footer } from "@components/organisms/Footer";
 
-import { projects } from "../json/data.json";
+import {projects} from "../json/project.json";
 
 const Projects = () => {
+  useEffect(() => {
+    const overlay = document.getElementById("overlay");
+    const tl = new TimelineLite({ paused: true }).to(overlay, 2, {
+      autoAlpha: 0,
+      y: "40vh",
+      ease: Linear.easeNone,
+    });
+
+    window.addEventListener("scroll", () => {
+      const st = document.documentElement.scrollTop;
+      const ht = overlay.scrollHeight;
+      const windowScroll = st / ht;
+      tl.progress(windowScroll);
+    });
+  }, []);
 
   useEffect(() => {
     const itemList = [...document.querySelectorAll(".listProject")];
@@ -27,36 +42,31 @@ const Projects = () => {
           gsap.to(itemList[i], 0.5, { opacity: 1, zIndex: 1 });
         }
 
-        gsap.to(".showImage", 0.5, { autoAlpha: 0 });        
+        gsap.to(".showImage", 0.5, { autoAlpha: 0 });
       });
 
       itemList[i].addEventListener("mousemove", (e) => {
-        const image = itemList[i].querySelector(".showImage"),
-          setX = gsap.quickSetter(image, "x", "px"),
-          setY = gsap.quickSetter(image, "y", "px"),
-          align = (e) => {
-            setX(e.clientX - 200);
-            setY(e.clientY - 160);
-          },
-          startFollow = () => document.addEventListener("mousemove", align),
-          stopFollow = () => document.removeEventListener("mousemove", align),
-          fade = gsap.to(image, {
-            autoAlpha: 1,
-            ease: "none",
-            paused: true,
-            onReverseComplete: stopFollow,
-          });
+        const x = e.clientX;
+        const y = e.clientY;
 
-        startFollow();
-        align(e);
-        fade.play();
+        gsap.to(".showImage", 0.5, {
+          x: x + 50,
+          y: y - 150,
+          autoAlpha: 1,
+        });
       });
     }
   }, []);
 
   return (
     <Layout>
-      <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40">
+      <section id="overlay" className=" h-screen bg-main-dark flex justify-center items-center shadow-main-dark shadow-[0_100px_100px_100px]">
+        <h1>
+          Here's a full-screen header container that fades with a parallax
+          effect.
+        </h1>
+      </section>
+      <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 my-20 space-y-20 md:space-y-40 testProjectLagi">
         <div>
           <h1 className="text-4xl uppercase">My Project</h1>
         </div>

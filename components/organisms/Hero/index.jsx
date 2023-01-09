@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap, { Power2 } from "gsap";
-import Link from "next/link";
 import { ButtonLink } from "@components/atoms/ButtonLink";
 gsap.registerPlugin(ScrollTrigger);
 

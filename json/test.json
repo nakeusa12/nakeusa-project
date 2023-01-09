@@ -1,0 +1,40 @@
+{
+    "categories": [
+        {
+            "name": "Category A",
+            "id": 1,
+            "content": [
+                {
+                    "id": 1,
+                    "title": "Title Content 1",
+                    "description": "Description Content 1",
+                    "link": "http://www.google.com"
+                },
+                {
+                    "id": 2,
+                    "title": "Title Content 2",
+                    "description": "Description Content 2",
+                    "link": "http://www.google.com"
+                }
+            ]
+        },
+        {
+            "name": "Category B",
+            "id": 2,
+            "content": [
+                {
+                    "id": 1,
+                    "title": "Title Content 3",
+                    "description": "Description Content 3",
+                    "link": "http://www.google.com"
+                },
+                {
+                    "id": 2,
+                    "title": "Title Content 4",
+                    "description": "Description Content 4",
+                    "link": "http://www.google.com"
+                }
+            ]
+        }
+    ]
+}

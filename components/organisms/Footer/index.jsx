@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="w-full h-full z-10 relative pt-16 pb-10">
-      <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5 grid md:grid-cols-2 gap-x-10">
-        <div className="w-full flex flex-col gap-y-20">
+    <footer className="relative z-10 w-full h-full pt-16 pb-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] w-full md:w-11/12 lg:w-4/5 mx-auto px-6 md:px-5">
+        <div className="flex flex-col w-full max-w-2xl gap-y-20">
           <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white text-main-dark">
             For work enquiries or if you just want to say hello, email{" "}
             <Link href={"mailto:sfulnakeusa@gmail.com"}>
@@ -17,7 +17,7 @@ export const Footer = () => {
             </Link>
                
           </span>
-          <ul className="w-full flex flex-row items-center justify-center md:justify-start flex-wrap gap-10 xl:gap-20 dark:text-white text-main-dark">
+          <ul className="flex flex-row flex-wrap items-center justify-center w-full gap-10 md:justify-start xl:gap-20 dark:text-white text-main-dark">
             <Link href={"https://twitter.com/nakeusaa"}>
               <a target="_blank">
                 <FaTwitter className="text-3xl" />
@@ -47,7 +47,6 @@ export const Footer = () => {
             Thanks to several websites for the inspiration. coding by me ©2022
           </p>
         </div>
-        <div className=""></div>
       </div>
     </footer>
   );

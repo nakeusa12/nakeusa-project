@@ -1,7 +1,7 @@
 import { MarqueeText } from "@components/atoms/MarqueeText";
 import { ProjectCard } from "@components/molecules/ProjectCard";
 
-import {projects} from "../../../json/project.json";
+import {projects} from "../../../json/project.js";
 
 export const LatestProject = () => {
   return (

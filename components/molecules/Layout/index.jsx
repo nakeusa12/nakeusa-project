@@ -18,6 +18,10 @@ const Layout = ({ children, titlePage, metaDescription }) => {
         setShowTopButton(false);
       }
     });
+
+    () => {
+      window.removeEventListener("scroll");
+    };
   }, []);
 
   const goToTop = () => {
@@ -39,22 +43,20 @@ const Layout = ({ children, titlePage, metaDescription }) => {
       <CustomCursor />
       <Header />
       <main
-        className="antialiased bg-white dark:bg-black pl-0 md:pl-20 overflow-hidden relative"
+        className="relative pl-0 overflow-hidden antialiased bg-white dark:bg-black md:pl-20"
         id="main-container"
       >
         {children}
 
-
-        {showTopButton && (
-          <button
-            className="flex-center fixed right-5 md:right-8 bottom-5 md:bottom-8 z-10 rounded-full bg-main-purple text-xl text-main-dark dark:text-white btn-gotop duration-300 ease-in-out"
-            onClick={goToTop}
-          >
-            <span className="">
-              <BsTriangleFill className="w-3 h-3 md:w-5 md:h-5" />
-            </span>
-          </button>
-        )}
+        <button
+          className={`fixed z-10 text-xl transition-all duration-300 ease-in-out rounded-full flex-center right-5 md:right-8 bottom-5 md:bottom-8 bg-main-purple text-main-dark dark:text-white btn-gotop ${
+            showTopButton ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={goToTop}
+        >
+          <BsTriangleFill className="w-4 h-4 md:w-5 md:h-5" />
+          {/* <span className=""></span> */}
+        </button>
       </main>
     </>
   );

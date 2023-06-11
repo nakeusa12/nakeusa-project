@@ -69,13 +69,13 @@ export const ProjectCard = ({ item, index }) => {
   return (
     <>
       <article
-        className="card-project flex max-w-4xl w-full gap-5 scale-100 flex-col-reverse md:flex-row"
+        className="flex flex-col-reverse w-full max-w-4xl gap-5 scale-100 card-project md:flex-row"
         ref={cardProject}
       >
         <Link href={item.url}>
           <a
             target=""
-            className="relative group w-full h-auto cursor-none content-card-project"
+            className="relative w-full h-auto group cursor-none content-card-project"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
@@ -103,11 +103,11 @@ export const ProjectCard = ({ item, index }) => {
               </div>
             </div>
             <div
-              className="absolute top-0 left-0 w-full h-full bg-white/50 dark:bg-black/50 flex items-end invisible"
+              className="absolute top-0 left-0 flex items-end invisible w-full h-full bg-white/50 dark:bg-black/50"
               ref={contentProject}
             >
-              <div className="w-full h flex flex-col p-5 md:p-10">
-                <h1 className="font-k2d tracking-wide text-main-dark dark:text-white text-5xl uppercase relative overflow-hidden">
+              <div className="flex flex-col w-full p-5 h md:p-10">
+                <h1 className="relative overflow-hidden text-5xl tracking-wide uppercase font-k2d text-main-dark dark:text-white">
                   <span
                     className="inline-block translate-y-full opacity-0"
                     ref={titleProject}
@@ -115,15 +115,15 @@ export const ProjectCard = ({ item, index }) => {
                     {item.name}
                   </span>
                 </h1>
-                <div className="w-full flex justify-between items-center mt-1 relative overflow-hidden">
+                <div className="relative flex items-center justify-between w-full mt-1 overflow-hidden">
                   <span
-                    className="font-k2d tracking-wide text-base inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
+                    className="inline-block text-base tracking-wide translate-y-full opacity-0 font-k2d text-main-dark dark:text-white"
                     ref={categoryProject}
                   >
                     {item.category}
                   </span>
                   <span
-                    className="font-koulen tracking-wide text-2xl inline-block translate-y-full opacity-0 text-main-dark dark:text-white"
+                    className="inline-block text-2xl tracking-wide translate-y-full opacity-0 font-koulen text-main-dark dark:text-white"
                     ref={yearProject}
                   >
                     {item.year}

@@ -72,13 +72,11 @@ export const CustomCursor = () => {
     button.forEach((el) => {
       el.addEventListener("mouseenter", () => {
         cursor.current.classList.add("is-btn");
-        cursorGroup.current.classList.add("mix-blend-difference");
         cursorFollower.current.classList.add("is-btn");
       });
 
       el.addEventListener("mouseleave", () => {
         cursor.current.classList.remove("is-btn");
-        cursorGroup.current.classList.remove("mix-blend-difference");
         cursorFollower.current.classList.remove("is-btn");
       });
     });
@@ -86,7 +84,7 @@ export const CustomCursor = () => {
 
   return (
     <div className="relative z-[10000]" ref={cursorGroup}>
-      <div className="cursor bg-main-red dark:bg-main-blue active:bg-main-red dark:active:bg-main-blue " ref={cursor}></div>
+      <div className="cursor bg-main-red dark:bg-main-blue active:bg-main-red dark:active:bg-main-blue" ref={cursor}></div>
       <div className="cursor-follower border-main-dark dark:border-main-whiteGray" ref={cursorFollower}></div>
     </div>
   );

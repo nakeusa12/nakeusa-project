@@ -4,7 +4,7 @@ import gsap, { Linear, TimelineLite } from "gsap";
 import Layout from "@components/molecules/Layout";
 import { Footer } from "@components/organisms/Footer";
 
-import {projects} from "../json/project.json";
+import {projects} from "../json/project.js";
 
 const Projects = () => {
   useEffect(() => {
@@ -76,16 +76,16 @@ const Projects = () => {
           </li>
           {projects.map((item, index) => (
             <li key={index}>
-              <div className="w-full flex flex-row justify-between items-start py-10 relative listProject">
+              <div className="relative flex flex-row items-start justify-between w-full py-10 listProject">
                 <div className="flex-1">
                   <h3 className="text-4xl font-semibold">{item.name}</h3>
                   <p className="text-lg">{item.category}</p>
                 </div>
-                <div className="flex-1 flex flex-wrap gap-2 justify-end max-w-md">
+                <div className="flex flex-wrap justify-end flex-1 max-w-md gap-2">
                   {item.stack.map((stack) => (
                     <p
                       key={stack.value}
-                      className="bg-main-dark py-2 px-3 inline text-main-whiteGray rounded-md text-sm"
+                      className="inline px-3 py-2 text-sm rounded-md bg-main-dark text-main-whiteGray"
                     >
                       {stack.label}
                     </p>
@@ -93,7 +93,7 @@ const Projects = () => {
                 </div>
                 <img
                   src={item.image}
-                  className="fixed max-w-md object-cover top-0 left-0 opacity-0 invisible z-30 pointer-events-none showImage"
+                  className="fixed top-0 left-0 z-30 invisible object-cover max-w-md opacity-0 pointer-events-none showImage"
                   alt={item.name}
                 />
               </div>
